@@ -1,0 +1,11 @@
+C:\Users\ASUS\Desktop\Code Academy\C#\API\Homework\PokemonGame\PokemonGame\PokemonGame.Infrastructure\bin\Debug\net8.0\PokemonGame.Infrastructure.deps.json
+C:\Users\ASUS\Desktop\Code Academy\C#\API\Homework\PokemonGame\PokemonGame\PokemonGame.Infrastructure\bin\Debug\net8.0\PokemonGame.Infrastructure.dll
+C:\Users\ASUS\Desktop\Code Academy\C#\API\Homework\PokemonGame\PokemonGame\PokemonGame.Infrastructure\bin\Debug\net8.0\PokemonGame.Infrastructure.pdb
+C:\Users\ASUS\Desktop\Code Academy\C#\API\Homework\PokemonGame\PokemonGame\PokemonGame.Infrastructure\obj\Debug\net8.0\PokemonGame.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ASUS\Desktop\Code Academy\C#\API\Homework\PokemonGame\PokemonGame\PokemonGame.Infrastructure\obj\Debug\net8.0\PokemonGame.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\ASUS\Desktop\Code Academy\C#\API\Homework\PokemonGame\PokemonGame\PokemonGame.Infrastructure\obj\Debug\net8.0\PokemonGame.Infrastructure.AssemblyInfo.cs
+C:\Users\ASUS\Desktop\Code Academy\C#\API\Homework\PokemonGame\PokemonGame\PokemonGame.Infrastructure\obj\Debug\net8.0\PokemonGame.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\ASUS\Desktop\Code Academy\C#\API\Homework\PokemonGame\PokemonGame\PokemonGame.Infrastructure\obj\Debug\net8.0\PokemonGame.Infrastructure.dll
+C:\Users\ASUS\Desktop\Code Academy\C#\API\Homework\PokemonGame\PokemonGame\PokemonGame.Infrastructure\obj\Debug\net8.0\refint\PokemonGame.Infrastructure.dll
+C:\Users\ASUS\Desktop\Code Academy\C#\API\Homework\PokemonGame\PokemonGame\PokemonGame.Infrastructure\obj\Debug\net8.0\PokemonGame.Infrastructure.pdb
+C:\Users\ASUS\Desktop\Code Academy\C#\API\Homework\PokemonGame\PokemonGame\PokemonGame.Infrastructure\obj\Debug\net8.0\ref\PokemonGame.Infrastructure.dll

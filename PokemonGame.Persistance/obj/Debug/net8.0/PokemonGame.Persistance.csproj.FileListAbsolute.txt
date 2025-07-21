@@ -1,0 +1,17 @@
+C:\Users\ASUS\Desktop\Code Academy\C#\API\Homework\PokemonGame\PokemonGame\PokemonGame.Persistance\bin\Debug\net8.0\PokemonGame.Persistance.deps.json
+C:\Users\ASUS\Desktop\Code Academy\C#\API\Homework\PokemonGame\PokemonGame\PokemonGame.Persistance\bin\Debug\net8.0\PokemonGame.Persistance.dll
+C:\Users\ASUS\Desktop\Code Academy\C#\API\Homework\PokemonGame\PokemonGame\PokemonGame.Persistance\bin\Debug\net8.0\PokemonGame.Persistance.pdb
+C:\Users\ASUS\Desktop\Code Academy\C#\API\Homework\PokemonGame\PokemonGame\PokemonGame.Persistance\obj\Debug\net8.0\PokemonGame.Persistance.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ASUS\Desktop\Code Academy\C#\API\Homework\PokemonGame\PokemonGame\PokemonGame.Persistance\obj\Debug\net8.0\PokemonGame.Persistance.AssemblyInfoInputs.cache
+C:\Users\ASUS\Desktop\Code Academy\C#\API\Homework\PokemonGame\PokemonGame\PokemonGame.Persistance\obj\Debug\net8.0\PokemonGame.Persistance.AssemblyInfo.cs
+C:\Users\ASUS\Desktop\Code Academy\C#\API\Homework\PokemonGame\PokemonGame\PokemonGame.Persistance\obj\Debug\net8.0\PokemonGame.Persistance.csproj.CoreCompileInputs.cache
+C:\Users\ASUS\Desktop\Code Academy\C#\API\Homework\PokemonGame\PokemonGame\PokemonGame.Persistance\obj\Debug\net8.0\PokemonGame.Persistance.dll
+C:\Users\ASUS\Desktop\Code Academy\C#\API\Homework\PokemonGame\PokemonGame\PokemonGame.Persistance\obj\Debug\net8.0\refint\PokemonGame.Persistance.dll
+C:\Users\ASUS\Desktop\Code Academy\C#\API\Homework\PokemonGame\PokemonGame\PokemonGame.Persistance\obj\Debug\net8.0\PokemonGame.Persistance.pdb
+C:\Users\ASUS\Desktop\Code Academy\C#\API\Homework\PokemonGame\PokemonGame\PokemonGame.Persistance\obj\Debug\net8.0\ref\PokemonGame.Persistance.dll
+C:\Users\ASUS\Desktop\Code Academy\C#\API\Homework\PokemonGame\PokemonGame\PokemonGame.Persistance\bin\Debug\net8.0\PokemonGame.Persistance.runtimeconfig.json
+C:\Users\ASUS\Desktop\Code Academy\C#\API\Homework\PokemonGame\PokemonGame\PokemonGame.Persistance\bin\Debug\net8.0\PokemonGame,Domain.dll
+C:\Users\ASUS\Desktop\Code Academy\C#\API\Homework\PokemonGame\PokemonGame\PokemonGame.Persistance\bin\Debug\net8.0\PokemonGame,Domain.pdb
+C:\Users\ASUS\Desktop\Code Academy\C#\API\Homework\PokemonGame\PokemonGame\PokemonGame.Persistance\obj\Debug\net8.0\PokemonGame.Persistance.csproj.AssemblyReference.cache
+C:\Users\ASUS\Desktop\Code Academy\C#\API\Homework\PokemonGame\PokemonGame\PokemonGame.Persistance\obj\Debug\net8.0\PokemonG.5FDA2272.Up2Date
+C:\Users\ASUS\Desktop\Code Academy\C#\API\Homework\PokemonGame\PokemonGame\PokemonGame.Persistance\obj\Debug\net8.0\PokemonGame.Persistance.genruntimeconfig.cache

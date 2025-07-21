@@ -1,0 +1,15 @@
+C:\Users\ASUS\Desktop\Code Academy\C#\API\Homework\PokemonGame\PokemonGame\PokemonGame.Contracts\bin\Debug\net8.0\PokemonGame.Contracts.deps.json
+C:\Users\ASUS\Desktop\Code Academy\C#\API\Homework\PokemonGame\PokemonGame\PokemonGame.Contracts\bin\Debug\net8.0\PokemonGame.Contracts.dll
+C:\Users\ASUS\Desktop\Code Academy\C#\API\Homework\PokemonGame\PokemonGame\PokemonGame.Contracts\bin\Debug\net8.0\PokemonGame.Contracts.pdb
+C:\Users\ASUS\Desktop\Code Academy\C#\API\Homework\PokemonGame\PokemonGame\PokemonGame.Contracts\bin\Debug\net8.0\PokemonGame,Domain.dll
+C:\Users\ASUS\Desktop\Code Academy\C#\API\Homework\PokemonGame\PokemonGame\PokemonGame.Contracts\bin\Debug\net8.0\PokemonGame,Domain.pdb
+C:\Users\ASUS\Desktop\Code Academy\C#\API\Homework\PokemonGame\PokemonGame\PokemonGame.Contracts\obj\Debug\net8.0\PokemonGame.Contracts.csproj.AssemblyReference.cache
+C:\Users\ASUS\Desktop\Code Academy\C#\API\Homework\PokemonGame\PokemonGame\PokemonGame.Contracts\obj\Debug\net8.0\PokemonGame.Contracts.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ASUS\Desktop\Code Academy\C#\API\Homework\PokemonGame\PokemonGame\PokemonGame.Contracts\obj\Debug\net8.0\PokemonGame.Contracts.AssemblyInfoInputs.cache
+C:\Users\ASUS\Desktop\Code Academy\C#\API\Homework\PokemonGame\PokemonGame\PokemonGame.Contracts\obj\Debug\net8.0\PokemonGame.Contracts.AssemblyInfo.cs
+C:\Users\ASUS\Desktop\Code Academy\C#\API\Homework\PokemonGame\PokemonGame\PokemonGame.Contracts\obj\Debug\net8.0\PokemonGame.Contracts.csproj.CoreCompileInputs.cache
+C:\Users\ASUS\Desktop\Code Academy\C#\API\Homework\PokemonGame\PokemonGame\PokemonGame.Contracts\obj\Debug\net8.0\PokemonG.BF1F4B0C.Up2Date
+C:\Users\ASUS\Desktop\Code Academy\C#\API\Homework\PokemonGame\PokemonGame\PokemonGame.Contracts\obj\Debug\net8.0\PokemonGame.Contracts.dll
+C:\Users\ASUS\Desktop\Code Academy\C#\API\Homework\PokemonGame\PokemonGame\PokemonGame.Contracts\obj\Debug\net8.0\refint\PokemonGame.Contracts.dll
+C:\Users\ASUS\Desktop\Code Academy\C#\API\Homework\PokemonGame\PokemonGame\PokemonGame.Contracts\obj\Debug\net8.0\PokemonGame.Contracts.pdb
+C:\Users\ASUS\Desktop\Code Academy\C#\API\Homework\PokemonGame\PokemonGame\PokemonGame.Contracts\obj\Debug\net8.0\ref\PokemonGame.Contracts.dll
