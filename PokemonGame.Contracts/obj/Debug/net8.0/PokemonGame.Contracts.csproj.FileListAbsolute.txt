@@ -13,3 +13,4 @@ C:\Users\ASUS\Desktop\Code Academy\C#\API\Homework\PokemonGame\PokemonGame\Pokem
 C:\Users\ASUS\Desktop\Code Academy\C#\API\Homework\PokemonGame\PokemonGame\PokemonGame.Contracts\obj\Debug\net8.0\refint\PokemonGame.Contracts.dll
 C:\Users\ASUS\Desktop\Code Academy\C#\API\Homework\PokemonGame\PokemonGame\PokemonGame.Contracts\obj\Debug\net8.0\PokemonGame.Contracts.pdb
 C:\Users\ASUS\Desktop\Code Academy\C#\API\Homework\PokemonGame\PokemonGame\PokemonGame.Contracts\obj\Debug\net8.0\ref\PokemonGame.Contracts.dll
+C:\Users\ASUS\Desktop\Code Academy\C#\API\Homework\PokemonGame\PokemonGame\PokemonGame.Contracts\obj\Debug\net8.0\PokemonGame.Contracts.sourcelink.json

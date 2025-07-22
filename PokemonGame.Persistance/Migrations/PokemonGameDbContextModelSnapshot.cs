@@ -71,7 +71,7 @@ namespace PokemonGame.Persistance.Migrations
 
                     b.HasIndex("Trainer2Id");
 
-                    b.ToTable("Battle");
+                    b.ToTable("Battles");
                 });
 
             modelBuilder.Entity("PokemonGame_Domain.Entities.Category", b =>
@@ -171,7 +171,7 @@ namespace PokemonGame.Persistance.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Location");
+                    b.ToTable("Locations");
                 });
 
             modelBuilder.Entity("PokemonGame_Domain.Entities.Pokemon", b =>
@@ -207,47 +207,6 @@ namespace PokemonGame.Persistance.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Pokemons");
-                });
-
-            modelBuilder.Entity("PokemonGame_Domain.Entities.PokemonTrainer", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<DateTime>("CaughtAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("CurrentHP")
-                        .HasColumnType("int");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<int>("Level")
-                        .HasColumnType("int");
-
-                    b.Property<int>("PokemonId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("TrainerId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("UpdatedAt")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("PokemonId");
-
-                    b.HasIndex("TrainerId");
-
-                    b.ToTable("PokemonTrainer");
                 });
 
             modelBuilder.Entity("PokemonGame_Domain.Entities.Skill", b =>
@@ -307,6 +266,88 @@ namespace PokemonGame.Persistance.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Trainers");
+                });
+
+            modelBuilder.Entity("PokemonGame_Domain.Entities.TrainerPokemon", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("CaughtAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("CurrentHP")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("Level")
+                        .HasColumnType("int");
+
+                    b.Property<int>("PokemonId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TrainerId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("PokemonId");
+
+                    b.HasIndex("TrainerId");
+
+                    b.ToTable("TrainerPokemons");
+                });
+
+            modelBuilder.Entity("PokemonGame_Domain.Entities.WildPokemon", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("AppearedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("HP")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("Level")
+                        .HasColumnType("int");
+
+                    b.Property<int>("LocationId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("PokemonId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("LocationId");
+
+                    b.HasIndex("PokemonId");
+
+                    b.ToTable("WildPokemons");
                 });
 
             modelBuilder.Entity("PokemonSkill", b =>
@@ -385,7 +426,7 @@ namespace PokemonGame.Persistance.Migrations
                     b.Navigation("Location");
                 });
 
-            modelBuilder.Entity("PokemonGame_Domain.Entities.PokemonTrainer", b =>
+            modelBuilder.Entity("PokemonGame_Domain.Entities.TrainerPokemon", b =>
                 {
                     b.HasOne("PokemonGame_Domain.Entities.Pokemon", "Pokemon")
                         .WithMany()
@@ -402,6 +443,25 @@ namespace PokemonGame.Persistance.Migrations
                     b.Navigation("Pokemon");
 
                     b.Navigation("Trainer");
+                });
+
+            modelBuilder.Entity("PokemonGame_Domain.Entities.WildPokemon", b =>
+                {
+                    b.HasOne("PokemonGame_Domain.Entities.Location", "Location")
+                        .WithMany()
+                        .HasForeignKey("LocationId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("PokemonGame_Domain.Entities.Pokemon", "Pokemon")
+                        .WithMany()
+                        .HasForeignKey("PokemonId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Location");
+
+                    b.Navigation("Pokemon");
                 });
 
             modelBuilder.Entity("PokemonSkill", b =>

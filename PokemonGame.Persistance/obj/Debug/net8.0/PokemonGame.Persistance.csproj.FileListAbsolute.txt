@@ -15,3 +15,4 @@ C:\Users\ASUS\Desktop\Code Academy\C#\API\Homework\PokemonGame\PokemonGame\Pokem
 C:\Users\ASUS\Desktop\Code Academy\C#\API\Homework\PokemonGame\PokemonGame\PokemonGame.Persistance\obj\Debug\net8.0\PokemonGame.Persistance.csproj.AssemblyReference.cache
 C:\Users\ASUS\Desktop\Code Academy\C#\API\Homework\PokemonGame\PokemonGame\PokemonGame.Persistance\obj\Debug\net8.0\PokemonG.5FDA2272.Up2Date
 C:\Users\ASUS\Desktop\Code Academy\C#\API\Homework\PokemonGame\PokemonGame\PokemonGame.Persistance\obj\Debug\net8.0\PokemonGame.Persistance.genruntimeconfig.cache
+C:\Users\ASUS\Desktop\Code Academy\C#\API\Homework\PokemonGame\PokemonGame\PokemonGame.Persistance\obj\Debug\net8.0\PokemonGame.Persistance.sourcelink.json

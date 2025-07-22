@@ -16,11 +16,29 @@ namespace PokemonGame.Persistance.Configuration
             builder.HasOne(builder => builder.Trainer1)
                 .WithMany()
                 .HasForeignKey(builder => builder.Trainer1Id)
-                .OnDelete(DeleteBehavior.Restrict);
+                .OnDelete(DeleteBehavior.NoAction);
             builder.HasOne(builder => builder.Trainer2)
                 .WithMany()
                 .HasForeignKey(builder => builder.Trainer2Id)
-                .OnDelete(DeleteBehavior.Restrict);
+                .OnDelete(DeleteBehavior.NoAction);
+
+            builder.HasOne(builder => builder.Winner)
+                .WithMany()
+                .HasForeignKey(builder => builder.WinnerId)
+                .OnDelete(DeleteBehavior.NoAction);
+            builder.HasOne(builder => builder.Loser)
+                .WithMany()
+                .HasForeignKey(builder => builder.LoserId)
+                .OnDelete(DeleteBehavior.NoAction);
+            builder.HasOne(builder => builder.Gym)
+                .WithMany()
+                .HasForeignKey(builder => builder.GymId)
+                .OnDelete(DeleteBehavior.NoAction);
+            builder.Property(b => b.BattleDate)
+                .HasDefaultValueSql("CURRENT_TIMESTAMP") // Set default value to current timestamp
+                .ValueGeneratedOnAdd(); // Ensure the value is generated on add
+
+
         }
     }
 }

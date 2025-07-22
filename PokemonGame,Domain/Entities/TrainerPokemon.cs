@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PokemonGame_Domain.Entities
 {
-    public class PokemonTrainer : BaseEntity
+    public class TrainerPokemon : BaseEntity
     {
         public int TrainerId { get; set; }
         public Trainer Trainer { get; set; } // Navigation property to Trainer

@@ -15,3 +15,4 @@ C:\Users\ASUS\Desktop\Code Academy\C#\API\Homework\PokemonGame\PokemonGame\Pokem
 C:\Users\ASUS\Desktop\Code Academy\C#\API\Homework\PokemonGame\PokemonGame\PokemonGame.Application\bin\Debug\net8.0\PokemonGame.Contracts.pdb
 C:\Users\ASUS\Desktop\Code Academy\C#\API\Homework\PokemonGame\PokemonGame\PokemonGame.Application\obj\Debug\net8.0\PokemonGame.Application.csproj.AssemblyReference.cache
 C:\Users\ASUS\Desktop\Code Academy\C#\API\Homework\PokemonGame\PokemonGame\PokemonGame.Application\obj\Debug\net8.0\PokemonG.251BDF0A.Up2Date
+C:\Users\ASUS\Desktop\Code Academy\C#\API\Homework\PokemonGame\PokemonGame\PokemonGame.Application\obj\Debug\net8.0\PokemonGame.Application.sourcelink.json

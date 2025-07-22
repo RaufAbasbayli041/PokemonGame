@@ -18,7 +18,16 @@ namespace PokemonGame.Persistance.DB
         public DbSet<Pokemon> Pokemons { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Skill> Skills { get; set; }
-
+        public DbSet<Battle> Battles { get; set; }
         public DbSet<Gym> Gyms { get; set; }
+        public DbSet<Location> Locations { get; set; }
+        public DbSet<TrainerPokemon> TrainerPokemons { get; set; }
+        public DbSet<WildPokemon> WildPokemons { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.ApplyConfigurationsFromAssembly(typeof(PokemonGameDbContext).Assembly);
+        }
+
     }
 }

@@ -9,3 +9,4 @@ C:\Users\ASUS\Desktop\Code Academy\C#\API\Homework\PokemonGame\PokemonGame\Pokem
 C:\Users\ASUS\Desktop\Code Academy\C#\API\Homework\PokemonGame\PokemonGame\PokemonGame,Domain\obj\Debug\net8.0\refint\PokemonGame,Domain.dll
 C:\Users\ASUS\Desktop\Code Academy\C#\API\Homework\PokemonGame\PokemonGame\PokemonGame,Domain\obj\Debug\net8.0\PokemonGame,Domain.pdb
 C:\Users\ASUS\Desktop\Code Academy\C#\API\Homework\PokemonGame\PokemonGame\PokemonGame,Domain\obj\Debug\net8.0\ref\PokemonGame,Domain.dll
+C:\Users\ASUS\Desktop\Code Academy\C#\API\Homework\PokemonGame\PokemonGame\PokemonGame,Domain\obj\Debug\net8.0\PokemonGame,Domain.sourcelink.json
