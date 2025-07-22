@@ -20,6 +20,7 @@ namespace PokemonGame.Application.Validators
             RuleFor(p => p.Level).NotEmpty()
                 .WithMessage("Level is required.")
                 .GreaterThanOrEqualTo(1).WithMessage("Level must be at least 1.");
+             
 
 
 

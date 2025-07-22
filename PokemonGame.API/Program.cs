@@ -33,6 +33,7 @@ namespace PokemonGame.API
 
             builder.Services.AddFluentValidationAutoValidation();
             builder.Services.AddValidatorsFromAssemblyContaining<PokemonValidator>();
+            builder.Services.AddValidatorsFromAssemblyContaining<CategoryValidator>();
 
 
             var app = builder.Build();

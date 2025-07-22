@@ -18,8 +18,18 @@ namespace PokemonGame.Persistance.Configuration
                 .HasMaxLength(100); // Set maximum length for Name
             builder.Property(g => g.Description)
                 .HasMaxLength(500); // Set maximum length for Description
-            // Configure the relationship with Trainer
-
+            builder.HasOne(g => g.Leader)
+                .WithOne()
+                .HasForeignKey<Gym>(g => g.TrainerPokemonId)
+                .OnDelete(DeleteBehavior.NoAction); // Set up foreign key relationship with Trainer
+            builder.HasMany(g => g.Battles)
+                .WithOne(b => b.Gym)
+                .HasForeignKey(b => b.GymId)
+                .OnDelete(DeleteBehavior.NoAction); // Set up foreign key relationship with Battle
+            builder.HasOne(g => g.Location)
+                .WithMany(l => l.Gyms)
+                .HasForeignKey(g => g.LocationId)
+                .OnDelete(DeleteBehavior.NoAction); // Set up foreign key relationship with Location
         }
     }
 }

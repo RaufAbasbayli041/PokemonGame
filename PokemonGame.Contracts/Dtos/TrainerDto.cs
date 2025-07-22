@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PokemonGame_Domain.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,8 +10,7 @@ namespace PokemonGame.Contracts.Dtos
     public record class TrainerDto : BaseDto
     {
         public string Name { get; set; }
-        public string BadgeCollection { get; set; } // Collection of badges the trainer has earned
-        public ICollection<PokemonDto> Pokemons { get; set; } = new List<PokemonDto>(); // Navigation property to the Pokemons owned by the trainer
+        public ICollection<TrainerPokemon> Pokemons { get; set; } = new List<TrainerPokemon>(); // Navigation property to the Pokemons owned by the trainer
     }
     
 }

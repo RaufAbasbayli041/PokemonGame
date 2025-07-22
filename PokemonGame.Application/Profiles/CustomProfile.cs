@@ -13,7 +13,9 @@ namespace PokemonGame.Application.Profiles
     {
         public CustomProfile()
         {
-            CreateMap<Pokemon, PokemonDto>().ReverseMap();
+            CreateMap<Pokemon, PokemonDto>().ForMember(x => x.Categories, opt => opt.Ignore());
+
+
             CreateMap<Category, CategoryDto>().ReverseMap();
         }
     }

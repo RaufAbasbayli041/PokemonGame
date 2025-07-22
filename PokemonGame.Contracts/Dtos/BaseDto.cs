@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PokemonGame.Contracts.Dtos
 {
-    public record class BaseDto
+    public record BaseDto
     {
         public int Id { get; set; }
     }

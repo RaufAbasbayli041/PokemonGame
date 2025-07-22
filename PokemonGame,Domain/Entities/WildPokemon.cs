@@ -15,5 +15,8 @@ namespace PokemonGame_Domain.Entities
         public DateTime AppearedAt { get; set; } = DateTime.Now;
         public int LocationId { get; set; }
         public Location Location { get; set; }
+        public ICollection<WildBattle> WildBattles { get; set; } = new List<WildBattle>(); // Navigation property to the WildBattles involving this WildPokemon
+
+
     }
 }

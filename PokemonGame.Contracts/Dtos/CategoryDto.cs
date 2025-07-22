@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PokemonGame.Contracts.Dtos
 {
-    public record class CategoryDto : BaseDto
+    public record CategoryDto : BaseDto
     {
         public string Name { get; set; }
         public string Description { get; set; }

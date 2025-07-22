@@ -13,22 +13,25 @@ namespace PokemonGame.Persistance.Configuration
     {
         public void Configure(EntityTypeBuilder<Battle> builder)
         {
-            builder.HasOne(builder => builder.Trainer1)
+            builder.HasOne(b => b.TrainerPokemon1)
                 .WithMany()
-                .HasForeignKey(builder => builder.Trainer1Id)
+                .HasForeignKey(b => b.TrainerPokemon1Id)
                 .OnDelete(DeleteBehavior.NoAction);
-            builder.HasOne(builder => builder.Trainer2)
+            builder.HasOne(builder => builder.TrainerPokemon2)
                 .WithMany()
-                .HasForeignKey(builder => builder.Trainer2Id)
+                .HasForeignKey(builder => builder.TrainerPokemon2Id)
                 .OnDelete(DeleteBehavior.NoAction);
 
             builder.HasOne(builder => builder.Winner)
                 .WithMany()
-                .HasForeignKey(builder => builder.WinnerId)
+                .HasForeignKey(builder => builder.TrainerPokemonWinnerId)
+                .IsRequired(false)
+
                 .OnDelete(DeleteBehavior.NoAction);
             builder.HasOne(builder => builder.Loser)
                 .WithMany()
-                .HasForeignKey(builder => builder.LoserId)
+                .HasForeignKey(builder => builder.TrainerPokemonLoserId)
+                .IsRequired(false)
                 .OnDelete(DeleteBehavior.NoAction);
             builder.HasOne(builder => builder.Gym)
                 .WithMany()
@@ -37,6 +40,7 @@ namespace PokemonGame.Persistance.Configuration
             builder.Property(b => b.BattleDate)
                 .HasDefaultValueSql("CURRENT_TIMESTAMP") // Set default value to current timestamp
                 .ValueGeneratedOnAdd(); // Ensure the value is generated on add
+
 
 
         }

@@ -8,8 +8,8 @@ namespace PokemonGame_Domain.Entities
 {
     public class Trainer : BaseEntity
     {
-        public string Name { get; set; }
-        public int TrainerLevel { get; set; }
-        public ICollection<TrainerPokemon> Pokemons { get; set; } = new List<TrainerPokemon>(); // Navigation property to the Pokemons owned by the trainer
+        public string Name { get; set; }       
+        public ICollection<TrainerPokemon> Pokemons { get; set; } = new List<TrainerPokemon>(); // Navigation property to the Pokemons owned by the trainer       
+       
     }
 }

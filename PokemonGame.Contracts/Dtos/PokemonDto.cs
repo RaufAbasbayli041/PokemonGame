@@ -7,16 +7,14 @@ using System.Threading.Tasks;
 
 namespace PokemonGame.Contracts.Dtos
 {
-    public record class PokemonDto : BaseDto
+    public record PokemonDto : BaseDto
     {
         public string Name { get; set; }
-        public int CategoryId { get; set; }
-        public int Level { get; set; } // The level of the Pokemon
-        public int HP { get; set; } // Health Points, using Guid for unique identification
-        public CategoryDto Category { get; set; } // Navigation property to Category
-        public ICollection<Skill> Skills { get; set; } = new List<Skill>(); // Navigation property to Skills
-        public int TrainerId { get; set; }
-        public TrainerDto Trainer { get; set; } // Navigation property to Trainer
+        public int HP { get; set; }
+        public int Level { get; set; }
+        public string? ImageUrl { get; set; } // URL for the Pokemon's image
+        public ICollection<int> Categories { get; set; } = new List<int>(); // Navigation property to Categories
+        public ICollection<int> Skills { get; set; } = new List<int>(); // Navigation property to Skills
 
 
     }
