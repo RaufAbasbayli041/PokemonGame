@@ -10,6 +10,7 @@ namespace PokemonGame_Domain.Repository
     public interface IPokemonRepository : IGenericRepository<Pokemon>
     {
         Task<Pokemon> UploadImgAsyn (int id,string imagePath);
+        Task<List<Category>> GetCategoriesByIdsAsync(List<int> categoryIds);
     }
     
 }

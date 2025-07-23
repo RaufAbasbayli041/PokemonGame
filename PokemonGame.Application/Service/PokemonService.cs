@@ -22,6 +22,26 @@ namespace PokemonGame.Application.Service
         {
             _pokemonRepository = pokemonRepository;
         }
+        public override async Task<PokemonDto> AddAsync(PokemonDto dto)
+        {
+            if (dto == null)
+            {
+                throw new ArgumentNullException(nameof(dto), "PokemonDto cannot be null");
+            }
+            var category = await _pokemonRepository.GetCategoriesByIdsAsync(dto.CategoriesIds);
+            var foundIds = category.Select(c => c.Id).ToList();
+
+            if (category == null || !category.Any())
+            {
+                throw new ArgumentException("Category not found");
+            }
+            var entity = _mapper.Map<Pokemon>(dto);
+            entity.Categories = category;
+            var addedData = await _pokemonRepository.AddAsync(entity);
+            var responseDto = _mapper.Map<PokemonDto>(addedData);
+            return responseDto;
+
+        }
 
         public async Task<bool> UploadImgAsync(int id, string filePath)
         {

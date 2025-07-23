@@ -13,7 +13,7 @@ namespace PokemonGame.Application.Profiles
     {
         public CustomProfile()
         {
-            CreateMap<Pokemon, PokemonDto>().ForMember(x => x.Categories, opt => opt.Ignore());
+            CreateMap<Pokemon, PokemonDto>().ForMember(x => x.CategoriesIds, opt => opt.MapFrom(src => src.Categories.Select(c => c.Id).ToList())).ReverseMap();
 
 
             CreateMap<Category, CategoryDto>().ReverseMap();

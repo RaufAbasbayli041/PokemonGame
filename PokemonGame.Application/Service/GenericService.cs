@@ -18,7 +18,7 @@ namespace PokemonGame.Application.Service
  
         private readonly IGenericRepository<TEntity> _repository;
 
-        private readonly IMapper _mapper;
+        protected readonly IMapper _mapper;
         private readonly IValidator<TDto> _validator;
         public GenericService(IGenericRepository<TEntity> repository, IMapper mapper, IValidator<TDto> validator)
         {
@@ -45,7 +45,7 @@ namespace PokemonGame.Application.Service
             return dto;
         }
 
-        public async Task<TDto> AddAsync(TDto dto)
+        public virtual async Task<TDto> AddAsync(TDto dto)
         {
             var entity = _mapper.Map<TEntity>(dto);
             var addedData = await _repository.AddAsync(entity);

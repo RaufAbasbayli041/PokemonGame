@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace PokemonGame.Persistance.Migrations
 {
     /// <inheritdoc />
-    public partial class sdfewredf : Migration
+    public partial class sdserqw : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -176,51 +176,23 @@ namespace PokemonGame.Persistance.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Gyms",
+                name: "TrainerPokemons",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false),
-                    LeaderId = table.Column<int>(type: "int", nullable: false),
-                    LocationId = table.Column<int>(type: "int", nullable: false),
-                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    IsDeleted = table.Column<bool>(type: "bit", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Gyms", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Gyms_Locations_LocationId",
-                        column: x => x.LocationId,
-                        principalTable: "Locations",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_Gyms_Trainers_LeaderId",
-                        column: x => x.LeaderId,
-                        principalTable: "Trainers",
-                        principalColumn: "Id");
-                });
-
-            migrationBuilder.CreateTable(
-                name: "TrainerPokemons",
-                columns: table => new
-                {
                     TrainerId = table.Column<int>(type: "int", nullable: false),
                     PokemonId = table.Column<int>(type: "int", nullable: false),
                     CaughtAt = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Level = table.Column<int>(type: "int", nullable: false, defaultValue: 1),
                     CurrentHP = table.Column<int>(type: "int", nullable: false),
-                    Id = table.Column<int>(type: "int", nullable: false),
                     CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
                     IsDeleted = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_TrainerPokemons", x => new { x.TrainerId, x.PokemonId });
+                    table.PrimaryKey("PK_TrainerPokemons", x => x.Id);
                     table.ForeignKey(
                         name: "FK_TrainerPokemons_Pokemons_PokemonId",
                         column: x => x.PokemonId,
@@ -235,61 +207,31 @@ namespace PokemonGame.Persistance.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Battles",
+                name: "Gyms",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Trainer1Id = table.Column<int>(type: "int", nullable: false),
-                    Trainer2Id = table.Column<int>(type: "int", nullable: false),
-                    BattleDate = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValueSql: "CURRENT_TIMESTAMP"),
-                    WinnerId = table.Column<int>(type: "int", nullable: true),
-                    LoserId = table.Column<int>(type: "int", nullable: true),
-                    GymId = table.Column<int>(type: "int", nullable: false),
-                    TrainerId = table.Column<int>(type: "int", nullable: true),
-                    TrainerPokemonPokemonId = table.Column<int>(type: "int", nullable: true),
-                    TrainerPokemonTrainerId = table.Column<int>(type: "int", nullable: true),
+                    Name = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false),
+                    TrainerPokemonId = table.Column<int>(type: "int", nullable: false),
+                    LocationId = table.Column<int>(type: "int", nullable: false),
                     CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
                     IsDeleted = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Battles", x => x.Id);
+                    table.PrimaryKey("PK_Gyms", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Battles_Gyms_GymId",
-                        column: x => x.GymId,
-                        principalTable: "Gyms",
+                        name: "FK_Gyms_Locations_LocationId",
+                        column: x => x.LocationId,
+                        principalTable: "Locations",
                         principalColumn: "Id");
                     table.ForeignKey(
-                        name: "FK_Battles_TrainerPokemons_TrainerPokemonTrainerId_TrainerPokemonPokemonId",
-                        columns: x => new { x.TrainerPokemonTrainerId, x.TrainerPokemonPokemonId },
+                        name: "FK_Gyms_TrainerPokemons_TrainerPokemonId",
+                        column: x => x.TrainerPokemonId,
                         principalTable: "TrainerPokemons",
-                        principalColumns: new[] { "TrainerId", "PokemonId" });
-                    table.ForeignKey(
-                        name: "FK_Battles_Trainers_LoserId",
-                        column: x => x.LoserId,
-                        principalTable: "Trainers",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_Battles_Trainers_Trainer1Id",
-                        column: x => x.Trainer1Id,
-                        principalTable: "Trainers",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_Battles_Trainers_Trainer2Id",
-                        column: x => x.Trainer2Id,
-                        principalTable: "Trainers",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_Battles_Trainers_TrainerId",
-                        column: x => x.TrainerId,
-                        principalTable: "Trainers",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_Battles_Trainers_WinnerId",
-                        column: x => x.WinnerId,
-                        principalTable: "Trainers",
                         principalColumn: "Id");
                 });
 
@@ -300,13 +242,11 @@ namespace PokemonGame.Persistance.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     WildPokemonId = table.Column<int>(type: "int", nullable: false),
-                    TrainerId = table.Column<int>(type: "int", nullable: false),
+                    TrainerPokemonId = table.Column<int>(type: "int", nullable: false),
                     BattleDate = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValueSql: "GETDATE()"),
                     TrainerWin = table.Column<bool>(type: "bit", nullable: true),
                     LocationId = table.Column<int>(type: "int", nullable: false),
                     Result = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    TrainerPokemonPokemonId = table.Column<int>(type: "int", nullable: true),
-                    TrainerPokemonTrainerId = table.Column<int>(type: "int", nullable: true),
                     WildPokemonId1 = table.Column<int>(type: "int", nullable: true),
                     CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
@@ -321,14 +261,9 @@ namespace PokemonGame.Persistance.Migrations
                         principalTable: "Locations",
                         principalColumn: "Id");
                     table.ForeignKey(
-                        name: "FK_WildBattle_TrainerPokemons_TrainerPokemonTrainerId_TrainerPokemonPokemonId",
-                        columns: x => new { x.TrainerPokemonTrainerId, x.TrainerPokemonPokemonId },
+                        name: "FK_WildBattle_TrainerPokemons_TrainerPokemonId",
+                        column: x => x.TrainerPokemonId,
                         principalTable: "TrainerPokemons",
-                        principalColumns: new[] { "TrainerId", "PokemonId" });
-                    table.ForeignKey(
-                        name: "FK_WildBattle_Trainers_TrainerId",
-                        column: x => x.TrainerId,
-                        principalTable: "Trainers",
                         principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_WildBattle_WildPokemons_WildPokemonId",
@@ -342,51 +277,87 @@ namespace PokemonGame.Persistance.Migrations
                         principalColumn: "Id");
                 });
 
+            migrationBuilder.CreateTable(
+                name: "Battles",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    TrainerPokemon1Id = table.Column<int>(type: "int", nullable: false),
+                    TrainerPokemon2Id = table.Column<int>(type: "int", nullable: false),
+                    BattleDate = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValueSql: "CURRENT_TIMESTAMP"),
+                    TrainerPokemonWinnerId = table.Column<int>(type: "int", nullable: true),
+                    TrainerPokemonLoserId = table.Column<int>(type: "int", nullable: true),
+                    GymId = table.Column<int>(type: "int", nullable: false),
+                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    IsDeleted = table.Column<bool>(type: "bit", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Battles", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Battles_Gyms_GymId",
+                        column: x => x.GymId,
+                        principalTable: "Gyms",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_Battles_TrainerPokemons_TrainerPokemon1Id",
+                        column: x => x.TrainerPokemon1Id,
+                        principalTable: "TrainerPokemons",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_Battles_TrainerPokemons_TrainerPokemon2Id",
+                        column: x => x.TrainerPokemon2Id,
+                        principalTable: "TrainerPokemons",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_Battles_TrainerPokemons_TrainerPokemonLoserId",
+                        column: x => x.TrainerPokemonLoserId,
+                        principalTable: "TrainerPokemons",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_Battles_TrainerPokemons_TrainerPokemonWinnerId",
+                        column: x => x.TrainerPokemonWinnerId,
+                        principalTable: "TrainerPokemons",
+                        principalColumn: "Id");
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_Battles_GymId",
                 table: "Battles",
                 column: "GymId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Battles_LoserId",
+                name: "IX_Battles_TrainerPokemon1Id",
                 table: "Battles",
-                column: "LoserId");
+                column: "TrainerPokemon1Id");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Battles_Trainer1Id",
+                name: "IX_Battles_TrainerPokemon2Id",
                 table: "Battles",
-                column: "Trainer1Id");
+                column: "TrainerPokemon2Id");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Battles_Trainer2Id",
+                name: "IX_Battles_TrainerPokemonLoserId",
                 table: "Battles",
-                column: "Trainer2Id");
+                column: "TrainerPokemonLoserId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Battles_TrainerId",
+                name: "IX_Battles_TrainerPokemonWinnerId",
                 table: "Battles",
-                column: "TrainerId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Battles_TrainerPokemonTrainerId_TrainerPokemonPokemonId",
-                table: "Battles",
-                columns: new[] { "TrainerPokemonTrainerId", "TrainerPokemonPokemonId" });
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Battles_WinnerId",
-                table: "Battles",
-                column: "WinnerId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Gyms_LeaderId",
-                table: "Gyms",
-                column: "LeaderId",
-                unique: true);
+                column: "TrainerPokemonWinnerId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Gyms_LocationId",
                 table: "Gyms",
                 column: "LocationId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Gyms_TrainerPokemonId",
+                table: "Gyms",
+                column: "TrainerPokemonId",
+                unique: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_PokemonCategories_PokemonsId",
@@ -404,19 +375,19 @@ namespace PokemonGame.Persistance.Migrations
                 column: "PokemonId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_TrainerPokemons_TrainerId",
+                table: "TrainerPokemons",
+                column: "TrainerId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_WildBattle_LocationId",
                 table: "WildBattle",
                 column: "LocationId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_WildBattle_TrainerId",
+                name: "IX_WildBattle_TrainerPokemonId",
                 table: "WildBattle",
-                column: "TrainerId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_WildBattle_TrainerPokemonTrainerId_TrainerPokemonPokemonId",
-                table: "WildBattle",
-                columns: new[] { "TrainerPokemonTrainerId", "TrainerPokemonPokemonId" });
+                column: "TrainerPokemonId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_WildBattle_WildPokemonId",
@@ -465,19 +436,19 @@ namespace PokemonGame.Persistance.Migrations
                 name: "Skills");
 
             migrationBuilder.DropTable(
-                name: "TrainerPokemons");
-
-            migrationBuilder.DropTable(
                 name: "WildPokemons");
 
             migrationBuilder.DropTable(
-                name: "Trainers");
+                name: "TrainerPokemons");
 
             migrationBuilder.DropTable(
                 name: "Locations");
 
             migrationBuilder.DropTable(
                 name: "Pokemons");
+
+            migrationBuilder.DropTable(
+                name: "Trainers");
         }
     }
 }

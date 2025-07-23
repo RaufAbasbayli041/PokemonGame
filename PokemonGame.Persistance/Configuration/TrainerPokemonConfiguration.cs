@@ -13,7 +13,7 @@ namespace PokemonGame.Persistance.Configuration
     {
         public void Configure(EntityTypeBuilder<TrainerPokemon> builder)
         {
-            builder.HasKey(tp => new { tp.TrainerId, tp.PokemonId }); // Composite key for TrainerPokemon
+            builder.HasKey(tp => tp.Id); 
             builder.Property(tp => tp.CaughtAt)
                 .IsRequired(); // CaughtAt must be required
             builder.Property(tp => tp.Level)
