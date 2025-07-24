@@ -12,7 +12,8 @@ namespace PokemonGame.Contracts.Contracts
     {
        public Task<bool> UploadImgAsync(int id, string filePath);
        
-       public Task<PokemonDto> AddAsync(PokemonDto dto);
+       //public Task<PokemonDto> AddAsync(PokemonDto dto);
+
 
 
     }

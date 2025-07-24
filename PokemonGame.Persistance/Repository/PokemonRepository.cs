@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace PokemonGame.Persistance.Repository
 {
-    public class PokemonRepository : GenericRepository<Pokemon>, IPokemonRepository
+	public class PokemonRepository : GenericRepository<Pokemon>, IPokemonRepository
     {
         public PokemonRepository(PokemonGameDbContext context) : base(context)
         {
@@ -38,6 +38,21 @@ namespace PokemonGame.Persistance.Repository
             await _context.SaveChangesAsync();
             return pokemon;
         }
-    }
+
+        public async Task<IEnumerable<Pokemon>> GetAllAsync()
+        {
+            var data =  await _context.Pokemons
+                .Include(c => c.Categories)
+                .AsNoTracking()
+                .ToListAsync();
+            return data;
+        }
+
+		public async Task<List<Skill>> GetSkillByIdsAsync(List<int> skillIds)
+		{
+			var datas  = await _context.Skills.Where(c=> skillIds.Contains(c.Id) && !c.IsDeleted).ToListAsync();
+            return datas;
+		}
+	}
 
 }

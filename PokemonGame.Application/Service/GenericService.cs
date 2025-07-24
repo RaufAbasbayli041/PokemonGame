@@ -27,7 +27,7 @@ namespace PokemonGame.Application.Service
             _validator = validator;
         }
 
-        public async Task<IEnumerable<TDto>> GetAllAsync()
+        public virtual async Task<IEnumerable<TDto>> GetAllAsync()
         {            
             var datas = await _repository.GetAllAsync();
             var dtos = _mapper.Map<IEnumerable<TDto>>(datas);

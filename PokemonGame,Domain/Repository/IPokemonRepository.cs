@@ -11,6 +11,7 @@ namespace PokemonGame_Domain.Repository
     {
         Task<Pokemon> UploadImgAsyn (int id,string imagePath);
         Task<List<Category>> GetCategoriesByIdsAsync(List<int> categoryIds);
+        Task<List<Skill>> GetSkillByIdsAsync(List<int> skillIds);  
     }
     
 }

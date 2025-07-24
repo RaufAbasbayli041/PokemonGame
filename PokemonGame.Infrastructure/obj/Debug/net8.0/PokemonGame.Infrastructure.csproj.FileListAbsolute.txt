@@ -9,3 +9,15 @@ C:\Users\ASUS\Desktop\Code Academy\C#\API\Homework\PokemonGame\PokemonGame\Pokem
 C:\Users\ASUS\Desktop\Code Academy\C#\API\Homework\PokemonGame\PokemonGame\PokemonGame.Infrastructure\obj\Debug\net8.0\refint\PokemonGame.Infrastructure.dll
 C:\Users\ASUS\Desktop\Code Academy\C#\API\Homework\PokemonGame\PokemonGame\PokemonGame.Infrastructure\obj\Debug\net8.0\PokemonGame.Infrastructure.pdb
 C:\Users\ASUS\Desktop\Code Academy\C#\API\Homework\PokemonGame\PokemonGame\PokemonGame.Infrastructure\obj\Debug\net8.0\ref\PokemonGame.Infrastructure.dll
+C:\Users\elnur.a\Desktop\Rauf\Visual Studio\API\PokemonGame\PokemonGame.Infrastructure\bin\Debug\net8.0\PokemonGame.Infrastructure.deps.json
+C:\Users\elnur.a\Desktop\Rauf\Visual Studio\API\PokemonGame\PokemonGame.Infrastructure\bin\Debug\net8.0\PokemonGame.Infrastructure.dll
+C:\Users\elnur.a\Desktop\Rauf\Visual Studio\API\PokemonGame\PokemonGame.Infrastructure\bin\Debug\net8.0\PokemonGame.Infrastructure.pdb
+C:\Users\elnur.a\Desktop\Rauf\Visual Studio\API\PokemonGame\PokemonGame.Infrastructure\obj\Debug\net8.0\PokemonGame.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\elnur.a\Desktop\Rauf\Visual Studio\API\PokemonGame\PokemonGame.Infrastructure\obj\Debug\net8.0\PokemonGame.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\elnur.a\Desktop\Rauf\Visual Studio\API\PokemonGame\PokemonGame.Infrastructure\obj\Debug\net8.0\PokemonGame.Infrastructure.AssemblyInfo.cs
+C:\Users\elnur.a\Desktop\Rauf\Visual Studio\API\PokemonGame\PokemonGame.Infrastructure\obj\Debug\net8.0\PokemonGame.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\elnur.a\Desktop\Rauf\Visual Studio\API\PokemonGame\PokemonGame.Infrastructure\obj\Debug\net8.0\PokemonGame.Infrastructure.sourcelink.json
+C:\Users\elnur.a\Desktop\Rauf\Visual Studio\API\PokemonGame\PokemonGame.Infrastructure\obj\Debug\net8.0\PokemonGame.Infrastructure.dll
+C:\Users\elnur.a\Desktop\Rauf\Visual Studio\API\PokemonGame\PokemonGame.Infrastructure\obj\Debug\net8.0\refint\PokemonGame.Infrastructure.dll
+C:\Users\elnur.a\Desktop\Rauf\Visual Studio\API\PokemonGame\PokemonGame.Infrastructure\obj\Debug\net8.0\PokemonGame.Infrastructure.pdb
+C:\Users\elnur.a\Desktop\Rauf\Visual Studio\API\PokemonGame\PokemonGame.Infrastructure\obj\Debug\net8.0\ref\PokemonGame.Infrastructure.dll

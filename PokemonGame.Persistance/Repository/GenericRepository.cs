@@ -38,10 +38,10 @@ namespace PokemonGame.Persistance.Repository
             await _context.SaveChangesAsync();
             return true;
         }
-        public async Task<IQueryable<TEntity>> GetAllAsync()
+        public virtual async Task<IEnumerable<TEntity>> GetAllAsync()
         {
             var entities = (await _dbSet.ToListAsync()).Where(x => !x.IsDeleted);
-            return entities.AsQueryable();
+            return entities;
         }
         public async Task<TEntity> GetByIdAsync(int id)
         {
