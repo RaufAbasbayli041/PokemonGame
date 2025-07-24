@@ -15,6 +15,9 @@ namespace PokemonGame.Persistance.Extensions
         {
             services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
             services.AddScoped<IPokemonRepository, PokemonRepository>();
+            services.AddScoped<ICategoryRepository, CategoryRepository>();
+            services.AddScoped<ISkillRepository, SkillRepository>();
+            services.AddScoped<ITrainerRepository, TrainerRepository>();
             return services;
         }
     }

@@ -11,22 +11,23 @@ namespace PokemonGame.API.Controllers
     [ApiController]
     public class CategoryController : ControllerBase
     {
-        private readonly IGenericService<Category, CategoryDto> _genericService;
+        private readonly ICategoryService _categoryService;
 
-        public CategoryController(IGenericService<Category, CategoryDto> genericService)
+        public CategoryController(ICategoryService categoryService)
         {
-            _genericService = genericService;
+            _categoryService = categoryService;
         }
+
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
-            var categories = await _genericService.GetAllAsync();
+            var categories = await _categoryService.GetAllAsync();
             return Ok(categories);
         }
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)
         {
-            var category = await _genericService.GetByIdAsync(id);
+            var category = await _categoryService.GetByIdAsync(id);
             if (category == null)
             {
                 return NotFound();
@@ -40,7 +41,7 @@ namespace PokemonGame.API.Controllers
             {
                 return BadRequest("Category data is null");
             }
-            var createdCategory = await _genericService.AddAsync(categoryDto);
+            var createdCategory = await _categoryService.AddAsync(categoryDto);
             return CreatedAtAction(nameof(GetById), new { id = createdCategory.Id }, createdCategory);
         }
         [HttpPut]
@@ -50,7 +51,7 @@ namespace PokemonGame.API.Controllers
             {
                 return BadRequest("Category data is null");
             }
-            var updatedCategory = await _genericService.UpdateAsync(categoryDto);
+            var updatedCategory = await _categoryService.UpdateAsync(categoryDto);
             if (updatedCategory == null)
             {
                 return NotFound();
@@ -60,7 +61,7 @@ namespace PokemonGame.API.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {
-            var deleted = await _genericService.DeleteAsync(id);
+            var deleted = await _categoryService.DeleteAsync(id);
             if (!deleted)
             {
                 return NotFound();

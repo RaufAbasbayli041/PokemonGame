@@ -16,7 +16,7 @@ namespace PokemonGame.Persistance.Configuration
             builder.Property(t => t.Name)
                 .IsRequired()
                 .HasMaxLength(100); // Set maximum length for Name
-            builder.HasMany(t => t.Pokemons)
+            builder.HasMany(t => t.TrainerPokemon)
                 .WithOne(p => p.Trainer)
                 .HasForeignKey(p => p.TrainerId)
                 .OnDelete(DeleteBehavior.NoAction); // Set up foreign key relationship with Pokemon

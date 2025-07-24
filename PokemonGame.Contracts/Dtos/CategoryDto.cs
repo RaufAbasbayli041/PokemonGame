@@ -12,7 +12,7 @@ namespace PokemonGame.Contracts.Dtos
         public string Name { get; set; }
         public string Description { get; set; }
         // Navigation property to the Pokemons in this category
-        public ICollection<PokemonDto> Pokemons { get; set; } = new List<PokemonDto>();
+        public List<int> PokemonIds { get; set; } = new List<int>();
 
     }
 }

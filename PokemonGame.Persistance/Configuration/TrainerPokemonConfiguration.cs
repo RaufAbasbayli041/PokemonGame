@@ -23,7 +23,7 @@ namespace PokemonGame.Persistance.Configuration
                 .IsRequired();               
             // Configure relationships
             builder.HasOne(tp => tp.Trainer)
-                .WithMany(t => t.Pokemons)
+                .WithMany(t => t.TrainerPokemon)
                 .HasForeignKey(tp => tp.TrainerId);
             builder.HasOne(tp => tp.Pokemon)
                 .WithMany()

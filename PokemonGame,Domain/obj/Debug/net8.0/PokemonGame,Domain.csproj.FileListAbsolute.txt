@@ -22,3 +22,15 @@ C:\Users\elnur.a\Desktop\Rauf\Visual Studio\API\PokemonGame\PokemonGame,Domain\o
 C:\Users\elnur.a\Desktop\Rauf\Visual Studio\API\PokemonGame\PokemonGame,Domain\obj\Debug\net8.0\refint\PokemonGame,Domain.dll
 C:\Users\elnur.a\Desktop\Rauf\Visual Studio\API\PokemonGame\PokemonGame,Domain\obj\Debug\net8.0\PokemonGame,Domain.pdb
 C:\Users\elnur.a\Desktop\Rauf\Visual Studio\API\PokemonGame\PokemonGame,Domain\obj\Debug\net8.0\ref\PokemonGame,Domain.dll
+C:\Users\ASUS\Desktop\Code Academy\C#\API\Homework\PokemonGame\PokemonGame,Domain\bin\Debug\net8.0\PokemonGame,Domain.deps.json
+C:\Users\ASUS\Desktop\Code Academy\C#\API\Homework\PokemonGame\PokemonGame,Domain\bin\Debug\net8.0\PokemonGame,Domain.dll
+C:\Users\ASUS\Desktop\Code Academy\C#\API\Homework\PokemonGame\PokemonGame,Domain\bin\Debug\net8.0\PokemonGame,Domain.pdb
+C:\Users\ASUS\Desktop\Code Academy\C#\API\Homework\PokemonGame\PokemonGame,Domain\obj\Debug\net8.0\PokemonGame,Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ASUS\Desktop\Code Academy\C#\API\Homework\PokemonGame\PokemonGame,Domain\obj\Debug\net8.0\PokemonGame,Domain.AssemblyInfoInputs.cache
+C:\Users\ASUS\Desktop\Code Academy\C#\API\Homework\PokemonGame\PokemonGame,Domain\obj\Debug\net8.0\PokemonGame,Domain.AssemblyInfo.cs
+C:\Users\ASUS\Desktop\Code Academy\C#\API\Homework\PokemonGame\PokemonGame,Domain\obj\Debug\net8.0\PokemonGame,Domain.csproj.CoreCompileInputs.cache
+C:\Users\ASUS\Desktop\Code Academy\C#\API\Homework\PokemonGame\PokemonGame,Domain\obj\Debug\net8.0\PokemonGame,Domain.sourcelink.json
+C:\Users\ASUS\Desktop\Code Academy\C#\API\Homework\PokemonGame\PokemonGame,Domain\obj\Debug\net8.0\PokemonGame,Domain.dll
+C:\Users\ASUS\Desktop\Code Academy\C#\API\Homework\PokemonGame\PokemonGame,Domain\obj\Debug\net8.0\refint\PokemonGame,Domain.dll
+C:\Users\ASUS\Desktop\Code Academy\C#\API\Homework\PokemonGame\PokemonGame,Domain\obj\Debug\net8.0\PokemonGame,Domain.pdb
+C:\Users\ASUS\Desktop\Code Academy\C#\API\Homework\PokemonGame\PokemonGame,Domain\obj\Debug\net8.0\ref\PokemonGame,Domain.dll

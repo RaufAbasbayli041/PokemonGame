@@ -7,10 +7,11 @@ using System.Threading.Tasks;
 
 namespace PokemonGame.Contracts.Dtos
 {
-    public record   SkillDto : BaseDto
+    public record SkillDto : BaseDto
     {
         public string Name { get; set; }
         public string Description { get; set; }
-        public ICollection<PokemonDto> Pokemons { get; set; } = new List<PokemonDto>();
+        public List<int> PokemonIds { get; set; } = new List<int>();
+
     }
 }

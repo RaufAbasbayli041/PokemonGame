@@ -30,10 +30,7 @@ namespace PokemonGame.API
             builder.Services.AddRepositoryRegistration();
 
             builder.Services.AddAutoMapper(typeof(CustomProfile).Assembly);
-
-            builder.Services.AddFluentValidationAutoValidation();
-            builder.Services.AddValidatorsFromAssemblyContaining<PokemonValidator>();
-            builder.Services.AddValidatorsFromAssemblyContaining<CategoryValidator>();
+            builder.Services.AddValidatorsRegistration();
 
 
             var app = builder.Build();

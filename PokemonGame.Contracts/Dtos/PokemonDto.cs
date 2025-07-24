@@ -14,7 +14,7 @@ namespace PokemonGame.Contracts.Dtos
         public int Level { get; set; }
         public string? ImageUrl { get; set; } // URL for the Pokemon's image
         public List<int> CategoriesIds { get; set; } = new List<int>(); // Navigation property to Categories
-        public ICollection<int> SkillIds { get; set; } = new List<int>(); // Navigation property to Skills
+        public List<int> SkillIds { get; set; } = new List<int>(); // Navigation property to Skills
 
 
     }

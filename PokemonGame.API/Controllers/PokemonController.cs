@@ -12,13 +12,13 @@ namespace PokemonGame.API.Controllers
     {
         private readonly IPokemonService _pokemonService;
         private readonly IWebHostEnvironment _webHostEnvironment;
-      
+
 
         public PokemonController(IWebHostEnvironment webHostEnvironment, IPokemonService pokemonService)
         {
             _webHostEnvironment = webHostEnvironment;
             _pokemonService = pokemonService;
-         
+
         }
         [HttpGet]
         public async Task<IActionResult> GetAll()
@@ -70,27 +70,31 @@ namespace PokemonGame.API.Controllers
             }
             return NoContent();
         }
+      
         [HttpPost("upload-image/{id}")]
-        public async Task<IActionResult> UploadImage(int id, FileUploadDto file)
+        public async Task<IActionResult> UploadImage(int id, FileUploadDto image)
         {
-            var folder = Path.Combine(_webHostEnvironment.WebRootPath, "/pokemon/images");
+            if (image == null || image.Image.Length == 0)
+            {
+                return BadRequest("No image file provided");
+            }
+            var folder  = _webHostEnvironment.WebRootPath+ "/pokemon/images";
             if (!Directory.Exists(folder))
             {
                 Directory.CreateDirectory(folder);
             }
-            var fileName = $"{Guid.NewGuid()}_{file.Image.FileName}";
+            var fileName = $"{Guid.NewGuid()}_{image.Image.FileName}";
             var filePath = Path.Combine(folder, fileName);
             using (var stream = new FileStream(filePath, FileMode.Create))
             {
-                await file.Image.CopyToAsync(stream);
+                await image.Image.CopyToAsync(stream);
             }
-            var isUploaded = await _pokemonService.UploadImgAsync(id, filePath);
+            var isUploaded = await _pokemonService.UploadImgAsync(id, fileName);
             if (!isUploaded)
             {
                 return BadRequest("Image upload failed");
             }
-            return Ok();    
-
+            return Ok ();
         }
     }
 }

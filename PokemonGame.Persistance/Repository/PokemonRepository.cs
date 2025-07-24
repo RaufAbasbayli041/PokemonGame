@@ -10,12 +10,12 @@ using System.Threading.Tasks;
 
 namespace PokemonGame.Persistance.Repository
 {
-	public class PokemonRepository : GenericRepository<Pokemon>, IPokemonRepository
+    public class PokemonRepository : GenericRepository<Pokemon>, IPokemonRepository
     {
         public PokemonRepository(PokemonGameDbContext context) : base(context)
         {
         }
-        
+
 
         public async Task<List<Category>> GetCategoriesByIdsAsync(List<int> categoryIds)
         {
@@ -39,20 +39,21 @@ namespace PokemonGame.Persistance.Repository
             return pokemon;
         }
 
-        public async Task<IEnumerable<Pokemon>> GetAllAsync()
+        public override async Task<IEnumerable<Pokemon>> GetAllAsync()
         {
-            var data =  await _context.Pokemons
+            var data = await _context.Pokemons
                 .Include(c => c.Categories)
+                .Where(c => !c.IsDeleted)
                 .AsNoTracking()
                 .ToListAsync();
             return data;
         }
 
-		public async Task<List<Skill>> GetSkillByIdsAsync(List<int> skillIds)
-		{
-			var datas  = await _context.Skills.Where(c=> skillIds.Contains(c.Id) && !c.IsDeleted).ToListAsync();
+        public async Task<List<Skill>> GetSkillByIdsAsync(List<int> skillIds)
+        {
+            var datas = await _context.Skills.Where(c => skillIds.Contains(c.Id) && !c.IsDeleted).ToListAsync();
             return datas;
-		}
-	}
+        }
+    }
 
 }

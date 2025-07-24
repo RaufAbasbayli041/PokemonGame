@@ -38,6 +38,7 @@ namespace PokemonGame.Application.Service
 			var skill = await _pokemonRepository.GetSkillByIdsAsync(dto.SkillIds);
 			var entity = _mapper.Map<Pokemon>(dto);
 			entity.Categories = category;
+			entity.Skills = skill;
 			var addedData = await _pokemonRepository.AddAsync(entity);
 			var responseDto = _mapper.Map<PokemonDto>(addedData);
 			return responseDto;

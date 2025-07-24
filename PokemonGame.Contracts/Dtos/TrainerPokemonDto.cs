@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PokemonGame.Contracts.Dtos
 {
-    public record   TrainerPokemonDto : BaseDto
+    public record TrainerPokemonDto : BaseDto
     {
         public int TrainerId { get; set; }
         public string? TrainerName { get; set; } // Name of the Trainer for display purposes        
