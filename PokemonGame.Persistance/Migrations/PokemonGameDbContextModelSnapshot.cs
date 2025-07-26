@@ -140,6 +140,9 @@ namespace PokemonGame.Persistance.Migrations
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
+                    b.Property<int>("LeaderTrainerPokemonId")
+                        .HasColumnType("int");
+
                     b.Property<int>("LocationId")
                         .HasColumnType("int");
 
@@ -148,18 +151,15 @@ namespace PokemonGame.Persistance.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
-                    b.Property<int>("TrainerPokemonId")
-                        .HasColumnType("int");
-
                     b.Property<DateTime>("UpdatedAt")
                         .HasColumnType("datetime2");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("LocationId");
-
-                    b.HasIndex("TrainerPokemonId")
+                    b.HasIndex("LeaderTrainerPokemonId")
                         .IsUnique();
+
+                    b.HasIndex("LocationId");
 
                     b.ToTable("Gyms");
                 });
@@ -507,15 +507,15 @@ namespace PokemonGame.Persistance.Migrations
 
             modelBuilder.Entity("PokemonGame_Domain.Entities.Gym", b =>
                 {
-                    b.HasOne("PokemonGame_Domain.Entities.Location", "Location")
-                        .WithMany("Gyms")
-                        .HasForeignKey("LocationId")
+                    b.HasOne("PokemonGame_Domain.Entities.TrainerPokemon", "Leader")
+                        .WithOne()
+                        .HasForeignKey("PokemonGame_Domain.Entities.Gym", "LeaderTrainerPokemonId")
                         .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
-                    b.HasOne("PokemonGame_Domain.Entities.TrainerPokemon", "Leader")
-                        .WithOne()
-                        .HasForeignKey("PokemonGame_Domain.Entities.Gym", "TrainerPokemonId")
+                    b.HasOne("PokemonGame_Domain.Entities.Location", "Location")
+                        .WithMany("Gyms")
+                        .HasForeignKey("LocationId")
                         .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
@@ -533,7 +533,7 @@ namespace PokemonGame.Persistance.Migrations
                         .IsRequired();
 
                     b.HasOne("PokemonGame_Domain.Entities.Trainer", "Trainer")
-                        .WithMany("Pokemons")
+                        .WithMany("TrainerPokemon")
                         .HasForeignKey("TrainerId")
                         .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
@@ -624,7 +624,7 @@ namespace PokemonGame.Persistance.Migrations
 
             modelBuilder.Entity("PokemonGame_Domain.Entities.Trainer", b =>
                 {
-                    b.Navigation("Pokemons");
+                    b.Navigation("TrainerPokemon");
                 });
 
             modelBuilder.Entity("PokemonGame_Domain.Entities.WildPokemon", b =>
