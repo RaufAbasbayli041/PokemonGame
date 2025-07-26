@@ -20,7 +20,7 @@ namespace PokemonGame.Persistance.Configuration
                 .HasMaxLength(500); // Set maximum length for Description
             builder.HasOne(g => g.Leader)
                 .WithOne()
-                .HasForeignKey<Gym>(g => g.TrainerPokemonId)
+                .HasForeignKey<Gym>(g => g.LeaderTrainerPokemonId)
                 .OnDelete(DeleteBehavior.NoAction); // Set up foreign key relationship with Trainer
             builder.HasMany(g => g.Battles)
                 .WithOne(b => b.Gym)

@@ -22,6 +22,7 @@ namespace PokemonGame.Application.Extensions
             services.AddValidatorsFromAssemblyContaining<SkillValidator>();
             services.AddValidatorsFromAssemblyContaining<TrainerValidation>();
             services.AddValidatorsFromAssemblyContaining<TrainerPokemonValidator>();
+            services.AddValidatorsFromAssemblyContaining<LocationValidator>();
 
             return services;
         }

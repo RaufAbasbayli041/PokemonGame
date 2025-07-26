@@ -18,6 +18,9 @@ namespace PokemonGame.Application.Extensions
             services.AddScoped<ICategoryService, CategoryService>();
             services.AddScoped<ISkillService, SkillService>();
             services.AddScoped<ITrainerService, TrainerService>();
+            services.AddScoped<ITrainerPokemonService, TrainerPokemonService>();
+            services.AddScoped<ILocationService, LocationService>();
+            services.AddScoped<IGymService, GymService>();
             return services;
         }
     }

@@ -7,7 +7,10 @@ using System.Threading.Tasks;
 
 namespace PokemonGame_Domain.Repository
 {
-    internal interface ITrainerPokemonRepository : IGenericRepository<TrainerPokemon>
+    public interface ITrainerPokemonRepository : IGenericRepository<TrainerPokemon>
     {
+        //public Task<Trainer> GetTrainerByIdAsync(int trainerId);
+        //public Task<Pokemon> GetPokemonByIdAsync(int pokemonId);
+
     }
 }

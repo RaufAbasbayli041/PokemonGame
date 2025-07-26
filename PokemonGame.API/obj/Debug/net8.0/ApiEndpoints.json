@@ -74,6 +74,80 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "PokemonGame.API.Controllers.LocationController",
+    "Method": "GetAll",
+    "RelativePath": "api/Location",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PokemonGame.API.Controllers.LocationController",
+    "Method": "Add",
+    "RelativePath": "api/Location",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "locationDto",
+        "Type": "PokemonGame.Contracts.Dtos.LocationDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PokemonGame.API.Controllers.LocationController",
+    "Method": "Update",
+    "RelativePath": "api/Location",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "locationDto",
+        "Type": "PokemonGame.Contracts.Dtos.LocationDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PokemonGame.API.Controllers.LocationController",
+    "Method": "GetById",
+    "RelativePath": "api/Location/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PokemonGame.API.Controllers.LocationController",
+    "Method": "Delete",
+    "RelativePath": "api/Location/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "PokemonGame.API.Controllers.PokemonController",
     "Method": "GetAll",
     "RelativePath": "api/Pokemon",
@@ -305,6 +379,80 @@
     "Method": "Delete",
     "RelativePath": "api/Trainer/{id}",
     "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PokemonGame.API.Controllers.TrainerPokemonController",
+    "Method": "GetAll",
+    "RelativePath": "api/TrainerPokemon",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PokemonGame.API.Controllers.TrainerPokemonController",
+    "Method": "Add",
+    "RelativePath": "api/TrainerPokemon",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "PokemonGame.Contracts.Dtos.TrainerPokemonDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PokemonGame.API.Controllers.TrainerPokemonController",
+    "Method": "Update",
+    "RelativePath": "api/TrainerPokemon",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "PokemonGame.Contracts.Dtos.TrainerPokemonDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PokemonGame.API.Controllers.TrainerPokemonController",
+    "Method": "Delete",
+    "RelativePath": "api/TrainerPokemon/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PokemonGame.API.Controllers.TrainerPokemonController",
+    "Method": "GetById",
+    "RelativePath": "api/TrainerPokemon/{id}",
+    "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
