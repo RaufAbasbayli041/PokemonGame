@@ -43,6 +43,7 @@ namespace PokemonGame.Persistance.Repository
         {
             var data = await _context.Pokemons
                 .Include(c => c.Categories)
+                .Include(c => c.Skills)
                 .Where(c => !c.IsDeleted)
                 .AsNoTracking()
                 .ToListAsync();
@@ -53,6 +54,16 @@ namespace PokemonGame.Persistance.Repository
         {
             var datas = await _context.Skills.Where(c => skillIds.Contains(c.Id) && !c.IsDeleted).ToListAsync();
             return datas;
+        }
+
+        public override async Task<Pokemon> GetByIdAsync(int id)
+        {
+            var pokemon = await _context.Pokemons
+                .Include(c => c.Categories)
+                .Include(c => c.Skills)
+                .AsNoTracking()
+                .FirstOrDefaultAsync(c => c.Id == id && !c.IsDeleted);
+            return pokemon;
         }
     }
 

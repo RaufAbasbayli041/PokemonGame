@@ -33,5 +33,21 @@ namespace PokemonGame.Application.Service
 			return wildPokemonDtos;
 
 		}
-	}
+
+        public override async Task<WildPokemonDto> AddAsync(WildPokemonDto dto)
+		{
+            if (dto == null)
+            {
+                throw new ArgumentNullException(nameof(dto), "WildPokemonDto cannot be null");
+            }
+            var entity = _mapper.Map<WildPokemon>(dto);
+            var addedData = await _wildPokemonRepository.AddAsync(entity);
+            if (addedData == null)
+            {
+                throw new ArgumentException("WildPokemon not found");
+            }
+            var responseDto = _mapper.Map<WildPokemonDto>(addedData);
+            return responseDto;
+        }
+    }
 }

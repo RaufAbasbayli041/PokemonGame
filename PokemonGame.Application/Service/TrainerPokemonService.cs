@@ -28,5 +28,22 @@ namespace PokemonGame.Application.Service
             var dtos = _mapper.Map<IEnumerable<TrainerPokemonDto>>(datas);
             return dtos;
         }
+
+        public override async Task<TrainerPokemonDto> AddAsync(TrainerPokemonDto dto)
+        {
+            var entity = _mapper.Map<TrainerPokemon>(dto);
+            if (dto == null)
+            {
+                throw new ArgumentNullException(nameof(dto), "TrainerPokemonDto cannot be null");
+            }
+            var trainerPOkeomon = await _trainerPokemonRepository.AddAsync(entity);
+            if (trainerPOkeomon == null)
+            {
+                throw new ArgumentException("TrainerPokemon not found");
+            }
+            var responseDto = _mapper.Map<TrainerPokemonDto>(trainerPOkeomon);
+            return responseDto;
+
+        }
     }
 }

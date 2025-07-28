@@ -32,9 +32,11 @@ namespace PokemonGame.Application.Profiles
                 .ForMember(dest => dest.WildPokemonsIds, opt => opt.MapFrom(src => src.WildPokemons.Select(wp => wp.Id).ToList()))
                 .ForMember(dest => dest.WildBattlesIds, opt => opt.MapFrom(src => src.WildBattles.Select(wb => wb.Id).ToList()))
                 .ReverseMap();
-
             CreateMap<Gym, GymDto>()
                 .ForMember(dest => dest.BattlesIds, opt => opt.MapFrom(src => src.Battles.Select(w=>w.Id).ToList()))
+                .ReverseMap();
+            CreateMap<WildPokemon, WildPokemonDto>()
+                .ForMember(dest => dest.LocationId, opt => opt.Ignore())
                 .ReverseMap();
         }
     }

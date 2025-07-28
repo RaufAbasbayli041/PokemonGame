@@ -28,27 +28,27 @@ namespace PokemonGame.Application.Service
             return _mapper.Map<IEnumerable<SkillDto>>(skills);
         }
 
-        public override async Task<SkillDto> AddAsync(SkillDto dto)
-        {
-            if (dto == null)
-            {
-                throw new ArgumentNullException(nameof(dto), "PokemonDto cannot be null");
-            }
-            var pokemon = await _skillRepository.GetPokemonsByIds(dto.PokemonIds);
-            var foundIds = pokemon.Select(c => c.Id).ToList();
+        //public override async Task<SkillDto> AddAsync(SkillDto dto)
+        //{
+        //    if (dto == null)
+        //    {
+        //        throw new ArgumentNullException(nameof(dto), "PokemonDto cannot be null");
+        //    }
+        //    var pokemon = await _skillRepository.GetPokemonsByIds(dto.PokemonIds);
+        //    var foundIds = pokemon.Select(c => c.Id).ToList();
 
-            if (pokemon == null || !pokemon.Any())
-            {
-                throw new ArgumentException("pokemon not found");
-            }
+        //    if (pokemon == null || !pokemon.Any())
+        //    {
+        //        throw new ArgumentException("pokemon not found");
+        //    }
 
-            var entity = _mapper.Map<Skill>(dto);
-            entity.Pokemons = pokemon;
+        //    var entity = _mapper.Map<Skill>(dto);
+        //    entity.Pokemons = pokemon;
 
-            var addedData = await _skillRepository.AddAsync(entity);
-            var responseDto = _mapper.Map<SkillDto>(addedData);
-            return responseDto;
+        //    var addedData = await _skillRepository.AddAsync(entity);
+        //    var responseDto = _mapper.Map<SkillDto>(addedData);
+        //    return responseDto;
 
-        }
+        //}
     }
 }

@@ -1007,7 +1007,7 @@
             "type": "integer",
             "format": "int32"
           },
-          "leaderId": {
+          "leaderTrainerPokemonId": {
             "type": "integer",
             "format": "int32"
           },
@@ -1086,6 +1086,9 @@
           "imageUrl": {
             "type": "string",
             "nullable": true
+          },
+          "isWild": {
+            "type": "boolean"
           },
           "categoriesIds": {
             "type": "array",

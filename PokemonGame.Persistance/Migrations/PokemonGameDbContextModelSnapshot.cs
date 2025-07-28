@@ -219,6 +219,9 @@ namespace PokemonGame.Persistance.Migrations
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
+                    b.Property<bool>("IsWild")
+                        .HasColumnType("bit");
+
                     b.Property<int>("Level")
                         .HasColumnType("int");
 
@@ -507,7 +510,7 @@ namespace PokemonGame.Persistance.Migrations
 
             modelBuilder.Entity("PokemonGame_Domain.Entities.Gym", b =>
                 {
-                    b.HasOne("PokemonGame_Domain.Entities.TrainerPokemon", "Leader")
+                    b.HasOne("PokemonGame_Domain.Entities.TrainerPokemon", "LeaderTrainerPokemon")
                         .WithOne()
                         .HasForeignKey("PokemonGame_Domain.Entities.Gym", "LeaderTrainerPokemonId")
                         .OnDelete(DeleteBehavior.NoAction)
@@ -519,7 +522,7 @@ namespace PokemonGame.Persistance.Migrations
                         .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
-                    b.Navigation("Leader");
+                    b.Navigation("LeaderTrainerPokemon");
 
                     b.Navigation("Location");
                 });

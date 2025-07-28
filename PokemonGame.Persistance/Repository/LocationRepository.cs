@@ -18,7 +18,7 @@ namespace PokemonGame.Persistance.Repository
         public override async Task<IEnumerable<Location>> GetAllAsync()
         {
             var datas = await _context.Locations
-                .Include(x => x.Gyms).ThenInclude(x => x.LeaderTrainerPokemonId)
+                .Include(x => x.Gyms).ThenInclude(x => x.LeaderTrainerPokemon)
                 .Include(x => x.WildPokemons)
                 .Include(x => x.WildBattles)
                 .Where(c => !c.IsDeleted)

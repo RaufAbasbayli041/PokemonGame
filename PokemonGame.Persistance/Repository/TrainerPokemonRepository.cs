@@ -57,5 +57,26 @@ namespace PokemonGame.Persistance.Repository
         //    }
         //    return trainer;
         //}
+
+        public override async Task<TrainerPokemon> AddAsync(TrainerPokemon entity)
+        {
+            var trainer = await _context.Trainers
+                .FirstOrDefaultAsync(t => t.Id == entity.TrainerId && !t.IsDeleted);
+            if (trainer == null)
+            {
+                throw new ArgumentException("Trainer not found or is deleted.");
+            }
+            var pokemon = await _context.Pokemons
+                .FirstOrDefaultAsync(p => p.Id == entity.PokemonId && !p.IsDeleted && !p.IsWild);
+            if (pokemon == null)
+            {
+                throw new ArgumentException("Pokemon not found or is deleted.");
+            }
+            entity.Trainer = trainer;
+            entity.Pokemon = pokemon;
+            var addedEntity = await _context.AddAsync(entity);
+            await _context.SaveChangesAsync();
+            return addedEntity.Entity;
+        }
     }
 }

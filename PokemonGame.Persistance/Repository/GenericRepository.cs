@@ -20,7 +20,7 @@ namespace PokemonGame.Persistance.Repository
             _context = context;
             _dbSet = _context.Set<TEntity>();
         }
-        public async Task<TEntity> AddAsync(TEntity entity)
+        public virtual async Task<TEntity> AddAsync(TEntity entity)
         {
             var addedEntity = await _dbSet.AddAsync(entity);
             await _context.SaveChangesAsync();
@@ -43,9 +43,13 @@ namespace PokemonGame.Persistance.Repository
             var entities = (await _dbSet.ToListAsync()).Where(x => !x.IsDeleted);
             return entities;
         }
-        public async Task<TEntity> GetByIdAsync(int id)
+        public virtual async Task<TEntity> GetByIdAsync(int id)
         {
             var entity = await _dbSet.FindAsync(id);
+            if (entity == null)
+            {
+                return null;
+            }
 
             return entity;
         }

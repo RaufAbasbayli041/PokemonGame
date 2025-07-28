@@ -12,7 +12,7 @@ namespace PokemonGame.Contracts.Dtos
         public int TrainerId { get; set; }
         //public string? TrainerName { get; set; } // Name of the Trainer for display purposes        
         public int PokemonId { get; set; }
-       // public string? PokemonName { get; set; } // Name of the Pokemon for display purposes       
+        // public string? PokemonName { get; set; } // Name of the Pokemon for display purposes       
         public DateTime CaughtAt { get; set; } // Date when the Pokemon was caught by the trainer
         public int Level { get; set; } // Level of the Pokemon for this trainer
         public int CurrentHP { get; set; } // Current HP of the Pokemon for this trainer

@@ -13,6 +13,8 @@ namespace PokemonGame.Contracts.Dtos
         public int HP { get; set; }
         public int Level { get; set; }
         public string? ImageUrl { get; set; } // URL for the Pokemon's image
+        public bool IsWild { get; set; } // Indicates if the Pokemon is wild or not
+
         public List<int> CategoriesIds { get; set; } = new List<int>(); // Navigation property to Categories
         public List<int> SkillIds { get; set; } = new List<int>(); // Navigation property to Skills
 

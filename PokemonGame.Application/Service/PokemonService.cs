@@ -28,6 +28,7 @@ namespace PokemonGame.Application.Service
 			{
 				throw new ArgumentNullException(nameof(dto), "PokemonDto cannot be null");
 			}
+
 			var category = await _pokemonRepository.GetCategoriesByIdsAsync(dto.CategoriesIds);
 			var foundIds = category.Select(c => c.Id).ToList();
 
@@ -35,10 +36,19 @@ namespace PokemonGame.Application.Service
 			{
 				throw new ArgumentException("Category not found");
 			}
+
 			var skill = await _pokemonRepository.GetSkillByIdsAsync(dto.SkillIds);
+
 			var entity = _mapper.Map<Pokemon>(dto);
 			entity.Categories = category;
 			entity.Skills = skill;
+			if (entity.IsWild == true)
+			{
+				WildPokemon wildPokemon = new WildPokemon
+                {
+                  
+                };
+            }
 			var addedData = await _pokemonRepository.AddAsync(entity);
 			var responseDto = _mapper.Map<PokemonDto>(addedData);
 			return responseDto;

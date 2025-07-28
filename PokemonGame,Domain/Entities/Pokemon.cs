@@ -11,6 +11,7 @@ namespace PokemonGame_Domain.Entities
         public string Name { get; set; }
         public int HP { get; set; } 
         public int Level { get; set; }
+        public bool IsWild { get; set; } // Indicates if the Pokemon is wild or not
         public string? ImageUrl { get; set; } // URL for the Pokemon's image
         public ICollection<Category> Categories { get; set; } = new List<Category>(); // Navigation property to Categories
         public ICollection<Skill> Skills { get; set; } = new List<Skill>(); // Navigation property to Skills

@@ -28,27 +28,27 @@ namespace PokemonGame.Application.Service
             return _mapper.Map<IEnumerable<CategoryDto>>(categories);
         }
 
-        public override async Task<CategoryDto> AddAsync(CategoryDto dto)
-        {
-            if (dto == null)
-            {
-                throw new ArgumentNullException(nameof(dto), "PokemonDto cannot be null");
-            }
-            var pokemon = await _categoryRepository.GetPokemonsByIds(dto.PokemonIds);
-            var foundIds = pokemon.Select(c => c.Id).ToList();
+        //public override async Task<CategoryDto> AddAsync(CategoryDto dto)
+        //{
+        //    if (dto == null)
+        //    {
+        //        throw new ArgumentNullException(nameof(dto), "CategoryDto cannot be null");
+        //    }
+        //    var pokemon = await _categoryRepository.GetPokemonsByIds(dto.PokemonIds);
+        //    var foundIds = pokemon.Select(c => c.Id).ToList();
 
-            if (pokemon == null || !pokemon.Any())
-            {
-                throw new ArgumentException("pokemon not found");
-            }
+        //    if (pokemon == null || !pokemon.Any())
+        //    {
+        //        throw new ArgumentException("pokemon not found");
+        //    }
          
-            var entity = _mapper.Map<Category>(dto);
-            entity.Pokemons = pokemon;
+        //    var entity = _mapper.Map<Category>(dto);
+        //    entity.Pokemons = pokemon;
 
-            var addedData = await _categoryRepository.AddAsync(entity);
-            var responseDto = _mapper.Map<CategoryDto>(addedData);
-            return responseDto;
+        //    var addedData = await _categoryRepository.AddAsync(entity);
+        //    var responseDto = _mapper.Map<CategoryDto>(addedData);
+        //    return responseDto;
 
-        }
+        //}
     }
 }

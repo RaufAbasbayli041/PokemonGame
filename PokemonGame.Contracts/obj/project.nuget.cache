@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "E5ffVgim8Qo=",
+  "dgSpecHash": "XQsK9D2CXmo=",
   "success": true,
-  "projectFilePath": "C:\\Users\\elnur.a\\Desktop\\Rauf\\Visual Studio\\API\\PokemonGame\\PokemonGame.Contracts\\PokemonGame.Contracts.csproj",
+  "projectFilePath": "C:\\Users\\ASUS\\Desktop\\Code Academy\\C#\\API\\Homework\\PokemonGame\\PokemonGame.Contracts\\PokemonGame.Contracts.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\elnur.a\\.nuget\\packages\\microsoft.aspnetcore.http.features\\5.0.17\\microsoft.aspnetcore.http.features.5.0.17.nupkg.sha512",
-    "C:\\Users\\elnur.a\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.1\\microsoft.extensions.primitives.5.0.1.nupkg.sha512",
-    "C:\\Users\\elnur.a\\.nuget\\packages\\system.io.pipelines\\5.0.2\\system.io.pipelines.5.0.2.nupkg.sha512"
+    "C:\\Users\\ASUS\\.nuget\\packages\\microsoft.aspnetcore.http.features\\5.0.17\\microsoft.aspnetcore.http.features.5.0.17.nupkg.sha512",
+    "C:\\Users\\ASUS\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.1\\microsoft.extensions.primitives.5.0.1.nupkg.sha512",
+    "C:\\Users\\ASUS\\.nuget\\packages\\system.io.pipelines\\5.0.2\\system.io.pipelines.5.0.2.nupkg.sha512"
   ],
   "logs": []
 }

@@ -11,7 +11,7 @@ namespace PokemonGame.Contracts.Dtos
         public string Name { get; set; } // Name of the Gym
         public string Description { get; set; } // Description of the Gym
         public int LocationId { get; set; } // ID of the Location where the Gym is located 
-        public int LeaderId { get; set; } // ID of the Gym Leader 
+        public int LeaderTrainerPokemonId { get; set; } // ID of the Gym Leader 
         public List<int> BattlesIds { get; set; } = new List<int>(); // List of battles associated with the Gym
 
     }

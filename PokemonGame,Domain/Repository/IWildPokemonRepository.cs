@@ -9,5 +9,6 @@ namespace PokemonGame_Domain.Repository
 {
 	public interface IWildPokemonRepository : IGenericRepository<WildPokemon>
 	{
+
 	}
 }

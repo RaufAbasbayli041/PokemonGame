@@ -1,8 +1,10 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using PokemonGame.Contracts.Contracts;
 using PokemonGame.Contracts.Dtos;
+using PokemonGame.Persistance.DB;
 
 namespace PokemonGame.API.Controllers
 {
@@ -12,13 +14,13 @@ namespace PokemonGame.API.Controllers
     {
         private readonly IPokemonService _pokemonService;
         private readonly IWebHostEnvironment _webHostEnvironment;
+        private readonly PokemonGameDbContext _context;
 
-
-        public PokemonController(IWebHostEnvironment webHostEnvironment, IPokemonService pokemonService)
+        public PokemonController(IWebHostEnvironment webHostEnvironment, IPokemonService pokemonService, PokemonGameDbContext context)
         {
             _webHostEnvironment = webHostEnvironment;
             _pokemonService = pokemonService;
-
+            _context = context;
         }
         [HttpGet]
         public async Task<IActionResult> GetAll()
@@ -36,6 +38,7 @@ namespace PokemonGame.API.Controllers
             }
             return Ok(pokemon);
         }
+       
         [HttpPost]
         public async Task<IActionResult> Add([FromBody] PokemonDto pokemonDto)
         {

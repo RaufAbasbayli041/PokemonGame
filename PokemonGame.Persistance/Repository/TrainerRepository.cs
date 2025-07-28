@@ -25,5 +25,6 @@ namespace PokemonGame.Persistance.Repository
                  .ToListAsync();
             return datas;
         }
+         
     }
 }
