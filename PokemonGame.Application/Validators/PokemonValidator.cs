@@ -20,7 +20,16 @@ namespace PokemonGame.Application.Validators
             RuleFor(p => p.Level).NotEmpty()
                 .WithMessage("Level is required.")
                 .GreaterThanOrEqualTo(1).WithMessage("Level must be at least 1.");
-             
+          RuleFor(p => p.ImageUrl)
+                .Must(url => string.IsNullOrEmpty(url) || Uri.IsWellFormedUriString(url, UriKind.Absolute))
+                .WithMessage("ImageUrl must be a valid URL or empty.");
+            RuleFor(p => p.PokemonBaseStats)
+                .NotNull().WithMessage("PokemonBaseStats is required.");
+            RuleForEach(p => p.CategoriesIds)
+                .GreaterThan(0).WithMessage("Category ID must be greater than 0.");
+            RuleForEach(p => p.SkillIds)
+                .GreaterThan(0).WithMessage("Skill ID must be greater than 0.");
+
 
 
 

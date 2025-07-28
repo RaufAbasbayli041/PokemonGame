@@ -22,7 +22,8 @@ namespace PokemonGame.Application.Extensions
             services.AddScoped<ILocationService, LocationService>();
             services.AddScoped<IGymService, GymService>();
             services.AddScoped<IWildPokemonService, WildPokemonService>();
-			return services;
+            services.AddScoped<IBattleService, BattleService>();
+            return services;
         }
     }
 }

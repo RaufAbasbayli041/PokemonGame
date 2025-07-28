@@ -1,5 +1,100 @@
 [
   {
+    "ContainingType": "PokemonGame.API.Controllers.BattleController",
+    "Method": "GetAll",
+    "RelativePath": "api/Battle",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PokemonGame.API.Controllers.BattleController",
+    "Method": "Add",
+    "RelativePath": "api/Battle",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "battleDto",
+        "Type": "PokemonGame.Contracts.Dtos.BattleDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PokemonGame.API.Controllers.BattleController",
+    "Method": "Update",
+    "RelativePath": "api/Battle",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "battleDto",
+        "Type": "PokemonGame.Contracts.Dtos.BattleDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PokemonGame.API.Controllers.BattleController",
+    "Method": "AddTurn",
+    "RelativePath": "api/Battle/{battleId}/turns",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "battleId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "turnDto",
+        "Type": "PokemonGame.Contracts.Dtos.BattleTurnDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PokemonGame.API.Controllers.BattleController",
+    "Method": "GetById",
+    "RelativePath": "api/Battle/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PokemonGame.API.Controllers.BattleController",
+    "Method": "Delete",
+    "RelativePath": "api/Battle/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "PokemonGame.API.Controllers.CategoryController",
     "Method": "GetAll",
     "RelativePath": "api/Category",

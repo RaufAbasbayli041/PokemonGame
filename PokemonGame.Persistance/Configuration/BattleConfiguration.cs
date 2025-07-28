@@ -41,6 +41,11 @@ namespace PokemonGame.Persistance.Configuration
                 .HasDefaultValueSql("CURRENT_TIMESTAMP") // Set default value to current timestamp
                 .ValueGeneratedOnAdd(); // Ensure the value is generated on add
 
+            builder.HasMany(b => b.BattleTurns)
+                .WithOne(bt => bt.Battle)
+                .HasForeignKey(bt => bt.BattleId)
+                .OnDelete(DeleteBehavior.NoAction); // Ensure that battle turns are deleted if the battle is deleted
+
 
 
         }

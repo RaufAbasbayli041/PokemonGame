@@ -89,6 +89,55 @@ namespace PokemonGame.Persistance.Migrations
                     b.ToTable("Battles");
                 });
 
+            modelBuilder.Entity("PokemonGame_Domain.Entities.BattleTurn", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("AttackerId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("BattleAction")
+                        .HasColumnType("int");
+
+                    b.Property<int>("BattleId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("Damage")
+                        .HasColumnType("int");
+
+                    b.Property<int>("DefenderId")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("TurnDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("TurnNumber")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AttackerId");
+
+                    b.HasIndex("BattleId");
+
+                    b.HasIndex("DefenderId");
+
+                    b.ToTable("BattleTurns");
+                });
+
             modelBuilder.Entity("PokemonGame_Domain.Entities.Category", b =>
                 {
                     b.Property<int>("Id")
@@ -236,6 +285,49 @@ namespace PokemonGame.Persistance.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Pokemons");
+                });
+
+            modelBuilder.Entity("PokemonGame_Domain.Entities.PokemonBaseStats", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("Attack")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("Defense")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("PokemonId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("SpecialAttack")
+                        .HasColumnType("int");
+
+                    b.Property<int>("SpecialDefense")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Speed")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("PokemonId")
+                        .IsUnique();
+
+                    b.ToTable("PokemonBaseStats");
                 });
 
             modelBuilder.Entity("PokemonGame_Domain.Entities.Skill", b =>
@@ -390,7 +482,7 @@ namespace PokemonGame.Persistance.Migrations
 
                     b.HasIndex("WildPokemonId1");
 
-                    b.ToTable("WildBattle");
+                    b.ToTable("WildBattles");
                 });
 
             modelBuilder.Entity("PokemonGame_Domain.Entities.WildPokemon", b =>
@@ -508,6 +600,33 @@ namespace PokemonGame.Persistance.Migrations
                     b.Navigation("Winner");
                 });
 
+            modelBuilder.Entity("PokemonGame_Domain.Entities.BattleTurn", b =>
+                {
+                    b.HasOne("PokemonGame_Domain.Entities.TrainerPokemon", "Attacker")
+                        .WithMany()
+                        .HasForeignKey("AttackerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("PokemonGame_Domain.Entities.Battle", "Battle")
+                        .WithMany("BattleTurns")
+                        .HasForeignKey("BattleId")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
+                    b.HasOne("PokemonGame_Domain.Entities.TrainerPokemon", "Defender")
+                        .WithMany()
+                        .HasForeignKey("DefenderId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Attacker");
+
+                    b.Navigation("Battle");
+
+                    b.Navigation("Defender");
+                });
+
             modelBuilder.Entity("PokemonGame_Domain.Entities.Gym", b =>
                 {
                     b.HasOne("PokemonGame_Domain.Entities.TrainerPokemon", "LeaderTrainerPokemon")
@@ -525,6 +644,17 @@ namespace PokemonGame.Persistance.Migrations
                     b.Navigation("LeaderTrainerPokemon");
 
                     b.Navigation("Location");
+                });
+
+            modelBuilder.Entity("PokemonGame_Domain.Entities.PokemonBaseStats", b =>
+                {
+                    b.HasOne("PokemonGame_Domain.Entities.Pokemon", "Pokemon")
+                        .WithOne("PokemonBaseStats")
+                        .HasForeignKey("PokemonGame_Domain.Entities.PokemonBaseStats", "PokemonId")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
+                    b.Navigation("Pokemon");
                 });
 
             modelBuilder.Entity("PokemonGame_Domain.Entities.TrainerPokemon", b =>
@@ -611,6 +741,11 @@ namespace PokemonGame.Persistance.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("PokemonGame_Domain.Entities.Battle", b =>
+                {
+                    b.Navigation("BattleTurns");
+                });
+
             modelBuilder.Entity("PokemonGame_Domain.Entities.Gym", b =>
                 {
                     b.Navigation("Battles");
@@ -623,6 +758,12 @@ namespace PokemonGame.Persistance.Migrations
                     b.Navigation("WildBattles");
 
                     b.Navigation("WildPokemons");
+                });
+
+            modelBuilder.Entity("PokemonGame_Domain.Entities.Pokemon", b =>
+                {
+                    b.Navigation("PokemonBaseStats")
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("PokemonGame_Domain.Entities.Trainer", b =>

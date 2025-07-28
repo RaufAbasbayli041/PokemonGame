@@ -31,7 +31,13 @@ namespace PokemonGame.Persistance.Configuration
             builder.HasMany(p => p.Skills)
                 .WithMany(s => s.Pokemons)
                 .UsingEntity(j => j.ToTable("PokemonSkills")); // Join table for many-to-many relationship
-         
+
+            builder.HasOne(p => p.PokemonBaseStats)
+                   .WithOne(b => b.Pokemon)
+                   .HasForeignKey<PokemonBaseStats>(b => b.PokemonId)
+                   .OnDelete(DeleteBehavior.NoAction);
+
+
         }
     }
 }

@@ -23,6 +23,9 @@ namespace PokemonGame.Persistance.DB
         public DbSet<Location> Locations { get; set; }
         public DbSet<TrainerPokemon> TrainerPokemons { get; set; }
         public DbSet<WildPokemon> WildPokemons { get; set; }
+        public DbSet<WildBattle> WildBattles { get; set; }
+        public DbSet<BattleTurn> BattleTurns { get; set; }
+        public DbSet<PokemonBaseStats> PokemonBaseStats { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

@@ -44,6 +44,7 @@ namespace PokemonGame.Persistance.Repository
             var data = await _context.Pokemons
                 .Include(c => c.Categories)
                 .Include(c => c.Skills)
+                .Include(c=>c.PokemonBaseStats)
                 .Where(c => !c.IsDeleted)
                 .AsNoTracking()
                 .ToListAsync();
@@ -61,6 +62,7 @@ namespace PokemonGame.Persistance.Repository
             var pokemon = await _context.Pokemons
                 .Include(c => c.Categories)
                 .Include(c => c.Skills)
+                .Include(c => c.PokemonBaseStats)
                 .AsNoTracking()
                 .FirstOrDefaultAsync(c => c.Id == id && !c.IsDeleted);
             return pokemon;

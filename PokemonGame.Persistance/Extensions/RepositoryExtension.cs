@@ -22,6 +22,7 @@ namespace PokemonGame.Persistance.Extensions
             services.AddScoped<ILocationRepository, LocationRepository>();
             services.AddScoped<IGymRepository, GymRepository>();
             services.AddScoped<IWildPokemonRepository, WildPokemonRepository>();
+            services.AddScoped<IBattleRepository, BattleRepository>();
             return services;
         }
     }

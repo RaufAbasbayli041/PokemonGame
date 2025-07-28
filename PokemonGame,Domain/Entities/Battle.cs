@@ -20,6 +20,7 @@ namespace PokemonGame_Domain.Entities
         public TrainerPokemon Winner { get; set; } // Navigation property to the winning trainer
         public int? TrainerPokemonLoserId { get; set; } // ID of the losing trainer
         public TrainerPokemon Loser { get; set; } // Navigation property to the losing trainer
+        public ICollection<BattleTurn> BattleTurns { get; set; } = new List<BattleTurn>(); // Collection of battle turns
 
         public int GymId { get; set; }
         public Gym Gym { get; set; }
