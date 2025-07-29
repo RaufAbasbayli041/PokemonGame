@@ -7,6 +7,8 @@ using PokemonGame.Application.Profiles;
 using PokemonGame.Persistance.DB;
 using PokemonGame.Persistance.Extensions;
 using PokemonGame.Application.Validators;
+using PokemonGame.API.Hubs;
+using PokemonGame.Contracts.Contracts;
 
 namespace PokemonGame.API
 {
@@ -31,7 +33,8 @@ namespace PokemonGame.API
 
             builder.Services.AddAutoMapper(typeof(CustomProfile).Assembly);
             builder.Services.AddValidatorsRegistration();
-
+            builder.Services.AddSignalR();
+            builder.Services.AddScoped<IBattleNotifier,BattleNotifier>();
 
             var app = builder.Build();
 
@@ -44,7 +47,8 @@ namespace PokemonGame.API
 
             app.UseHttpsRedirection();
 
-            app.UseAuthorization();
+            app.UseAuthorization(); 
+            app.MapHub<BattleHub>("/battleHub");
 
 
             app.MapControllers();

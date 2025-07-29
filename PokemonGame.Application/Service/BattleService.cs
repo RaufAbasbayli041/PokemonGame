@@ -1,5 +1,7 @@
 ﻿using AutoMapper;
 using FluentValidation;
+using Microsoft.AspNetCore.SignalR;
+
 using PokemonGame.Application.Validators;
 using PokemonGame.Contracts.Contracts;
 using PokemonGame.Contracts.Dtos;
@@ -17,11 +19,12 @@ namespace PokemonGame.Application.Service
     public class BattleService : GenericService<Battle, BattleDto>, IBattleService
     {
         private readonly IBattleRepository _battleRepository;
-        public BattleService(IBattleRepository repository, IMapper mapper, BattleValidator validator) : base(repository, mapper, validator)
+       private readonly IBattleNotifier _notifier;
+        public BattleService(IBattleRepository repository, IMapper mapper, BattleValidator validator, IBattleNotifier notifier) : base(repository, mapper, validator)
         {
             _battleRepository = repository;
+            _notifier = notifier;
         }
-
         public override async Task<BattleDto> AddAsync(BattleDto dto)
         {
             var p1 = await _battleRepository.GetTrainerByIdAsync(dto.TrainerPokemon1Id);
@@ -53,8 +56,6 @@ namespace PokemonGame.Application.Service
 
             var createdBattle = await _battleRepository.AddAsync(battle);
 
-
-
             // Initialize turn number and first turn
             int turnNumber = 1;
             bool p1Turn = true; // true for p1's turn, false for p2's turn
@@ -84,42 +85,62 @@ namespace PokemonGame.Application.Service
                 turnNumber++;
 
             }
-                await _battleRepository.UpdateAsync(createdBattle);
+            await _battleRepository.UpdateAsync(createdBattle);
             return _mapper.Map<BattleDto>(createdBattle);
-
-
-
-
         }
-
-
         private int PerformAction(TrainerPokemon attacker, TrainerPokemon defender, BattleAction action)
         {
-            int damage = 0;
-            var randomDamage = new Random();
-            switch (action)
-            {
-                case BattleAction.Attack:
-                    // Simple attack logic: attacker deals a random amount of damage
-                    damage = randomDamage.Next(5, 15); // Random damage between 5 and 15
-                    defender.CurrentHP -= damage;
-                    break;
-                case BattleAction.Defend:
-                    // Defend logic: reduce incoming damage by half
+            var attackerPokemon = attacker.Pokemon;
+            var defenderPokemon = defender.Pokemon;
 
-                    var defendDamage = randomDamage.Next(3, 10); // Random damage between 3 and 10
-                    damage = defendDamage / 2; // Defender takes half damage
-                    defender.CurrentHP -= damage;
-                    break;
-                    default : break;
+            var skill = attackerPokemon.Skills.FirstOrDefault(s => s.Name == action.ToString());
+            if (skill == null)
+            {
+                throw new ArgumentException($"Skill {action} not found for attacker {attackerPokemon.Name}.");
             }
 
+            int damage = CalculateDamage(attackerPokemon, defenderPokemon, skill);
+            defenderPokemon.HP -= damage;
+            if (defenderPokemon.HP < 0)
+            {
+                defenderPokemon.HP = 0; // Ensure HP does not go below zero
+            }
+            // Update the defender's current HP
+            defender.CurrentHP = defenderPokemon.HP;
             return damage;
+        }
 
+        public int CalculateDamage(Pokemon attacker, Pokemon defender, Skill skill)
+        {
+            int attack = attacker.PokemonBaseStats.Attack;
+            int defense = defender.PokemonBaseStats.Defense;
+            int level = attacker.Level;
+            if (skill == null)
+            {
+                throw new ArgumentNullException(nameof(skill), "Skill cannot be null.");
+            }
+            if (attack <= 0 || defense <= 0)
+            {
+                throw new ArgumentException("Attack and defense values must be greater than zero.");
+            }
+            if (level <= 0)
+            {
+                throw new ArgumentException("Level must be greater than zero.");
+            }
+            if (skill.Power <= 0)
+            {
+                throw new ArgumentException("Skill power must be greater than zero.");
+            }
+            // Calculate damage using the formula
+            int power = skill.Power;
+
+            double baseDamage = (((2 * level / 5.0 + 2) * attack * power / defense) / 50.0) + 2;
+
+            return (int)Math.Floor(baseDamage);
         }
 
 
-        public Task AddTurnAsync(int battleId, int attackerId, int defenderId, BattleAction action, int turnNumber)
+        public async Task AddTurnAsync(int battleId, int attackerId, int defenderId, BattleAction action, int turnNumber)
         {
             var turn = new BattleTurn
             {
@@ -129,7 +150,11 @@ namespace PokemonGame.Application.Service
                 BattleAction = action,
                 TurnDate = DateTime.UtcNow
             };
-            return _battleRepository.AddTurnAsync(turn);
+            await _battleRepository.AddTurnAsync(turn);
+            await _notifier.NotifyTurnAsync(battleId, attackerId, defenderId, action.ToString(), turnNumber);
+
+
         }
+
     }
 }

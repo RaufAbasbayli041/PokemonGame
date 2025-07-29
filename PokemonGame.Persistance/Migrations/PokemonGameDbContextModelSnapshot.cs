@@ -310,12 +310,6 @@ namespace PokemonGame.Persistance.Migrations
                     b.Property<int>("PokemonId")
                         .HasColumnType("int");
 
-                    b.Property<int>("SpecialAttack")
-                        .HasColumnType("int");
-
-                    b.Property<int>("SpecialDefense")
-                        .HasColumnType("int");
-
                     b.Property<int>("Speed")
                         .HasColumnType("int");
 
@@ -353,6 +347,11 @@ namespace PokemonGame.Persistance.Migrations
                         .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
+
+                    b.Property<int>("Power")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasDefaultValue(0);
 
                     b.Property<DateTime>("UpdatedAt")
                         .HasColumnType("datetime2");

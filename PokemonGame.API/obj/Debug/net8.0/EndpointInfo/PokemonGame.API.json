@@ -1398,6 +1398,10 @@
             "type": "string",
             "nullable": true
           },
+          "power": {
+            "type": "integer",
+            "format": "int32"
+          },
           "pokemonIds": {
             "type": "array",
             "items": {

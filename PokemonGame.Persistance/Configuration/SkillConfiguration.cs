@@ -18,6 +18,9 @@ namespace PokemonGame.Persistance.Configuration
             builder.Property(s => s.Description)
                 .IsRequired()
                 .HasMaxLength(500);
+            builder.Property(s => s.Power)
+                .IsRequired()
+                .HasDefaultValue(0); // Default power value for skills
             // Configure many-to-many relationship with Pokemon
             builder.HasMany(s => s.Pokemons)
                 .WithMany(p => p.Skills)

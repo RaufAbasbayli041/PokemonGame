@@ -18,6 +18,9 @@ namespace PokemonGame.Application.Validators
             RuleFor(c => c.Description)
                 .NotEmpty().WithMessage("Description is required.")
                 .Length(10, 200).WithMessage("Description must be between 10 and 200 characters.");
+            RuleFor(c => c.Power)
+                .GreaterThanOrEqualTo(0).WithMessage("Power must be a non-negative integer.")
+                .LessThanOrEqualTo(100).WithMessage("Power must not exceed 100.");
         }
 
     }

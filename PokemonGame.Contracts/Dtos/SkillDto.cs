@@ -11,6 +11,7 @@ namespace PokemonGame.Contracts.Dtos
     {
         public string Name { get; set; }
         public string Description { get; set; }
+        public int Power { get; set; } // Power of the skill
         public List<int> PokemonIds { get; set; } = new List<int>();
 
     }
