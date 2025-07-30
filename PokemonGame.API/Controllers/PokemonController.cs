@@ -75,7 +75,7 @@ namespace PokemonGame.API.Controllers
         }
       
         [HttpPost("upload-image/{id}")]
-        public async Task<IActionResult> UploadImage(int id, FileUploadDto image)
+        public async Task<IActionResult> UploadImage(int id,[FromForm] FileUploadDto image)
         {
             if (image == null || image.Image.Length == 0)
             {

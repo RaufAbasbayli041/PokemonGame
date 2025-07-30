@@ -60,7 +60,7 @@ namespace PokemonGame.API
 
             app.UseAuthorization(); 
             app.MapHub<BattleHub>("/battleHub");
-
+            app.UseStaticFiles();
 
             app.MapControllers();
 

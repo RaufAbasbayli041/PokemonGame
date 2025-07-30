@@ -34,3 +34,4 @@ C:\Users\ASUS\Desktop\Code Academy\C#\API\Homework\PokemonGame\PokemonGame.Infra
 C:\Users\ASUS\Desktop\Code Academy\C#\API\Homework\PokemonGame\PokemonGame.Infrastructure\obj\Debug\net8.0\PokemonGame.Infrastructure.pdb
 C:\Users\ASUS\Desktop\Code Academy\C#\API\Homework\PokemonGame\PokemonGame.Infrastructure\obj\Debug\net8.0\ref\PokemonGame.Infrastructure.dll
 C:\Users\elnur.a\Desktop\Rauf\Visual Studio\API\PokemonGame\PokemonGame.Infrastructure\obj\Debug\net8.0\PokemonGame.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\ASUS\Desktop\Code Academy\C#\API\Homework\PokemonGame\PokemonGame.Infrastructure\obj\Debug\net8.0\PokemonGame.Infrastructure.csproj.AssemblyReference.cache
