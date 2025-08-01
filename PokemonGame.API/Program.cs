@@ -35,18 +35,21 @@ namespace PokemonGame.API
             builder.Services.AddValidatorsRegistration();
             builder.Services.AddSignalR();
             builder.Services.AddScoped<IBattleNotifier,BattleNotifier>();
-			builder.Services.AddCors(options =>
-			{
-				options.AddDefaultPolicy(policy =>
-				{
-					policy.WithOrigins("http://127.0.0.1:5500")  
-						  .AllowAnyHeader()
-						  .AllowAnyMethod();
-				});
-			});
+            var allowedFrontendOrigin = "http://127.0.0.1:5500";
 
+            builder.Services.AddCors(options =>
+            {
+                options.AddPolicy("CorsPolicy", policy =>
+                {
+                    policy
+             .WithOrigins(allowedFrontendOrigin) 
+             .AllowAnyMethod()
+             .AllowAnyHeader()
+             .AllowCredentials();
+                });
+            });
 
-			var app = builder.Build();
+            var app = builder.Build();
 
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
@@ -55,7 +58,7 @@ namespace PokemonGame.API
                 app.UseSwaggerUI();
             }
 
-			app.UseCors(); 
+            app.UseCors("CorsPolicy");
             app.UseHttpsRedirection();
 
             app.UseAuthorization(); 

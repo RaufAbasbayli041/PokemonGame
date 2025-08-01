@@ -8,8 +8,8 @@ using PokemonGame.Persistance.DB;
 
 namespace PokemonGame.API.Controllers
 {
+    [ApiController] 
     [Route("api/[controller]")]
-    [ApiController]
     public class PokemonController : ControllerBase
     {
         private readonly IPokemonService _pokemonService;

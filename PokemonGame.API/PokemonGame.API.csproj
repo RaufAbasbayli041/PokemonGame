@@ -19,4 +19,8 @@
     <ProjectReference Include="..\PokemonGame.Persistance\PokemonGame.Persistance.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\" />
+  </ItemGroup>
+
 </Project>

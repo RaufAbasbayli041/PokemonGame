@@ -10,5 +10,6 @@ namespace PokemonGame.Contracts.Contracts
 {
     public interface ITrainerService : IGenericService<Trainer,TrainerDto>
     {
+        Task<IEnumerable<TrainerPokemonDto>> GetPokemonByTrainerIdAsync(int trainerId);
     }
 }

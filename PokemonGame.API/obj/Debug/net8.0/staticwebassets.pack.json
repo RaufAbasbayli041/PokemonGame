@@ -1,0 +1,33 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\ASUS\\Desktop\\Code Academy\\C#\\API\\Homework\\PokemonGame\\PokemonGame.API\\wwwroot\\pokemon\\images\\8891dd9a-4a5c-467e-8298-35ab70d5856c_025.png",
+      "PackagePath": "staticwebassets\\pokemon\\images\\8891dd9a-4a5c-467e-8298-35ab70d5856c_025.png"
+    },
+    {
+      "Id": "C:\\Users\\ASUS\\Desktop\\Code Academy\\C#\\API\\Homework\\PokemonGame\\PokemonGame.API\\wwwroot\\pokemon\\images\\fc7bf254-bd0f-40e8-a2c9-d7cd0b4c08f2_025.png",
+      "PackagePath": "staticwebassets\\pokemon\\images\\fc7bf254-bd0f-40e8-a2c9-d7cd0b4c08f2_025.png"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.PokemonGame.API.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.PokemonGame.API.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.PokemonGame.API.props",
+      "PackagePath": "build\\PokemonGame.API.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.PokemonGame.API.props",
+      "PackagePath": "buildMultiTargeting\\PokemonGame.API.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.PokemonGame.API.props",
+      "PackagePath": "buildTransitive\\PokemonGame.API.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

@@ -5,8 +5,8 @@ using PokemonGame.Contracts.Dtos;
 
 namespace PokemonGame.API.Controllers
 {
-    [Route("api/[controller]")]
     [ApiController]
+    [Route("api/[controller]")]
     public class BattleController : ControllerBase
     {
         private readonly IBattleService _battleService;

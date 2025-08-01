@@ -18,6 +18,7 @@ namespace PokemonGame.Application.Service
 		private readonly IPokemonRepository _pokemonRepository;
 
 
+
 		public PokemonService(IPokemonRepository pokemonRepository, IMapper mapper, PokemonValidator validator) : base(pokemonRepository, mapper, validator)
 		{
 			_pokemonRepository = pokemonRepository;
@@ -62,13 +63,10 @@ namespace PokemonGame.Application.Service
 			{
 				throw new ArgumentException("Pokemon not found");
 			}
-			var isUploaded = await _pokemonRepository.UploadImgAsyn(id, filePath);
-			if (isUploaded == null)
-			{
-				return false;
-			}
+			 
 			data.ImageUrl = filePath;
 			var updatedData = await _pokemonRepository.UpdateAsync(data);
+
 			return true;
 		}
 

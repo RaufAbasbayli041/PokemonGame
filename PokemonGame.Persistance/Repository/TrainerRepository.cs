@@ -25,6 +25,31 @@ namespace PokemonGame.Persistance.Repository
                  .ToListAsync();
             return datas;
         }
-         
+
+        public async Task<List<TrainerPokemon>> GetPokemonByTrainerIdAsync(int trainerId)
+        {
+            var data = await _context.TrainerPokemons
+                .Include(tp => tp.Pokemon)
+                .Where(tp => tp.TrainerId == trainerId && !tp.IsDeleted)
+                .ToListAsync();
+            if (data == null || !data.Any())
+            {
+                throw new KeyNotFoundException($"TrainerPokemon with TrainerId {trainerId} not found.");
+            }
+            return data;
+        }
+
+        public override async Task<Trainer> GetByIdAsync(int id)
+        {
+            var data = await _context.Trainers
+                .Include(t => t.TrainerPokemon)
+                .ThenInclude(tp => tp.Pokemon)
+                .FirstOrDefaultAsync(t => t.Id == id && !t.IsDeleted);
+            if (data == null)
+            {
+                return null;
+            }
+            return data;
+        }
     }
 }

@@ -66,7 +66,16 @@ namespace PokemonGame.API.Controllers
             return NoContent();
         }
 
-
+        [HttpGet("{id}/trainerPokemon")]
+        public async Task<IActionResult> GetTrainerPokemon(int id)
+        {
+            var trainerPokemon = await _trainerService.GetPokemonByTrainerIdAsync(id);
+            if (trainerPokemon == null )
+            {
+                return NotFound($"No Pokemon found for Trainer with id {id}");
+            }
+            return Ok(trainerPokemon);
+        }
 
     }
 }

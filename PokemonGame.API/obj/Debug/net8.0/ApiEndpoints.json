@@ -560,6 +560,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "PokemonGame.API.Controllers.TrainerController",
+    "Method": "GetTrainerPokemon",
+    "RelativePath": "api/Trainer/{id}/trainerPokemon",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "PokemonGame.API.Controllers.TrainerPokemonController",
     "Method": "GetAll",
     "RelativePath": "api/TrainerPokemon",

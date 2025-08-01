@@ -26,7 +26,13 @@ namespace PokemonGame.Application.Profiles
             CreateMap<Trainer, TrainerDto>()
                 .ForMember(dest => dest.TrainerPokemonsIds, opt => opt.MapFrom(src => src.TrainerPokemon.Select(p => p.Id).ToList()))
                 .ReverseMap();
-            CreateMap<TrainerPokemon, TrainerPokemonDto>().ReverseMap();
+           CreateMap<TrainerPokemon, TrainerPokemonDto>()
+                .ForMember(dest => dest.PokemonId, opt => opt.MapFrom(src => src.Pokemon.Id))
+                .ForMember(dest => dest.TrainerId, opt => opt.MapFrom(src => src.Trainer.Id))
+                .ForMember(dest => dest.Pokemon, opt => opt.MapFrom(src => src.Pokemon))
+                .ReverseMap();
+
+
             CreateMap<Location, LocationDto>()
                 .ForMember(dest => dest.GymsIds, opt => opt.MapFrom(src => src.Gyms.Select(g => g.Id).ToList()))
                 .ForMember(dest => dest.WildPokemonsIds, opt => opt.MapFrom(src => src.WildPokemons.Select(wp => wp.Id).ToList()))

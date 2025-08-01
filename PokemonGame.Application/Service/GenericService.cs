@@ -34,7 +34,7 @@ namespace PokemonGame.Application.Service
             return dtos;
         }
 
-        public async Task<TDto> GetByIdAsync(int id)
+        public virtual async Task<TDto> GetByIdAsync(int id)
         {
             var data = await _repository.GetByIdAsync(id);
             if (data == null)

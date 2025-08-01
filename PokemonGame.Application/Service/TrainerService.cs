@@ -25,5 +25,28 @@ namespace PokemonGame.Application.Service
             var dtos = _mapper.Map<IEnumerable<TrainerDto>>(datas);
             return dtos;
         }
+
+        public async Task<IEnumerable<TrainerPokemonDto>> GetPokemonByTrainerIdAsync(int trainerId)
+        {
+         var data = await _trainerRepository.GetPokemonByTrainerIdAsync(trainerId);
+            if (data == null || !data.Any())
+            {
+                throw new KeyNotFoundException($"TrainerPokemon with TrainerId {trainerId} not found.");
+            }
+            var dto = _mapper.Map<IEnumerable<TrainerPokemonDto>>(data);
+            return dto;
+
+        }
+
+        public override async Task<TrainerDto> GetByIdAsync(int id)
+        {
+            var data = await _trainerRepository.GetByIdAsync(id);
+            if (data == null)
+            {
+                return null;
+            }
+            var dto = _mapper.Map<TrainerDto>(data);
+            return dto;
+        }
     }
 }

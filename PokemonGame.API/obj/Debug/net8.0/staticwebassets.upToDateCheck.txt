@@ -1,0 +1,2 @@
+wwwroot\pokemon\images\8891dd9a-4a5c-467e-8298-35ab70d5856c_025.png
+wwwroot\pokemon\images\fc7bf254-bd0f-40e8-a2c9-d7cd0b4c08f2_025.png
