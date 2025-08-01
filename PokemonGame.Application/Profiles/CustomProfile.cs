@@ -56,6 +56,11 @@ namespace PokemonGame.Application.Profiles
                 .ForMember(dest => dest.DefenderId, opt => opt.MapFrom(src => src.DefenderId))
                 .ForMember(dest => dest.BattleId, opt => opt.MapFrom(src => src.BattleId))
                 .ReverseMap();
-        }
+            CreateMap<PokemonBaseStats,PokemonBaseStatsDto>()
+                .ForMember(dest => dest.Attack, opt => opt.MapFrom(src => src.Attack))
+                .ForMember(dest => dest.Defense, opt => opt.MapFrom(src => src.Defense))
+                .ForMember(dest => dest.Speed, opt => opt.MapFrom(src => src.Speed)) 
+                .ReverseMap();
+		}
     }
 }

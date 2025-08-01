@@ -36,7 +36,15 @@ namespace PokemonGame.Application.Service
             {
                 throw new ArgumentNullException(nameof(dto), "TrainerPokemonDto cannot be null");
             }
-            var trainerPOkeomon = await _trainerPokemonRepository.AddAsync(entity);
+            if (entity.TrainerId <= 0)
+            {
+                throw new ArgumentException("TrainerId must be greater than zero");
+			}
+            if (dto.CurrentHP > dto.Pokemon.HP)
+            {
+                dto.CurrentHP = dto.Pokemon.HP; // Ensure CurrentHP does not exceed Pokemon's max HP
+			}
+			var trainerPOkeomon = await _trainerPokemonRepository.AddAsync(entity);
             if (trainerPOkeomon == null)
             {
                 throw new ArgumentException("TrainerPokemon not found");

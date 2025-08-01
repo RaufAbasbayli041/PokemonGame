@@ -18,6 +18,8 @@ namespace PokemonGame.Contracts.Dtos
         public List<int> CategoriesIds { get; set; } = new List<int>(); // Navigation property to Categories
         public List<int> SkillIds { get; set; } = new List<int>(); // Navigation property to Skills
 
+        public int? LocationId { get; set; } // Optional Location ID for the Wild Pokemon, if applicable
 
-    }
+
+	}
 }

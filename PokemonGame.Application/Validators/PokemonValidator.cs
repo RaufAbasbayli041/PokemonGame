@@ -29,11 +29,18 @@ namespace PokemonGame.Application.Validators
                 .GreaterThan(0).WithMessage("Category ID must be greater than 0.");
             RuleForEach(p => p.SkillIds)
                 .GreaterThan(0).WithMessage("Skill ID must be greater than 0.");
+            RuleFor(p => p.LocationId)
+                .NotNull()
+                .When(p => p.IsWild)
+                .WithMessage("LocationId is required for wild Pokemon.");
+                 
 
 
 
 
 
-        }
+
+
+		}
     }
 }

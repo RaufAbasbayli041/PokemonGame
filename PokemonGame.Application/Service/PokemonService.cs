@@ -16,12 +16,13 @@ namespace PokemonGame.Application.Service
 	public class PokemonService : GenericService<Pokemon, PokemonDto>, IPokemonService
 	{
 		private readonly IPokemonRepository _pokemonRepository;
+		private readonly IWildPokemonRepository _wildPokemonRepository;
 
 
-
-		public PokemonService(IPokemonRepository pokemonRepository, IMapper mapper, PokemonValidator validator) : base(pokemonRepository, mapper, validator)
+		public PokemonService(IPokemonRepository pokemonRepository, IMapper mapper, PokemonValidator validator, IWildPokemonRepository wildPokemonRepository) : base(pokemonRepository, mapper, validator)
 		{
 			_pokemonRepository = pokemonRepository;
+			_wildPokemonRepository = wildPokemonRepository;
 		}
 		public override async Task<PokemonDto> AddAsync(PokemonDto dto)
 		{
@@ -39,18 +40,31 @@ namespace PokemonGame.Application.Service
 			}
 
 			var skill = await _pokemonRepository.GetSkillByIdsAsync(dto.SkillIds);
+			if (skill == null || !skill.Any())
+			{
+				throw new ArgumentException("Skill not found");
+			}
 
 			var entity = _mapper.Map<Pokemon>(dto);
 			entity.Categories = category;
 			entity.Skills = skill;
+			var addedData = await _pokemonRepository.AddAsync(entity);
 			if (entity.IsWild == true)
 			{
-				WildPokemon wildPokemon = new WildPokemon
-                {
-                  
-                };
-            }
-			var addedData = await _pokemonRepository.AddAsync(entity);
+				if (dto.LocationId == null || dto.LocationId <= 0)
+				{
+					throw new ArgumentException("LocationId is required for wild Pokemon.");
+				}
+				var wildDto = new WildPokemonDto
+				{
+					PokemonId = addedData.Id,  
+					Level = addedData.Level,
+					LocationId = dto.LocationId.Value	,
+					CurrentHP = addedData.HP
+				};
+				await AddWildPokemonAsync(wildDto);
+
+			}
 			var responseDto = _mapper.Map<PokemonDto>(addedData);
 			return responseDto;
 
@@ -63,7 +77,7 @@ namespace PokemonGame.Application.Service
 			{
 				throw new ArgumentException("Pokemon not found");
 			}
-			 
+
 			data.ImageUrl = filePath;
 			var updatedData = await _pokemonRepository.UpdateAsync(data);
 
@@ -77,6 +91,31 @@ namespace PokemonGame.Application.Service
 			return result;
 		}
 
+		public async Task<WildPokemonDto> AddWildPokemonAsync(WildPokemonDto dto)
+		{
+			var basePokemon = await _pokemonRepository.GetByIdAsync(dto.PokemonId);
+			if (basePokemon == null)
+			{
+				throw new ArgumentException("Pokemon not found");
+			}
+
+			var wild = new WildPokemon
+			{
+				Pokemon = basePokemon,
+				LocationId = dto.LocationId,
+				Level = dto.Level,
+				HP = dto.CurrentHP,
+				AppearedAt = DateTime.Now
+			};
+			var addedWildPokemon = await _wildPokemonRepository.AddAsync(wild);
+			if (addedWildPokemon == null)
+			{
+				throw new ArgumentException("Wild Pokemon could not be added");
+			}
+			var responseDto = _mapper.Map<WildPokemonDto>(addedWildPokemon);
+			return responseDto;
+
+		}
 	}
 
 

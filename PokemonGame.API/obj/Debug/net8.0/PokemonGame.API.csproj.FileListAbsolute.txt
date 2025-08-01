@@ -478,3 +478,4 @@ C:\Users\ASUS\Desktop\Code Academy\C#\API\Homework\PokemonGame\PokemonGame.API\o
 C:\Users\ASUS\Desktop\Code Academy\C#\API\Homework\PokemonGame\PokemonGame.API\obj\Debug\net8.0\PokemonGame.API.genruntimeconfig.cache
 C:\Users\ASUS\Desktop\Code Academy\C#\API\Homework\PokemonGame\PokemonGame.API\obj\Debug\net8.0\ref\PokemonGame.API.dll
 C:\Users\ASUS\Desktop\Code Academy\C#\API\Homework\PokemonGame\PokemonGame.API\bin\Debug\net8.0\PokemonGame.API.staticwebassets.runtime.json
+C:\Users\elnur.a\Desktop\Rauf\Visual Studio\API\PokemonGame\PokemonGame.API\bin\Debug\net8.0\PokemonGame.API.staticwebassets.runtime.json

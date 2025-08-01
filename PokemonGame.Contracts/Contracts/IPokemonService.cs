@@ -10,11 +10,10 @@ namespace PokemonGame.Contracts.Contracts
 {
     public interface IPokemonService : IGenericService<Pokemon,PokemonDto>
     {
-       public Task<bool> UploadImgAsync(int id, string filePath);
-       
-       //public Task<PokemonDto> AddAsync(PokemonDto dto);
+       public Task<bool> UploadImgAsync(int id, string filePath); 
+
+        public Task<WildPokemonDto> AddWildPokemonAsync(WildPokemonDto dto);
 
 
-
-    }
+	}
 }

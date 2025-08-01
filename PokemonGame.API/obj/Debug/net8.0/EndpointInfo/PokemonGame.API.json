@@ -1343,14 +1343,6 @@
             "type": "integer",
             "format": "int32"
           },
-          "specialAttack": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "specialDefense": {
-            "type": "integer",
-            "format": "int32"
-          },
           "pokemonId": {
             "type": "integer",
             "format": "int32"
@@ -1401,6 +1393,11 @@
               "type": "integer",
               "format": "int32"
             },
+            "nullable": true
+          },
+          "locationId": {
+            "type": "integer",
+            "format": "int32",
             "nullable": true
           }
         },
