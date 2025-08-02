@@ -67,6 +67,16 @@ namespace PokemonGame.Persistance.Repository
                 .FirstOrDefaultAsync(c => c.Id == id && !c.IsDeleted);
             return pokemon;
         }
+
+        public async Task<Pokemon> GetPokemonWithStatsAsync(int id)
+        {
+            var pokemon = await _context.Pokemons
+                .Include(c => c.PokemonBaseStats)
+                .Include(c => c.Categories)
+                .Include(c => c.Skills)
+                .FirstOrDefaultAsync(c => c.Id == id && !c.IsDeleted); 
+            return pokemon;
+        }
     }
 
 }

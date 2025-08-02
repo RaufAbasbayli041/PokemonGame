@@ -18,6 +18,7 @@ namespace PokemonGame.API.Hubs
         }
         public async Task SendAttack(int attackerId, int defenderId, int damage)
         {
+
             Console.WriteLine($"SendAttack called: {attackerId} -> {defenderId}, damage: {damage}");
 
             await Clients.All.SendAsync("ReceiveAttack", attackerId, defenderId, damage);

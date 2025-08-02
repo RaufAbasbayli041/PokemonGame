@@ -1,50 +1,42 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\elnur.a\\Desktop\\Rauf\\Visual Studio\\API\\PokemonGame\\",
+  "WorkspaceRootPath": "C:\\Users\\ASUS\\Desktop\\Code Academy\\C#\\API\\Homework\\PokemonGame\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9DF2D4AD-B45D-4249-A891-75220B8CD88E}|PokemonGame.Application\\PokemonGame.Application.csproj|c:\\users\\elnur.a\\desktop\\rauf\\visual studio\\api\\pokemongame\\pokemongame.application\\validators\\pokemonvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9DF2D4AD-B45D-4249-A891-75220B8CD88E}|PokemonGame.Application\\PokemonGame.Application.csproj|solutionrelative:pokemongame.application\\validators\\pokemonvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FA9A850F-EBCF-4132-849F-EE624D27678A}|PokemonGame.Persistance\\PokemonGame.Persistance.csproj|c:\\users\\asus\\desktop\\code academy\\c#\\api\\homework\\pokemongame\\pokemongame.persistance\\repository\\pokemonrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FA9A850F-EBCF-4132-849F-EE624D27678A}|PokemonGame.Persistance\\PokemonGame.Persistance.csproj|solutionrelative:pokemongame.persistance\\repository\\pokemonrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9DF2D4AD-B45D-4249-A891-75220B8CD88E}|PokemonGame.Application\\PokemonGame.Application.csproj|c:\\users\\elnur.a\\desktop\\rauf\\visual studio\\api\\pokemongame\\pokemongame.application\\service\\pokemonservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{245B7AA6-B451-4DA9-84DF-78B6C28D4FA8}|PokemonGame,Domain\\PokemonGame,Domain.csproj|c:\\users\\asus\\desktop\\code academy\\c#\\api\\homework\\pokemongame\\pokemongame,domain\\entities\\pokemonbasestats.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{245B7AA6-B451-4DA9-84DF-78B6C28D4FA8}|PokemonGame,Domain\\PokemonGame,Domain.csproj|solutionrelative:pokemongame,domain\\entities\\pokemonbasestats.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{245B7AA6-B451-4DA9-84DF-78B6C28D4FA8}|PokemonGame,Domain\\PokemonGame,Domain.csproj|c:\\users\\asus\\desktop\\code academy\\c#\\api\\homework\\pokemongame\\pokemongame,domain\\entities\\pokemon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{245B7AA6-B451-4DA9-84DF-78B6C28D4FA8}|PokemonGame,Domain\\PokemonGame,Domain.csproj|solutionrelative:pokemongame,domain\\entities\\pokemon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9DF2D4AD-B45D-4249-A891-75220B8CD88E}|PokemonGame.Application\\PokemonGame.Application.csproj|c:\\users\\asus\\desktop\\code academy\\c#\\api\\homework\\pokemongame\\pokemongame.application\\service\\pokemonservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9DF2D4AD-B45D-4249-A891-75220B8CD88E}|PokemonGame.Application\\PokemonGame.Application.csproj|solutionrelative:pokemongame.application\\service\\pokemonservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F16AA36E-AD1D-42D9-9541-0DB467BEC602}|PokemonGame.Contracts\\PokemonGame.Contracts.csproj|c:\\users\\elnur.a\\desktop\\rauf\\visual studio\\api\\pokemongame\\pokemongame.contracts\\dtos\\pokemondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F16AA36E-AD1D-42D9-9541-0DB467BEC602}|PokemonGame.Contracts\\PokemonGame.Contracts.csproj|solutionrelative:pokemongame.contracts\\dtos\\pokemondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{245B7AA6-B451-4DA9-84DF-78B6C28D4FA8}|PokemonGame,Domain\\PokemonGame,Domain.csproj|c:\\users\\asus\\desktop\\code academy\\c#\\api\\homework\\pokemongame\\pokemongame,domain\\repository\\ipokemonrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{245B7AA6-B451-4DA9-84DF-78B6C28D4FA8}|PokemonGame,Domain\\PokemonGame,Domain.csproj|solutionrelative:pokemongame,domain\\repository\\ipokemonrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9DF2D4AD-B45D-4249-A891-75220B8CD88E}|PokemonGame.Application\\PokemonGame.Application.csproj|c:\\users\\elnur.a\\desktop\\rauf\\visual studio\\api\\pokemongame\\pokemongame.application\\service\\trainerpokemonservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{9DF2D4AD-B45D-4249-A891-75220B8CD88E}|PokemonGame.Application\\PokemonGame.Application.csproj|c:\\users\\asus\\desktop\\code academy\\c#\\api\\homework\\pokemongame\\pokemongame.application\\service\\battleservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9DF2D4AD-B45D-4249-A891-75220B8CD88E}|PokemonGame.Application\\PokemonGame.Application.csproj|solutionrelative:pokemongame.application\\service\\battleservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FA9A850F-EBCF-4132-849F-EE624D27678A}|PokemonGame.Persistance\\PokemonGame.Persistance.csproj|c:\\users\\asus\\desktop\\code academy\\c#\\api\\homework\\pokemongame\\pokemongame.persistance\\configuration\\battleturnconfigurations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FA9A850F-EBCF-4132-849F-EE624D27678A}|PokemonGame.Persistance\\PokemonGame.Persistance.csproj|solutionrelative:pokemongame.persistance\\configuration\\battleturnconfigurations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9DF2D4AD-B45D-4249-A891-75220B8CD88E}|PokemonGame.Application\\PokemonGame.Application.csproj|c:\\users\\asus\\desktop\\code academy\\c#\\api\\homework\\pokemongame\\pokemongame.application\\service\\trainerpokemonservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9DF2D4AD-B45D-4249-A891-75220B8CD88E}|PokemonGame.Application\\PokemonGame.Application.csproj|solutionrelative:pokemongame.application\\service\\trainerpokemonservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F16AA36E-AD1D-42D9-9541-0DB467BEC602}|PokemonGame.Contracts\\PokemonGame.Contracts.csproj|c:\\users\\elnur.a\\desktop\\rauf\\visual studio\\api\\pokemongame\\pokemongame.contracts\\dtos\\trainerpokemondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F16AA36E-AD1D-42D9-9541-0DB467BEC602}|PokemonGame.Contracts\\PokemonGame.Contracts.csproj|solutionrelative:pokemongame.contracts\\dtos\\trainerpokemondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F16AA36E-AD1D-42D9-9541-0DB467BEC602}|PokemonGame.Contracts\\PokemonGame.Contracts.csproj|c:\\users\\elnur.a\\desktop\\rauf\\visual studio\\api\\pokemongame\\pokemongame.contracts\\contracts\\ipokemonservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F16AA36E-AD1D-42D9-9541-0DB467BEC602}|PokemonGame.Contracts\\PokemonGame.Contracts.csproj|solutionrelative:pokemongame.contracts\\contracts\\ipokemonservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{245B7AA6-B451-4DA9-84DF-78B6C28D4FA8}|PokemonGame,Domain\\PokemonGame,Domain.csproj|c:\\users\\elnur.a\\desktop\\rauf\\visual studio\\api\\pokemongame\\pokemongame,domain\\entities\\trainerpokemon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{245B7AA6-B451-4DA9-84DF-78B6C28D4FA8}|PokemonGame,Domain\\PokemonGame,Domain.csproj|solutionrelative:pokemongame,domain\\entities\\trainerpokemon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F16AA36E-AD1D-42D9-9541-0DB467BEC602}|PokemonGame.Contracts\\PokemonGame.Contracts.csproj|c:\\users\\elnur.a\\desktop\\rauf\\visual studio\\api\\pokemongame\\pokemongame.contracts\\dtos\\skilldto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F16AA36E-AD1D-42D9-9541-0DB467BEC602}|PokemonGame.Contracts\\PokemonGame.Contracts.csproj|solutionrelative:pokemongame.contracts\\dtos\\skilldto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F16AA36E-AD1D-42D9-9541-0DB467BEC602}|PokemonGame.Contracts\\PokemonGame.Contracts.csproj|c:\\users\\elnur.a\\desktop\\rauf\\visual studio\\api\\pokemongame\\pokemongame.contracts\\dtos\\categorydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F16AA36E-AD1D-42D9-9541-0DB467BEC602}|PokemonGame.Contracts\\PokemonGame.Contracts.csproj|solutionrelative:pokemongame.contracts\\dtos\\categorydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9DF2D4AD-B45D-4249-A891-75220B8CD88E}|PokemonGame.Application\\PokemonGame.Application.csproj|c:\\users\\elnur.a\\desktop\\rauf\\visual studio\\api\\pokemongame\\pokemongame.application\\profiles\\customprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9DF2D4AD-B45D-4249-A891-75220B8CD88E}|PokemonGame.Application\\PokemonGame.Application.csproj|solutionrelative:pokemongame.application\\profiles\\customprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F16AA36E-AD1D-42D9-9541-0DB467BEC602}|PokemonGame.Contracts\\PokemonGame.Contracts.csproj|c:\\users\\elnur.a\\desktop\\rauf\\visual studio\\api\\pokemongame\\pokemongame.contracts\\dtos\\pokemonbasestatsdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F16AA36E-AD1D-42D9-9541-0DB467BEC602}|PokemonGame.Contracts\\PokemonGame.Contracts.csproj|solutionrelative:pokemongame.contracts\\dtos\\pokemonbasestatsdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CC220B77-21A5-4A6A-9D5F-3C62586291C4}|PokemonGame.API\\PokemonGame.API.csproj|c:\\users\\asus\\desktop\\code academy\\c#\\api\\homework\\pokemongame\\pokemongame.api\\hubs\\battlehub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CC220B77-21A5-4A6A-9D5F-3C62586291C4}|PokemonGame.API\\PokemonGame.API.csproj|solutionrelative:pokemongame.api\\hubs\\battlehub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -54,136 +46,71 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "PokemonValidator.cs",
-              "DocumentMoniker": "C:\\Users\\elnur.a\\Desktop\\Rauf\\Visual Studio\\API\\PokemonGame\\PokemonGame.Application\\Validators\\PokemonValidator.cs",
-              "RelativeDocumentMoniker": "PokemonGame.Application\\Validators\\PokemonValidator.cs",
-              "ToolTip": "C:\\Users\\elnur.a\\Desktop\\Rauf\\Visual Studio\\API\\PokemonGame\\PokemonGame.Application\\Validators\\PokemonValidator.cs*",
-              "RelativeToolTip": "PokemonGame.Application\\Validators\\PokemonValidator.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAABIAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "Pokemon.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\Code Academy\\C#\\API\\Homework\\PokemonGame\\PokemonGame,Domain\\Entities\\Pokemon.cs",
+              "RelativeDocumentMoniker": "PokemonGame,Domain\\Entities\\Pokemon.cs",
+              "ToolTip": "C:\\Users\\ASUS\\Desktop\\Code Academy\\C#\\API\\Homework\\PokemonGame\\PokemonGame,Domain\\Entities\\Pokemon.cs",
+              "RelativeToolTip": "PokemonGame,Domain\\Entities\\Pokemon.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-01T13:42:19.215Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "IPokemonService.cs",
-              "DocumentMoniker": "C:\\Users\\elnur.a\\Desktop\\Rauf\\Visual Studio\\API\\PokemonGame\\PokemonGame.Contracts\\Contracts\\IPokemonService.cs",
-              "RelativeDocumentMoniker": "PokemonGame.Contracts\\Contracts\\IPokemonService.cs",
-              "ToolTip": "C:\\Users\\elnur.a\\Desktop\\Rauf\\Visual Studio\\API\\PokemonGame\\PokemonGame.Contracts\\Contracts\\IPokemonService.cs",
-              "RelativeToolTip": "PokemonGame.Contracts\\Contracts\\IPokemonService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAABMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-01T13:31:17.208Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "TrainerPokemon.cs",
-              "DocumentMoniker": "C:\\Users\\elnur.a\\Desktop\\Rauf\\Visual Studio\\API\\PokemonGame\\PokemonGame,Domain\\Entities\\TrainerPokemon.cs",
-              "RelativeDocumentMoniker": "PokemonGame,Domain\\Entities\\TrainerPokemon.cs",
-              "ToolTip": "C:\\Users\\elnur.a\\Desktop\\Rauf\\Visual Studio\\API\\PokemonGame\\PokemonGame,Domain\\Entities\\TrainerPokemon.cs",
-              "RelativeToolTip": "PokemonGame,Domain\\Entities\\TrainerPokemon.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-01T13:19:22.142Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "TrainerPokemonDto.cs",
-              "DocumentMoniker": "C:\\Users\\elnur.a\\Desktop\\Rauf\\Visual Studio\\API\\PokemonGame\\PokemonGame.Contracts\\Dtos\\TrainerPokemonDto.cs",
-              "RelativeDocumentMoniker": "PokemonGame.Contracts\\Dtos\\TrainerPokemonDto.cs",
-              "ToolTip": "C:\\Users\\elnur.a\\Desktop\\Rauf\\Visual Studio\\API\\PokemonGame\\PokemonGame.Contracts\\Dtos\\TrainerPokemonDto.cs",
-              "RelativeToolTip": "PokemonGame.Contracts\\Dtos\\TrainerPokemonDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-01T13:10:35.173Z",
+              "WhenOpened": "2025-08-01T20:16:01.245Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "TrainerPokemonService.cs",
-              "DocumentMoniker": "C:\\Users\\elnur.a\\Desktop\\Rauf\\Visual Studio\\API\\PokemonGame\\PokemonGame.Application\\Service\\TrainerPokemonService.cs",
-              "RelativeDocumentMoniker": "PokemonGame.Application\\Service\\TrainerPokemonService.cs",
-              "ToolTip": "C:\\Users\\elnur.a\\Desktop\\Rauf\\Visual Studio\\API\\PokemonGame\\PokemonGame.Application\\Service\\TrainerPokemonService.cs",
-              "RelativeToolTip": "PokemonGame.Application\\Service\\TrainerPokemonService.cs",
-              "ViewState": "AgIAABcAAAAAAAAAAAAuwCMAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-01T13:10:15.447Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
               "Title": "PokemonService.cs",
-              "DocumentMoniker": "C:\\Users\\elnur.a\\Desktop\\Rauf\\Visual Studio\\API\\PokemonGame\\PokemonGame.Application\\Service\\PokemonService.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\Code Academy\\C#\\API\\Homework\\PokemonGame\\PokemonGame.Application\\Service\\PokemonService.cs",
               "RelativeDocumentMoniker": "PokemonGame.Application\\Service\\PokemonService.cs",
-              "ToolTip": "C:\\Users\\elnur.a\\Desktop\\Rauf\\Visual Studio\\API\\PokemonGame\\PokemonGame.Application\\Service\\PokemonService.cs",
+              "ToolTip": "C:\\Users\\ASUS\\Desktop\\Code Academy\\C#\\API\\Homework\\PokemonGame\\PokemonGame.Application\\Service\\PokemonService.cs",
               "RelativeToolTip": "PokemonGame.Application\\Service\\PokemonService.cs",
-              "ViewState": "AgIAAFAAAAAAAAAAAAAcwHYAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAG8AAAAAAAAAAAAuwJEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-01T13:00:28.149Z",
+              "WhenOpened": "2025-08-01T20:13:30.327Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "CategoryDto.cs",
-              "DocumentMoniker": "C:\\Users\\elnur.a\\Desktop\\Rauf\\Visual Studio\\API\\PokemonGame\\PokemonGame.Contracts\\Dtos\\CategoryDto.cs",
-              "RelativeDocumentMoniker": "PokemonGame.Contracts\\Dtos\\CategoryDto.cs",
-              "ToolTip": "C:\\Users\\elnur.a\\Desktop\\Rauf\\Visual Studio\\API\\PokemonGame\\PokemonGame.Contracts\\Dtos\\CategoryDto.cs",
-              "RelativeToolTip": "PokemonGame.Contracts\\Dtos\\CategoryDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 6,
+              "Title": "BattleTurnConfigurations.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\Code Academy\\C#\\API\\Homework\\PokemonGame\\PokemonGame.Persistance\\Configuration\\BattleTurnConfigurations.cs",
+              "RelativeDocumentMoniker": "PokemonGame.Persistance\\Configuration\\BattleTurnConfigurations.cs",
+              "ToolTip": "C:\\Users\\ASUS\\Desktop\\Code Academy\\C#\\API\\Homework\\PokemonGame\\PokemonGame.Persistance\\Configuration\\BattleTurnConfigurations.cs",
+              "RelativeToolTip": "PokemonGame.Persistance\\Configuration\\BattleTurnConfigurations.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-01T13:00:11.998Z",
+              "WhenOpened": "2025-08-01T20:03:58.848Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "SkillDto.cs",
-              "DocumentMoniker": "C:\\Users\\elnur.a\\Desktop\\Rauf\\Visual Studio\\API\\PokemonGame\\PokemonGame.Contracts\\Dtos\\SkillDto.cs",
-              "RelativeDocumentMoniker": "PokemonGame.Contracts\\Dtos\\SkillDto.cs",
-              "ToolTip": "C:\\Users\\elnur.a\\Desktop\\Rauf\\Visual Studio\\API\\PokemonGame\\PokemonGame.Contracts\\Dtos\\SkillDto.cs",
-              "RelativeToolTip": "PokemonGame.Contracts\\Dtos\\SkillDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAASAAAAAAAAAA==",
+              "Title": "TrainerPokemonService.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\Code Academy\\C#\\API\\Homework\\PokemonGame\\PokemonGame.Application\\Service\\TrainerPokemonService.cs",
+              "RelativeDocumentMoniker": "PokemonGame.Application\\Service\\TrainerPokemonService.cs",
+              "ToolTip": "C:\\Users\\ASUS\\Desktop\\Code Academy\\C#\\API\\Homework\\PokemonGame\\PokemonGame.Application\\Service\\TrainerPokemonService.cs",
+              "RelativeToolTip": "PokemonGame.Application\\Service\\TrainerPokemonService.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAgwDkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-01T12:59:49.434Z",
+              "WhenOpened": "2025-08-01T20:02:13.67Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "PokemonDto.cs",
-              "DocumentMoniker": "C:\\Users\\elnur.a\\Desktop\\Rauf\\Visual Studio\\API\\PokemonGame\\PokemonGame.Contracts\\Dtos\\PokemonDto.cs",
-              "RelativeDocumentMoniker": "PokemonGame.Contracts\\Dtos\\PokemonDto.cs",
-              "ToolTip": "C:\\Users\\elnur.a\\Desktop\\Rauf\\Visual Studio\\API\\PokemonGame\\PokemonGame.Contracts\\Dtos\\PokemonDto.cs",
-              "RelativeToolTip": "PokemonGame.Contracts\\Dtos\\PokemonDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAABRAAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "IPokemonRepository.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\Code Academy\\C#\\API\\Homework\\PokemonGame\\PokemonGame,Domain\\Repository\\IPokemonRepository.cs",
+              "RelativeDocumentMoniker": "PokemonGame,Domain\\Repository\\IPokemonRepository.cs",
+              "ToolTip": "C:\\Users\\ASUS\\Desktop\\Code Academy\\C#\\API\\Homework\\PokemonGame\\PokemonGame,Domain\\Repository\\IPokemonRepository.cs",
+              "RelativeToolTip": "PokemonGame,Domain\\Repository\\IPokemonRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwA8AAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-01T12:59:56.55Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "PokemonBaseStatsDto.cs",
-              "DocumentMoniker": "C:\\Users\\elnur.a\\Desktop\\Rauf\\Visual Studio\\API\\PokemonGame\\PokemonGame.Contracts\\Dtos\\PokemonBaseStatsDto.cs",
-              "RelativeDocumentMoniker": "PokemonGame.Contracts\\Dtos\\PokemonBaseStatsDto.cs",
-              "ToolTip": "C:\\Users\\elnur.a\\Desktop\\Rauf\\Visual Studio\\API\\PokemonGame\\PokemonGame.Contracts\\Dtos\\PokemonBaseStatsDto.cs",
-              "RelativeToolTip": "PokemonGame.Contracts\\Dtos\\PokemonBaseStatsDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAABOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-01T12:57:38.456Z",
+              "WhenOpened": "2025-08-01T19:53:56.185Z",
               "EditorCaption": ""
             },
             {
@@ -192,15 +119,54 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "CustomProfile.cs",
-              "DocumentMoniker": "C:\\Users\\elnur.a\\Desktop\\Rauf\\Visual Studio\\API\\PokemonGame\\PokemonGame.Application\\Profiles\\CustomProfile.cs",
-              "RelativeDocumentMoniker": "PokemonGame.Application\\Profiles\\CustomProfile.cs",
-              "ToolTip": "C:\\Users\\elnur.a\\Desktop\\Rauf\\Visual Studio\\API\\PokemonGame\\PokemonGame.Application\\Profiles\\CustomProfile.cs",
-              "RelativeToolTip": "PokemonGame.Application\\Profiles\\CustomProfile.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAA5wBYAAAAlAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "PokemonRepository.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\Code Academy\\C#\\API\\Homework\\PokemonGame\\PokemonGame.Persistance\\Repository\\PokemonRepository.cs",
+              "RelativeDocumentMoniker": "PokemonGame.Persistance\\Repository\\PokemonRepository.cs",
+              "ToolTip": "C:\\Users\\ASUS\\Desktop\\Code Academy\\C#\\API\\Homework\\PokemonGame\\PokemonGame.Persistance\\Repository\\PokemonRepository.cs*",
+              "RelativeToolTip": "PokemonGame.Persistance\\Repository\\PokemonRepository.cs*",
+              "ViewState": "AgIAADMAAAAAAAAAAAAmwEsAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-31T20:29:24.26Z",
+              "WhenOpened": "2025-08-01T19:53:53.91Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PokemonBaseStats.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\Code Academy\\C#\\API\\Homework\\PokemonGame\\PokemonGame,Domain\\Entities\\PokemonBaseStats.cs",
+              "RelativeDocumentMoniker": "PokemonGame,Domain\\Entities\\PokemonBaseStats.cs",
+              "ToolTip": "C:\\Users\\ASUS\\Desktop\\Code Academy\\C#\\API\\Homework\\PokemonGame\\PokemonGame,Domain\\Entities\\PokemonBaseStats.cs",
+              "RelativeToolTip": "PokemonGame,Domain\\Entities\\PokemonBaseStats.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-01T19:06:05.609Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "BattleService.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\Code Academy\\C#\\API\\Homework\\PokemonGame\\PokemonGame.Application\\Service\\BattleService.cs",
+              "RelativeDocumentMoniker": "PokemonGame.Application\\Service\\BattleService.cs",
+              "ToolTip": "C:\\Users\\ASUS\\Desktop\\Code Academy\\C#\\API\\Homework\\PokemonGame\\PokemonGame.Application\\Service\\BattleService.cs",
+              "RelativeToolTip": "PokemonGame.Application\\Service\\BattleService.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAASwBYAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-01T16:38:36.625Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "BattleHub.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\Code Academy\\C#\\API\\Homework\\PokemonGame\\PokemonGame.API\\Hubs\\BattleHub.cs",
+              "RelativeDocumentMoniker": "PokemonGame.API\\Hubs\\BattleHub.cs",
+              "ToolTip": "C:\\Users\\ASUS\\Desktop\\Code Academy\\C#\\API\\Homework\\PokemonGame\\PokemonGame.API\\Hubs\\BattleHub.cs",
+              "RelativeToolTip": "PokemonGame.API\\Hubs\\BattleHub.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-01T16:34:32.22Z",
               "EditorCaption": ""
             }
           ]

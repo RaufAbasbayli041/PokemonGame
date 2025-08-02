@@ -20,15 +20,18 @@ namespace PokemonGame.Application.Service
     {
         private readonly IBattleRepository _battleRepository;
        private readonly IBattleNotifier _notifier;
-        public BattleService(IBattleRepository repository, IMapper mapper, BattleValidator validator, IBattleNotifier notifier) : base(repository, mapper, validator)
+        private readonly IPokemonRepository _pokemonRepository;
+        public BattleService(IBattleRepository repository, IMapper mapper, BattleValidator validator, IBattleNotifier notifier, IPokemonRepository pokemonRepository) : base(repository, mapper, validator)
         {
             _battleRepository = repository;
             _notifier = notifier;
+            _pokemonRepository = pokemonRepository;
         }
         public override async Task<BattleDto> AddAsync(BattleDto dto)
         {
             var p1 = await _battleRepository.GetTrainerByIdAsync(dto.TrainerPokemon1Id);
             var p2 = await _battleRepository.GetTrainerByIdAsync(dto.TrainerPokemon2Id);
+
             if (p1 == null || p2 == null)
             {
                 throw new ArgumentException("One or both trainers do not exist.");
@@ -36,14 +39,6 @@ namespace PokemonGame.Application.Service
             if (dto.TrainerPokemon1Id == dto.TrainerPokemon2Id)
             {
                 throw new ArgumentException("A trainer cannot battle themselves.");
-            }
-            if (dto.WinnerId != 0 && dto.WinnerId != dto.TrainerPokemon1Id && dto.WinnerId != dto.TrainerPokemon2Id)
-            {
-                throw new ArgumentException("Winner ID must be one of the trainers involved in the battle.");
-            }
-            if (dto.LoserId != 0 && dto.LoserId != dto.TrainerPokemon1Id && dto.LoserId != dto.TrainerPokemon2Id)
-            {
-                throw new ArgumentException("Loser ID must be one of the trainers involved in the battle.");
             }
 
             var battle = new Battle
@@ -56,21 +51,25 @@ namespace PokemonGame.Application.Service
 
             var createdBattle = await _battleRepository.AddAsync(battle);
 
-            // Initialize turn number and first turn
             int turnNumber = 1;
-            bool p1Turn = true; // true for p1's turn, false for p2's turn
+            bool p1Turn = true;
 
-            // Simulate a battle until one Pokemon's HP reaches 0tun
+            if (p1.Pokemon.Skills == null || p2.Pokemon.Skills == null || !p1.Pokemon.Skills.Any() || !p2.Pokemon.Skills.Any())
+            {
+                throw new InvalidOperationException("Both Pokémon must have skills to battle.");
+            }
+
+
             while (p1.CurrentHP > 0 && p2.CurrentHP > 0)
             {
                 TrainerPokemon attacker = p1Turn ? p1 : p2;
                 TrainerPokemon defender = p1Turn ? p2 : p1;
-                // Randomly select an action for the attacker
+
                 var actions = Enum.GetValues(typeof(BattleAction)).Cast<BattleAction>().ToList();
                 var random = new Random();
                 var action = actions[random.Next(actions.Count)];
 
-                int damage = PerformAction(attacker, defender, action);
+                int damage = await PerformAction(attacker, defender, action);
 
                 await AddTurnAsync(createdBattle.Id, attacker.Id, defender.Id, action, turnNumber);
 
@@ -83,29 +82,36 @@ namespace PokemonGame.Application.Service
 
                 p1Turn = !p1Turn;
                 turnNumber++;
-
             }
+
             await _battleRepository.UpdateAsync(createdBattle);
             return _mapper.Map<BattleDto>(createdBattle);
         }
-        private int PerformAction(TrainerPokemon attacker, TrainerPokemon defender, BattleAction action)
+        private async Task<int> PerformAction(TrainerPokemon attacker, TrainerPokemon defender, BattleAction action)
         {
-            var attackerPokemon = attacker.Pokemon;
-            var defenderPokemon = defender.Pokemon;
+            var attackerPokemon = await _pokemonRepository.GetPokemonWithStatsAsync(attacker.PokemonId);
+            var defenderPokemon = await _pokemonRepository.GetPokemonWithStatsAsync(defender.PokemonId);
 
-            var skill = attackerPokemon.Skills.FirstOrDefault(s => s.Name == action.ToString());
+            // Защита — отдельная логика
+            if (action == BattleAction.Defend)
+            {
+                return 0; // ничего не происходит
+            }
+
+            // Атака — выбираем случайный скилл
+            var skill = attackerPokemon.Skills
+                .OrderBy(_ => Guid.NewGuid())
+                .FirstOrDefault();
+
             if (skill == null)
             {
-                throw new ArgumentException($"Skill {action} not found for attacker {attackerPokemon.Name}.");
+                throw new InvalidOperationException($"Attacker {attackerPokemon.Name} has no skills.");
             }
 
             int damage = CalculateDamage(attackerPokemon, defenderPokemon, skill);
             defenderPokemon.HP -= damage;
-            if (defenderPokemon.HP < 0)
-            {
-                defenderPokemon.HP = 0; // Ensure HP does not go below zero
-            }
-            // Update the defender's current HP
+            if (defenderPokemon.HP < 0) defenderPokemon.HP = 0;
+
             defender.CurrentHP = defenderPokemon.HP;
             return damage;
         }
@@ -144,10 +150,11 @@ namespace PokemonGame.Application.Service
         {
             var turn = new BattleTurn
             {
-                BattleId = battleId,
+                BattleId = battleId, 
+                BattleAction = action,
                 AttackerId = attackerId,
                 DefenderId = defenderId,
-                BattleAction = action,
+                TurnNumber = turnNumber,
                 TurnDate = DateTime.UtcNow
             };
             await _battleRepository.AddTurnAsync(turn);

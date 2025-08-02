@@ -13,6 +13,8 @@ namespace PokemonGame_Domain.Repository
         Task<List<Category>> GetCategoriesByIdsAsync(List<int> categoryIds);
         Task<List<Skill>> GetSkillByIdsAsync(List<int> skillIds);  
         
+        Task<Pokemon> GetPokemonWithStatsAsync(int id);
+
     }
     
 }

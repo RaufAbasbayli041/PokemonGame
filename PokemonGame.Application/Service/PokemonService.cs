@@ -116,7 +116,30 @@ namespace PokemonGame.Application.Service
 			return responseDto;
 
 		}
-	}
+
+        public override async Task<PokemonDto> UpdateAsync(PokemonDto dto)
+        {
+            var existing = await _pokemonRepository.GetByIdAsync(dto.Id);
+            if (existing == null)
+                throw new ArgumentException("Pokemon not found");
+
+            existing.Name = dto.Name;
+            existing.HP = dto.HP;
+            existing.Level = dto.Level;
+            existing.ImageUrl = dto.ImageUrl;
+            existing.IsWild = dto.IsWild;
+
+            existing.PokemonBaseStats.Attack = dto.PokemonBaseStats.Attack;
+            existing.PokemonBaseStats.Defense = dto.PokemonBaseStats.Defense;
+
+            existing.Categories = await _pokemonRepository.GetCategoriesByIdsAsync(dto.CategoriesIds);
+            existing.Skills = await _pokemonRepository.GetSkillByIdsAsync(dto.SkillIds);
+
+            var updated = await _pokemonRepository.UpdateAsync(existing);
+            return _mapper.Map<PokemonDto>(updated);
+        }
+
+    }
 
 
 }

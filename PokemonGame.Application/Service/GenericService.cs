@@ -53,7 +53,7 @@ namespace PokemonGame.Application.Service
             return reponseDto;
         }
 
-        public async Task<TDto> UpdateAsync(TDto entity)
+        public virtual async Task<TDto> UpdateAsync(TDto entity)
         {
             var data = _mapper.Map<TEntity>(entity);
             var updatedData = await _repository.UpdateAsync(data);

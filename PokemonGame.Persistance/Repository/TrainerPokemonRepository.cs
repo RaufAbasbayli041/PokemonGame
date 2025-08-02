@@ -25,6 +25,9 @@ namespace PokemonGame.Persistance.Repository
                 .Include(p => p.Pokemon) // Include category of the Pokemon
                 .ThenInclude(p => p.Categories) // Include category of the Pokemon
                 .Where(tp => !tp.IsDeleted)
+                .Include(tp => tp.Pokemon) 
+                .ThenInclude(p => p.PokemonBaseStats) // Include base stats of the Pokemon
+
                 .AsNoTracking() // Use AsNoTracking for read-only operations
                 .ToListAsync();
             return datas;
