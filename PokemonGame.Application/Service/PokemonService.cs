@@ -57,9 +57,11 @@ namespace PokemonGame.Application.Service
 				}
 				var wildDto = new WildPokemonDto
 				{
+
 					PokemonId = addedData.Id,  
 					Level = addedData.Level,
 					LocationId = dto.LocationId.Value	,
+
 					CurrentHP = addedData.HP
 				};
 				await AddWildPokemonAsync(wildDto);
@@ -101,6 +103,7 @@ namespace PokemonGame.Application.Service
 
 			var wild = new WildPokemon
 			{
+				PokemonId = dto.PokemonId,
 				Pokemon = basePokemon,
 				LocationId = dto.LocationId,
 				Level = dto.Level,

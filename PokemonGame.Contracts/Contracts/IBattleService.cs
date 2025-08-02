@@ -13,6 +13,7 @@ namespace PokemonGame.Contracts.Contracts
     {
         Task AddTurnAsync(int battleId, int attackerId, int defenderId, BattleAction action, int turnNumber);
         
+        Task<IEnumerable<BattleDto>> GetBattlesAsync();
 
-    }
+	}
 }

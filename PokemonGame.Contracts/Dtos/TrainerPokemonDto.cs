@@ -11,7 +11,7 @@ namespace PokemonGame.Contracts.Dtos
     {
         public int TrainerId { get; set; }
         //public string? TrainerName { get; set; } // Name of the Trainer for display purposes        
-        public int PokemonId { get; set; }
+      //  public int PokemonId { get; set; }
         // public string? PokemonName { get; set; } // Name of the Pokemon for display purposes
         public PokemonDto? Pokemon { get; set; } // Reference to the Pokemon details
         public DateTime CaughtAt { get; set; } // Date when the Pokemon was caught by the trainer

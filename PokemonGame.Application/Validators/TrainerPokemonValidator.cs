@@ -15,7 +15,7 @@ namespace PokemonGame.Application.Validators
             RuleFor(tp => tp.TrainerId)
                 .NotEmpty().WithMessage("Trainer ID is required.")
                 .GreaterThan(0).WithMessage("Trainer ID must be greater than 0.");
-            RuleFor(tp => tp.PokemonId)
+            RuleFor(tp => tp.Pokemon.Id)
                 .NotEmpty().WithMessage("Pokemon ID is required.")
                 .GreaterThan(0).WithMessage("Pokemon ID must be greater than 0.");
             RuleFor(tp => tp.CaughtAt)

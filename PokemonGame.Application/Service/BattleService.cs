@@ -19,7 +19,7 @@ namespace PokemonGame.Application.Service
     public class BattleService : GenericService<Battle, BattleDto>, IBattleService
     {
         private readonly IBattleRepository _battleRepository;
-       private readonly IBattleNotifier _notifier;
+        private readonly IBattleNotifier _notifier;
         private readonly IPokemonRepository _pokemonRepository;
         public BattleService(IBattleRepository repository, IMapper mapper, BattleValidator validator, IBattleNotifier notifier, IPokemonRepository pokemonRepository) : base(repository, mapper, validator)
         {
@@ -113,6 +113,7 @@ namespace PokemonGame.Application.Service
             if (defenderPokemon.HP < 0) defenderPokemon.HP = 0;
 
             defender.CurrentHP = defenderPokemon.HP;
+            attacker.CurrentHP = attackerPokemon.HP;
             return damage;
         }
 
@@ -150,7 +151,7 @@ namespace PokemonGame.Application.Service
         {
             var turn = new BattleTurn
             {
-                BattleId = battleId, 
+                BattleId = battleId,
                 BattleAction = action,
                 AttackerId = attackerId,
                 DefenderId = defenderId,
@@ -163,5 +164,20 @@ namespace PokemonGame.Application.Service
 
         }
 
+        public async Task<IEnumerable<BattleDto>> GetBattlesAsync()
+        {
+            var battles = await _battleRepository.GetBattlesAsync();
+            return _mapper.Map<IEnumerable<BattleDto>>(battles);
+        }
+
+        public override async Task<BattleDto> GetByIdAsync(int id)
+        {
+            var battle = await _battleRepository.GetBattleByIdAsync(id);
+            if (battle == null)
+            {
+                return null;
+            }
+            return _mapper.Map<BattleDto>(battle);
+        }
     }
 }

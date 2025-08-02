@@ -19,7 +19,7 @@ namespace PokemonGame.API.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
-            var battles = await _battleService.GetAllAsync();
+            var battles = await _battleService.GetBattlesAsync();
             return Ok(battles);
         }
         [HttpGet("{id}")]

@@ -12,6 +12,8 @@ namespace PokemonGame_Domain.Repository
         Task<TrainerPokemon> GetTrainerByIdAsync(int id);
 
         Task<BattleTurn> AddTurnAsync(BattleTurn turn);
+        Task<IEnumerable<Battle>> GetBattlesAsync();
+        Task<Battle> GetBattleByIdAsync(int id);
 
-    }
+	}
 }
