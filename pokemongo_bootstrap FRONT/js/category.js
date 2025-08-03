@@ -15,7 +15,8 @@ async function getAllCategories() {
 }
 async function getCategoryById(id) {
   try {
-    const response = await fetch(`${baseUrl}/api/Category/${id}`);
+    const response = await fetch(`${endpoint.category}/${id}`);
+    console.log("salam") ;
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Wild Battle</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="./css/bootstrap.min.css" rel="stylesheet">
+  <link href="./css/wildBattle.css" rel="stylesheet">
+</head>
+<body>
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="index.html">Pokemon Game</a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="battle.html">Battle</a></li>
+          <li class="active"><a href="wildBattle.html">Wild Battle</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container" style="margin-top:70px;">
+    <h2 class="text-center">Wild Battle</h2>
+    <div class="row justify-content-center">
+      <div class="col-md-5">
+        <div class="select-group">
+          <label for="trainer-select">Your Trainer:</label>
+          <select id="trainer-select" class="form-control"></select>
+        </div>
+        <div class="select-group">
+          <label for="pokemon-select">Your Pokemon:</label>
+          <select id="pokemon-select" class="form-control" disabled></select>
+        </div>
+       
+      </div>
+      <div class="col-md-2 text-center" style="padding-top:40px;">
+        <button id="start-wild-battle" class="btn btn-success btn-lg">Start Wild Battle</button>
+        <button id="reset-wild-battle" class="btn btn-warning btn-lg" disabled>Reset</button>
+        <button id="back-wild" class="btn btn-default btn-lg">Back</button>
+      </div>
+      <div class="col-md-5">
+       
+          <div class="select-group">
+          <label for="wild-pokemon-select">Wild Pokemon:</label>
+          <select id="wild-pokemon-select" class="form-control" required>
+            <option value="" disabled selected hidden>-- Choose pokemon --</option>
+          </select>
+        </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="wild-battle-area" class="row" style="margin-top:30px; display:none;">
+      <div class="col-md-5 pokemon-card text-center">
+        <h4 id="your-name"></h4>
+        <img id="your-img" src="/pokemon/images/default.png" alt="Your Pokemon" class="wild-pokemon-img">
+        <div class="hp-bar">
+          <div id="your-hp-bar-fill" class="hp-bar-fill"></div>
+        </div>
+        <span>HP: <span id="your-hp"></span></span>
+        <button id="your-attack" class="btn btn-danger btn-block" disabled>Attack</button>
+      </div>
+      <div class="col-md-2 text-center vs-block">
+        <h3>VS</h3>
+      </div>
+      <div class="col-md-5 pokemon-card text-center">
+        <h4 id="wild-name-battle"></h4>
+        <img id="wild-img-battle" src="/pokemon/images/default.png" alt="Wild Pokemon" class="wild-pokemon-img">
+        <div class="hp-bar">
+          <div id="wild-hp-bar-fill-battle" class="hp-bar-fill"></div>
+        </div>
+        <span>HP: <span id="wild-hp-battle"></span></span>
+      </div>
+    </div>
+
+    <div class="row" style="margin-top:30px;">
+      <div class="col-md-12">
+        <div id="wild-battle-log" class="battle-log"></div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer text-center">
+    <hr>
+    <p>&copy; 2015 Company, Inc.</p>
+  </footer>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="./js/bootstrap.min.js"></script>
+  <script type="module" src="./js/wildBattle.js"></script>
+</body>
+</html>

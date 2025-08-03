@@ -26,8 +26,14 @@ namespace PokemonGame.Application.Validators
                 .GreaterThan(0).WithMessage("Level must be greater than 0.");
             RuleFor(tp => tp.CurrentHP)
                 .NotEmpty().WithMessage("Current HP is required.")
-                .GreaterThanOrEqualTo(0).WithMessage("Current HP cannot be negative.");
-            
+                .GreaterThanOrEqualTo(0).WithMessage("Current HP cannot be negative.");         
+            RuleFor(tp => tp.Wins)
+                .GreaterThanOrEqualTo(0).WithMessage("Wins cannot be negative.");
+            RuleFor(tp => tp.Losses)
+                .GreaterThanOrEqualTo(0).WithMessage("Losses cannot be negative.");
+
+
+
         }
     }
 }

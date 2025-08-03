@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "lVAa0ozCZmTm2iqoHrMx7UW9pQ0ZFmUfcdfIP82k70s=",
+  "Hash": "AtSCR+hclHU0mJ5Q+09WXZQ4L0kE22drnxh4pItdqek=",
   "Source": "PokemonGame.API",
   "BasePath": "_content/PokemonGame.API",
   "Mode": "Default",
@@ -16,6 +16,27 @@
     }
   ],
   "Assets": [
+    {
+      "Identity": "C:\\Users\\ASUS\\Desktop\\Code Academy\\C#\\API\\Homework\\PokemonGame\\PokemonGame.API\\wwwroot\\pokemon\\images\\034de8ac-4508-4eab-8ba8-b5f80181d3dc_025.png",
+      "SourceId": "PokemonGame.API",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ASUS\\Desktop\\Code Academy\\C#\\API\\Homework\\PokemonGame\\PokemonGame.API\\wwwroot\\",
+      "BasePath": "_content/PokemonGame.API",
+      "RelativePath": "pokemon/images/034de8ac-4508-4eab-8ba8-b5f80181d3dc_025#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "ziukk2fjwc",
+      "Integrity": "dZzq/bS41jffz+Zzz2crw8RyNUo7Ln4INdnNys2NGV0=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\pokemon\\images\\034de8ac-4508-4eab-8ba8-b5f80181d3dc_025.png"
+    },
     {
       "Identity": "C:\\Users\\ASUS\\Desktop\\Code Academy\\C#\\API\\Homework\\PokemonGame\\PokemonGame.API\\wwwroot\\pokemon\\images\\8891dd9a-4a5c-467e-8298-35ab70d5856c_025.png",
       "SourceId": "PokemonGame.API",
@@ -36,6 +57,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\pokemon\\images\\8891dd9a-4a5c-467e-8298-35ab70d5856c_025.png"
+    },
+    {
+      "Identity": "C:\\Users\\ASUS\\Desktop\\Code Academy\\C#\\API\\Homework\\PokemonGame\\PokemonGame.API\\wwwroot\\pokemon\\images\\a6d91d0a-5121-47a6-8009-b9a2c9e923ab_025.png",
+      "SourceId": "PokemonGame.API",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ASUS\\Desktop\\Code Academy\\C#\\API\\Homework\\PokemonGame\\PokemonGame.API\\wwwroot\\",
+      "BasePath": "_content/PokemonGame.API",
+      "RelativePath": "pokemon/images/a6d91d0a-5121-47a6-8009-b9a2c9e923ab_025#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "ziukk2fjwc",
+      "Integrity": "dZzq/bS41jffz+Zzz2crw8RyNUo7Ln4INdnNys2NGV0=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\pokemon\\images\\a6d91d0a-5121-47a6-8009-b9a2c9e923ab_025.png"
     },
     {
       "Identity": "C:\\Users\\ASUS\\Desktop\\Code Academy\\C#\\API\\Homework\\PokemonGame\\PokemonGame.API\\wwwroot\\pokemon\\images\\fc7bf254-bd0f-40e8-a2c9-d7cd0b4c08f2_025.png",
@@ -60,6 +102,88 @@
     }
   ],
   "Endpoints": [
+    {
+      "Route": "pokemon/images/034de8ac-4508-4eab-8ba8-b5f80181d3dc_025.png",
+      "AssetFile": "C:\\Users\\ASUS\\Desktop\\Code Academy\\C#\\API\\Homework\\PokemonGame\\PokemonGame.API\\wwwroot\\pokemon\\images\\034de8ac-4508-4eab-8ba8-b5f80181d3dc_025.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "118057"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"dZzq/bS41jffz+Zzz2crw8RyNUo7Ln4INdnNys2NGV0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 02 Aug 2025 12:48:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-dZzq/bS41jffz+Zzz2crw8RyNUo7Ln4INdnNys2NGV0="
+        }
+      ]
+    },
+    {
+      "Route": "pokemon/images/034de8ac-4508-4eab-8ba8-b5f80181d3dc_025.ziukk2fjwc.png",
+      "AssetFile": "C:\\Users\\ASUS\\Desktop\\Code Academy\\C#\\API\\Homework\\PokemonGame\\PokemonGame.API\\wwwroot\\pokemon\\images\\034de8ac-4508-4eab-8ba8-b5f80181d3dc_025.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "118057"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"dZzq/bS41jffz+Zzz2crw8RyNUo7Ln4INdnNys2NGV0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 02 Aug 2025 12:48:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ziukk2fjwc"
+        },
+        {
+          "Name": "label",
+          "Value": "pokemon/images/034de8ac-4508-4eab-8ba8-b5f80181d3dc_025.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-dZzq/bS41jffz+Zzz2crw8RyNUo7Ln4INdnNys2NGV0="
+        }
+      ]
+    },
     {
       "Route": "pokemon/images/8891dd9a-4a5c-467e-8298-35ab70d5856c_025.png",
       "AssetFile": "C:\\Users\\ASUS\\Desktop\\Code Academy\\C#\\API\\Homework\\PokemonGame\\PokemonGame.API\\wwwroot\\pokemon\\images\\8891dd9a-4a5c-467e-8298-35ab70d5856c_025.png",
@@ -135,6 +259,88 @@
         {
           "Name": "label",
           "Value": "pokemon/images/8891dd9a-4a5c-467e-8298-35ab70d5856c_025.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-dZzq/bS41jffz+Zzz2crw8RyNUo7Ln4INdnNys2NGV0="
+        }
+      ]
+    },
+    {
+      "Route": "pokemon/images/a6d91d0a-5121-47a6-8009-b9a2c9e923ab_025.png",
+      "AssetFile": "C:\\Users\\ASUS\\Desktop\\Code Academy\\C#\\API\\Homework\\PokemonGame\\PokemonGame.API\\wwwroot\\pokemon\\images\\a6d91d0a-5121-47a6-8009-b9a2c9e923ab_025.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "118057"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"dZzq/bS41jffz+Zzz2crw8RyNUo7Ln4INdnNys2NGV0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 02 Aug 2025 12:38:31 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-dZzq/bS41jffz+Zzz2crw8RyNUo7Ln4INdnNys2NGV0="
+        }
+      ]
+    },
+    {
+      "Route": "pokemon/images/a6d91d0a-5121-47a6-8009-b9a2c9e923ab_025.ziukk2fjwc.png",
+      "AssetFile": "C:\\Users\\ASUS\\Desktop\\Code Academy\\C#\\API\\Homework\\PokemonGame\\PokemonGame.API\\wwwroot\\pokemon\\images\\a6d91d0a-5121-47a6-8009-b9a2c9e923ab_025.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "118057"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"dZzq/bS41jffz+Zzz2crw8RyNUo7Ln4INdnNys2NGV0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 02 Aug 2025 12:38:31 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ziukk2fjwc"
+        },
+        {
+          "Name": "label",
+          "Value": "pokemon/images/a6d91d0a-5121-47a6-8009-b9a2c9e923ab_025.png"
         },
         {
           "Name": "integrity",

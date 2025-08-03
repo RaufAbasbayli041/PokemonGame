@@ -15,6 +15,7 @@ namespace PokemonGame_Domain.Repository
         
         Task<Pokemon> GetPokemonWithStatsAsync(int id);
 
+        
     }
     
 }

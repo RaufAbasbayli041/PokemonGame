@@ -650,6 +650,101 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "PokemonGame.API.Controllers.WildBattleController",
+    "Method": "GetAll",
+    "RelativePath": "api/WildBattle",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PokemonGame.API.Controllers.WildBattleController",
+    "Method": "Add",
+    "RelativePath": "api/WildBattle",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "wildBattleDto",
+        "Type": "PokemonGame.Contracts.Dtos.WildBattleDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PokemonGame.API.Controllers.WildBattleController",
+    "Method": "Update",
+    "RelativePath": "api/WildBattle",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "wildBattleDto",
+        "Type": "PokemonGame.Contracts.Dtos.WildBattleDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PokemonGame.API.Controllers.WildBattleController",
+    "Method": "AddTurn",
+    "RelativePath": "api/WildBattle/{battleId}/turns",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "battleId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "turnDto",
+        "Type": "PokemonGame.Contracts.Dtos.BattleTurnDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PokemonGame.API.Controllers.WildBattleController",
+    "Method": "GetById",
+    "RelativePath": "api/WildBattle/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PokemonGame.API.Controllers.WildBattleController",
+    "Method": "Delete",
+    "RelativePath": "api/WildBattle/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "PokemonGame.API.Controllers.WildPokemonController",
     "Method": "GetAll",
     "RelativePath": "api/WildPokemon",

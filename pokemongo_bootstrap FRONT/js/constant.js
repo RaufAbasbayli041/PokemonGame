@@ -10,5 +10,7 @@ export const endpoint = {
     trainer: `${baseUrl}/api/Trainer`,
     trainerPokemon: `${baseUrl}/api/TrainerPokemon`,
     wildPokemon: `${baseUrl}/api/WildPokemon`,
+    images: `${baseUrl}/api/images`,
+    wildBattle : `${baseUrl}/api/WildBattle`,
     
 };

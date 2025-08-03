@@ -16,7 +16,10 @@ namespace PokemonGame_Domain.Entities
         public int Level { get; set; } // Level of the Pokemon for this trainer
         public int CurrentHP { get; set; } // Current HP of the Pokemon for this trainer
 
+        public int Losses { get; set; } // Number of losses for this Pokemon in battles
+        public int Wins { get; set; } // Number of wins for this Pokemon in battles
 
-       
+
+
     }
 }

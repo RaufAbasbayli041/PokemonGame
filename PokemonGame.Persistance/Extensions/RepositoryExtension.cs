@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using PokemonGame.Contracts.Contracts;
 using PokemonGame.Persistance.Repository;
 using PokemonGame_Domain.Repository;
 using System;
@@ -23,6 +24,7 @@ namespace PokemonGame.Persistance.Extensions
             services.AddScoped<IGymRepository, GymRepository>();
             services.AddScoped<IWildPokemonRepository, WildPokemonRepository>();
             services.AddScoped<IBattleRepository, BattleRepository>();
+            services.AddScoped<IWildBattleRepository, WildBatleRepository>();
             return services;
         }
     }

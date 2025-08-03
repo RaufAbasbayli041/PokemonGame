@@ -1,8 +1,16 @@
 {
   "Files": [
     {
+      "Id": "C:\\Users\\ASUS\\Desktop\\Code Academy\\C#\\API\\Homework\\PokemonGame\\PokemonGame.API\\wwwroot\\pokemon\\images\\034de8ac-4508-4eab-8ba8-b5f80181d3dc_025.png",
+      "PackagePath": "staticwebassets\\pokemon\\images\\034de8ac-4508-4eab-8ba8-b5f80181d3dc_025.png"
+    },
+    {
       "Id": "C:\\Users\\ASUS\\Desktop\\Code Academy\\C#\\API\\Homework\\PokemonGame\\PokemonGame.API\\wwwroot\\pokemon\\images\\8891dd9a-4a5c-467e-8298-35ab70d5856c_025.png",
       "PackagePath": "staticwebassets\\pokemon\\images\\8891dd9a-4a5c-467e-8298-35ab70d5856c_025.png"
+    },
+    {
+      "Id": "C:\\Users\\ASUS\\Desktop\\Code Academy\\C#\\API\\Homework\\PokemonGame\\PokemonGame.API\\wwwroot\\pokemon\\images\\a6d91d0a-5121-47a6-8009-b9a2c9e923ab_025.png",
+      "PackagePath": "staticwebassets\\pokemon\\images\\a6d91d0a-5121-47a6-8009-b9a2c9e923ab_025.png"
     },
     {
       "Id": "C:\\Users\\ASUS\\Desktop\\Code Academy\\C#\\API\\Homework\\PokemonGame\\PokemonGame.API\\wwwroot\\pokemon\\images\\fc7bf254-bd0f-40e8-a2c9-d7cd0b4c08f2_025.png",

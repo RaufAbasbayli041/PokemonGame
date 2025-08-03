@@ -1,0 +1,80 @@
+/* Основной фон и шрифт */
+body {
+  background: #f5f7fa;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+/* Логотип */
+.header-logo img {
+  max-width: 180px;
+  margin: 20px auto 10px auto;
+  display: block;
+}
+
+/* Карточки покемонов */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.pokemon-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  padding: 18px 14px 14px 14px;
+  width: 220px;
+  text-align: center;
+  transition: transform 0.15s;
+  border: 1.5px solid #e0e0e0;
+  cursor: pointer;
+}
+
+.pokemon-card:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.10);
+}
+
+.pokemon-card-img {
+  display: block;
+  margin: 0 auto 12px auto;
+  max-width: 120px;
+  max-height: 120px;
+  border-radius: 8px;
+  background: #f3f3f3;
+}
+
+.pokemon-card h4 {
+  margin: 8px 0 4px 0;
+  font-size: 20px;
+  color: #1976d2;
+}
+
+.pokemon-card .hp {
+  font-size: 15px;
+  color: #388e3c;
+  margin-bottom: 6px;
+}
+
+.pokemon-card .level {
+  font-size: 14px;
+  color: #757575;
+}
+
+.pokemon-card .catch-btn {
+  margin-top: 10px;
+  background: #43e97b;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 16px;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+
+.pokemon-card .catch-btn:hover {
+  background: #38f9d7;
+  color: #222;
+}

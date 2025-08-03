@@ -74,7 +74,7 @@ namespace PokemonGame.Application.Service
 
 		public async Task<bool> UploadImgAsync(int id, string filePath)
 		{
-			var data = await _pokemonRepository.GetByIdAsync(id);
+			var data = await _pokemonRepository.UploadImgAsyn(id,filePath);
 			if (data == null)
 			{
 				throw new ArgumentException("Pokemon not found");

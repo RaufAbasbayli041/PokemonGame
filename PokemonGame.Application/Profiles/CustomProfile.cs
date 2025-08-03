@@ -75,6 +75,16 @@ namespace PokemonGame.Application.Profiles
 				.ForMember(dest => dest.Defense, opt => opt.MapFrom(src => src.Defense))
 				.ForMember(dest => dest.Speed, opt => opt.MapFrom(src => src.Speed))
 				.ReverseMap();
-		}
+
+            CreateMap<WildBattle, WildBattleDto>()
+                .ForMember(dest => dest.TrainerPokemonId, opt => opt.MapFrom(src => src.TrainerPokemonId))
+                .ForMember(dest => dest.WildPokemonId, opt => opt.MapFrom(src => src.WildPokemonId))
+                .ForMember(dest => dest.WinnerId, opt => opt.MapFrom(src => src.TrainerPokemonWinnerId))
+                .ForMember(dest => dest.LoserId, opt => opt.MapFrom(src => src.TrainerPokemonLooserId))
+                .ForMember(dest => dest.LocationId, opt => opt.MapFrom(src => src.LocationId))
+                .ReverseMap();
+
+
+        }
 	}
 }

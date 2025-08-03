@@ -77,6 +77,8 @@ namespace PokemonGame.Persistance.Repository
                 .FirstOrDefaultAsync(c => c.Id == id && !c.IsDeleted); 
             return pokemon;
         }
+
+        
     }
 
 }

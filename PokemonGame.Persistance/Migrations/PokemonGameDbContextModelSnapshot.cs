@@ -413,6 +413,11 @@ namespace PokemonGame.Persistance.Migrations
                         .HasColumnType("int")
                         .HasDefaultValue(1);
 
+                    b.Property<int>("Losses")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasDefaultValue(0);
+
                     b.Property<int>("PokemonId")
                         .HasColumnType("int");
 
@@ -421,6 +426,11 @@ namespace PokemonGame.Persistance.Migrations
 
                     b.Property<DateTime>("UpdatedAt")
                         .HasColumnType("datetime2");
+
+                    b.Property<int>("Wins")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasDefaultValue(0);
 
                     b.HasKey("Id");
 
@@ -454,13 +464,17 @@ namespace PokemonGame.Persistance.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Result")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<int>("TrainerPokemonId")
                         .HasColumnType("int");
 
-                    b.Property<bool?>("TrainerWin")
-                        .HasColumnType("bit");
+                    b.Property<int?>("TrainerPokemonLooserId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("TrainerPokemonWinnerId")
+                        .HasColumnType("int");
 
                     b.Property<DateTime>("UpdatedAt")
                         .HasColumnType("datetime2");
@@ -604,7 +618,7 @@ namespace PokemonGame.Persistance.Migrations
                     b.HasOne("PokemonGame_Domain.Entities.TrainerPokemon", "Attacker")
                         .WithMany()
                         .HasForeignKey("AttackerId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("PokemonGame_Domain.Entities.Battle", "Battle")
@@ -616,7 +630,7 @@ namespace PokemonGame.Persistance.Migrations
                     b.HasOne("PokemonGame_Domain.Entities.TrainerPokemon", "Defender")
                         .WithMany()
                         .HasForeignKey("DefenderId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Attacker");

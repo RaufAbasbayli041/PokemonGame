@@ -29,6 +29,14 @@ namespace PokemonGame.Persistance.Configuration
                 .WithMany()
                 .HasForeignKey(wb => wb.TrainerPokemonId)
                 .OnDelete(DeleteBehavior.NoAction); // Set up foreign key relationship with Trainer
+            builder.Property(wb => wb.Result)
+                .HasMaxLength(50)
+                .IsRequired(false); // Result can be null, but if set, has a max length of 50 characters
+            builder.Property(wb => wb.TrainerPokemonWinnerId)
+                .IsRequired(false); // Winner can be null, but if set, must be a valid TrainerPokemon ID
+            builder.Property(wb => wb.TrainerPokemonLooserId)
+                .IsRequired(false); // Looser can be null, but if set, must be a valid TrainerPokemon ID
+
 
 
 

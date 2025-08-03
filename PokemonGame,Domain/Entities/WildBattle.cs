@@ -14,7 +14,8 @@ namespace PokemonGame_Domain.Entities
         public TrainerPokemon Trainer { get; set; } // Navigation property to the Trainer entity
         public DateTime BattleDate { get; set; } = DateTime.UtcNow; // Default to current date and time
         
-        public bool? TrainerWin { get; set; }
+        public int? TrainerPokemonWinnerId { get; set; } // Foreign key to the TrainerPokemon entity for the looser 
+        public int? TrainerPokemonLooserId { get; set; } // Foreign key to the TrainerPokemon entity for the looser
 
         public int LocationId { get; set; } // Foreign key to the Location entity
         public Location Location { get; set; } // Navigation property to the Location entity

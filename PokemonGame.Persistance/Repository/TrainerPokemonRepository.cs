@@ -25,41 +25,12 @@ namespace PokemonGame.Persistance.Repository
                 .Include(p => p.Pokemon) // Include category of the Pokemon
                 .ThenInclude(p => p.Categories) // Include category of the Pokemon
                 .Where(tp => !tp.IsDeleted)
-                .Include(tp => tp.Pokemon) 
+                .Include(tp => tp.Pokemon)
                 .ThenInclude(p => p.PokemonBaseStats) // Include base stats of the Pokemon
-
                 .AsNoTracking() // Use AsNoTracking for read-only operations
                 .ToListAsync();
             return datas;
         }
-
-        //public async Task<Pokemon> GetPokemonByIdAsync(int pokemonId)
-        //{
-        //    var pokemon = await _context.Pokemons
-        //          .Include(p => p.Skills) // Include skills of the Pokemon
-        //          .Include(p => p.Categories) // Include categories of the Pokemon
-        //          .Where(p => !p.IsDeleted) // Ensure we only get non-deleted Pokemons
-        //          .AsNoTracking()
-        //          .FirstOrDefaultAsync(p => p.Id == pokemonId && !p.IsDeleted);
-        //    if (pokemon == null)
-        //    {
-        //        throw new ArgumentException("Pokemon not found");
-        //    }
-        //    return pokemon;
-        //}
-
-        //public Task<Trainer> GetTrainerByIdAsync(int trainerId)
-        //{
-        //    var trainer = _context.Trainers
-        //        .AsNoTracking()
-        //         .FirstOrDefaultAsync(t => t.Id == trainerId && !t.IsDeleted);
-
-        //    if (trainer == null)
-        //    {
-        //        throw new ArgumentException("Trainer not found");
-        //    }
-        //    return trainer;
-        //}
 
         public override async Task<TrainerPokemon> AddAsync(TrainerPokemon entity)
         {
@@ -81,5 +52,49 @@ namespace PokemonGame.Persistance.Repository
             await _context.SaveChangesAsync();
             return addedEntity.Entity;
         }
+
+        public async Task TransferPokemon(int pokemonId, int newTrainerId)
+        {
+            var loserTrainerPokemon = await _context.TrainerPokemons
+                .Include(tp => tp.Pokemon)
+                .FirstOrDefaultAsync(tp => tp.PokemonId == pokemonId && !tp.IsDeleted);
+            if (loserTrainerPokemon == null)
+            {
+                throw new ArgumentException("Pokemon not found or is deleted.");
+            }
+            var newTrainer = await _context.Trainers
+                .FirstOrDefaultAsync(t => t.Id == newTrainerId && !t.IsDeleted);
+            if (newTrainer == null)
+            {
+                throw new ArgumentException("New trainer not found or is deleted.");
+            }
+            loserTrainerPokemon.TrainerId = newTrainerId;
+            _context.TrainerPokemons.Update(loserTrainerPokemon);
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task CaughtPokemon(int pokemonId, int trainerId)
+        {
+            var pokemon = await _context.Pokemons
+                .FirstOrDefaultAsync(p => p.Id == pokemonId && !p.IsDeleted && p.IsWild);
+            if (pokemon == null)
+            {
+                throw new ArgumentException("Pokemon not found or is not wild.");
+            }
+             
+            var trainerPokemon = new TrainerPokemon
+            {
+                TrainerId = trainerId,
+                PokemonId = pokemonId,
+                CurrentHP = pokemon.HP, 
+                IsDeleted = false
+            };
+            await AddAsync(trainerPokemon);
+
+            pokemon.IsWild = false;
+            _context.Pokemons.Update(pokemon);
+            await _context.SaveChangesAsync();
+        }
+
     }
 }

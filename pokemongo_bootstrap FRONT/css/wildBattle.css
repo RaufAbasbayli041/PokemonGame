@@ -1,0 +1,115 @@
+body {
+  background: linear-gradient(135deg, #7b7be0 0%, #a8edea 100%);
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+.select-group {
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+label {
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 0;
+}
+
+select.form-control {
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: 1px solid #bbb;
+  min-width: 180px;
+}
+
+button {
+  padding: 8px 20px;
+  border-radius: 6px;
+  border: none;
+  background: #1976d2;
+  color: #fff;
+  font-weight: 500;
+  margin: 8px 0;
+  transition: background 0.2s;
+}
+
+button:disabled {
+  background: #b0b0b0;
+  color: #eee;
+  cursor: not-allowed;
+}
+
+#reset-wild-battle {
+  background: #ffb300;
+  color: #333;
+}
+
+#back-wild {
+  background: #e0e0e0;
+  color: #333;
+}
+
+#your-attack {
+  background: #e53935;
+  color: #fff;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.pokemon-card, .wild-pokemon-card {
+  width: 100%;
+  max-width: 320px;
+  border: 1.5px solid #d1d5db;
+  border-radius: 16px;
+  background: #fff;
+  padding: 22px 10px 18px 10px;
+  text-align: center;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  margin-bottom: 20px;
+}
+
+.wild-pokemon-img {
+  display: block;
+  margin: 0 auto 16px auto;
+  border-radius: 8px;
+  background: #f3f3f3;
+  max-width: 120px;
+  max-height: 120px;
+  width: auto;
+  height: auto;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.hp-bar {
+  height: 18px;
+  background: #e0e0e0;
+  border-radius: 9px;
+  overflow: hidden;
+  margin: 10px 0;
+}
+
+.hp-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #43e97b 0%, #38f9d7 100%);
+  width: 100%;
+  transition: width 0.5s;
+}
+
+.battle-log {
+  margin-top: 28px;
+  height: 160px;
+  overflow-y: auto;
+  border: 1.5px solid #d1d5db;
+  padding: 12px;
+  background: #fff;
+  border-radius: 8px;
+  font-size: 15px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  user-select: none;
+  line-height: 1.4;
+}
+
+.battle-log p {
+  margin: 6px 0;
+}

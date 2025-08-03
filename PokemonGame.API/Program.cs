@@ -9,6 +9,7 @@ using PokemonGame.Persistance.Extensions;
 using PokemonGame.Application.Validators;
 using PokemonGame.API.Hubs;
 using PokemonGame.Contracts.Contracts;
+using Microsoft.Extensions.FileProviders;
 
 namespace PokemonGame.API
 {
@@ -34,36 +35,45 @@ namespace PokemonGame.API
             builder.Services.AddAutoMapper(typeof(CustomProfile).Assembly);
             builder.Services.AddValidatorsRegistration();
             builder.Services.AddSignalR();
-            builder.Services.AddScoped<IBattleNotifier,BattleNotifier>();
+            builder.Services.AddScoped<IBattleNotifier, BattleNotifier>();
             var allowedFrontendOrigin = "http://127.0.0.1:5500";
 
             builder.Services.AddCors(options =>
             {
                 options.AddPolicy("CorsPolicy", policy =>
                 {
-                    policy
-             .WithOrigins(allowedFrontendOrigin) 
+                    policy.WithOrigins(allowedFrontendOrigin)
              .AllowAnyMethod()
              .AllowAnyHeader()
              .AllowCredentials();
                 });
             });
 
-            var app = builder.Build();
 
-            // Configure the HTTP request pipeline.
+            var app = builder.Build();
+            // Configure the HTTP request pipeline
             if (app.Environment.IsDevelopment())
             {
+                app.UseDeveloperExceptionPage(); // помогает отлаживать
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
 
             app.UseCors("CorsPolicy");
+           
+
             app.UseHttpsRedirection();
 
-            app.UseAuthorization(); 
+            // Аутентификация (если используешь)
+            // app.UseAuthentication();
+
+            app.UseAuthorization();
+
+            // SignalR
             app.MapHub<BattleHub>("/battleHub");
+
             app.UseStaticFiles();
+
 
             app.MapControllers();
 

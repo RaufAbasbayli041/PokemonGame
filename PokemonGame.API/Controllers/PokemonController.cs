@@ -8,7 +8,7 @@ using PokemonGame.Persistance.DB;
 
 namespace PokemonGame.API.Controllers
 {
-    [ApiController] 
+    [ApiController]
     [Route("api/[controller]")]
     public class PokemonController : ControllerBase
     {
@@ -38,7 +38,7 @@ namespace PokemonGame.API.Controllers
             }
             return Ok(pokemon);
         }
-       
+
         [HttpPost]
         public async Task<IActionResult> Add([FromBody] PokemonDto pokemonDto)
         {
@@ -73,20 +73,20 @@ namespace PokemonGame.API.Controllers
             }
             return NoContent();
         }
-      
+
         [HttpPost("upload-image/{id}")]
-        public async Task<IActionResult> UploadImage(int id,[FromForm] FileUploadDto image)
+        public async Task<IActionResult> UploadImage(int id, [FromForm] FileUploadDto image)
         {
             if (image == null || image.Image.Length == 0)
             {
                 return BadRequest("No image file provided");
             }
-            var folder  = _webHostEnvironment.WebRootPath+ "/pokemon/images";
+            var folder = _webHostEnvironment.WebRootPath + "/pokemon/images";
             if (!Directory.Exists(folder))
             {
                 Directory.CreateDirectory(folder);
             }
-            var fileName = $"{Guid.NewGuid()}_{image.Image.FileName}";
+            var fileName = $"image{Guid.NewGuid().ToString()}_{image.Image.FileName}";
             var filePath = Path.Combine(folder, fileName);
             using (var stream = new FileStream(filePath, FileMode.Create))
             {
@@ -97,7 +97,11 @@ namespace PokemonGame.API.Controllers
             {
                 return BadRequest("Image upload failed");
             }
-            return Ok ();
+            return Ok();
         }
+
+       
+      
+
     }
 }

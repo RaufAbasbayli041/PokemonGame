@@ -1,163 +1,146 @@
-/* Основные стили */
+/* Общий фон и шрифт */
 body {
-  max-width: 700px;
-  margin: 20px auto;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(135deg, #667eea, #764ba2);
-  color: #f0f0f0;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+  background: linear-gradient(135deg, #7b7be0 0%, #a8edea 100%);
+  font-family: 'Segoe UI', Arial, sans-serif;
 }
 
-h1 {
-  text-align: center;
-  margin-bottom: 30px;
-  font-weight: 700;
-  text-shadow: 1px 1px 4px rgba(0,0,0,0.4);
-}
-
-/* Селекты и кнопки */
+/* Селекторы и кнопки */
 .select-group {
-  margin-bottom: 20px;
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 label {
-  margin-right: 10px;
-  font-weight: 600;
-}
-
-select {
-  padding: 8px 12px;
-  border-radius: 8px;
-  border: none;
-  font-size: 16px;
-  outline: none;
-  box-shadow: 0 0 6px rgba(156,106,222,0.6);
-  transition: box-shadow 0.3s ease;
-  background-color: #fff;
+  font-weight: 500;
   color: #333;
-  width: 100%;
-  max-width: 320px;
-  display: inline-block;
-  vertical-align: middle;
+  margin-bottom: 0;
+  width: 100px  ;
 }
 
-select:focus {
-  box-shadow: 0 0 12px 2px #9c6ade;
+select.form-control {
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: 1px solid #bbb;
+  min-width: 180px;
 }
 
 button {
-  padding: 10px 20px;
-  background-color: #9c6ade;
+  padding: 8px 20px;
+  border-radius: 6px;
   border: none;
-  border-radius: 30px;
-  color: white;
-  font-weight: 700;
-  font-size: 16px;
-  cursor: pointer;
-  box-shadow: 0 6px 15px rgba(156,106,222,0.6);
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  background: #1976d2;
+  color: #fff;
+  font-weight: 500;
+  margin: 8px 0;
+  transition: background 0.2s;
 }
 
 button:disabled {
-  background-color: #7a5ebf;
+  background: #b0b0b0;
+  color: #eee;
   cursor: not-allowed;
-  box-shadow: none;
-  opacity: 0.6;
 }
 
-button:not(:disabled):hover {
-  background-color: #ae7bff;
-  box-shadow: 0 8px 20px rgba(174,123,255,0.8);
+#reset-battle {
+  background: #ffb300;
+  color: #333;
 }
 
-/* Область боя */
+#back {
+  background: #e0e0e0;
+  color: #333;
+}
+
+#attack1, #attack2 {
+  background: #e53935;
+  color: #fff;
+  width: 100%;
+  margin-top: 10px;
+}
+
 #battle-area {
   display: flex;
   justify-content: space-around;
   margin-top: 30px;
   gap: 30px;
-  flex-wrap: wrap;
 }
 
-.pokemon {
-  width: 250px;
-  background: rgba(255,255,255,0.1);
-  border-radius: 15px;
-  padding: 20px;
+.pokemon-card {
+  width: 100%;
+  max-width: 320px;
+  border: 1.5px solid #d1d5db;
+  border-radius: 16px;
+  background: #fff;
+  padding: 22px 10px 18px 10px;
   text-align: center;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.25);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  backdrop-filter: blur(6px);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  margin-bottom: 20px;
 }
 
-.pokemon:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(156,106,222,0.7);
+.battle-pokemon-img {
+  display: block;
+  margin: 0 auto 16px auto;
+  border-radius: 8px;
+  background: #f3f3f3;
+  max-width: 120px;
+  max-height: 120px;
+  width: auto;
+  height: auto;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
 }
 
-.pokemon h2 {
-  margin-bottom: 15px;
+.pokemon-card h2 {
+  margin-bottom: 12px;
   font-weight: 800;
   font-size: 22px;
   text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
-  color: #eee;
+  color: #444;
+  line-height: 1.2;
+  text-align: center;
 }
 
-.pokemon img {
-  width: 150px;
-  height: 150px;
-  object-fit: contain;
-  border-radius: 12px;
-  background-color: rgba(255,255,255,0.15);
-  margin-bottom: 15px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-}
-
-/* HP бар */
 .hp-bar {
-  height: 22px;
-  background: #333;
-  border-radius: 12px;
+  height: 18px;
+  background: #e0e0e0;
+  border-radius: 9px;
   overflow: hidden;
-  margin: 10px 0 15px 0;
-  box-shadow: inset 0 1px 3px rgba(255,255,255,0.2);
+  margin: 10px 0;
 }
 
 .hp-bar-fill {
   height: 100%;
-  background: linear-gradient(90deg, #6edc6e, #2ba52b);
+  background: linear-gradient(90deg, #43e97b 0%, #38f9d7 100%);
   width: 100%;
-  transition: width 0.5s ease;
-  box-shadow: 0 0 8px #4caf50;
+  transition: width 0.5s;
 }
 
-/* HP текст */
-.pokemon p {
+.pokemon-card p {
   font-weight: 700;
   font-size: 16px;
-  color: #c8f7c8;
-  text-shadow: 0 0 5px #3ca63c;
+  color: #43e97b;
+  text-shadow: 0 0 5px #3ca63c22;
   margin-bottom: 15px;
 }
 
-/* Кнопка атаки */
-.pokemon button {
-  width: 100%;
+.vs-block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
 }
 
 #battle-log {
-  margin-top: 25px;
+  margin-top: 28px;
   height: 160px;
   overflow-y: auto;
-  border-radius: 12px;
-  background: rgba(0, 0, 0, 0.35);
-  padding: 15px 20px;
-  font-family: monospace;
-  font-size: 14px;
-  color: #c8d6f5;
-  box-shadow: 0 0 15px rgba(108, 99, 255, 0.8);
+  border: 1.5px solid #d1d5db;
+  padding: 12px;
+  background: #fff;
+  border-radius: 8px;
+  font-size: 15px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
   user-select: none;
   line-height: 1.4;
 }
@@ -167,14 +150,13 @@ button:not(:disabled):hover {
 }
 
 /* Адаптив для маленьких экранов */
-@media (max-width: 640px) {
+@media (max-width: 900px) {
   #battle-area {
     flex-direction: column;
     align-items: center;
+    gap: 0;
   }
-
-  .pokemon {
-    width: 90%;
-    margin-bottom: 20px;
+  .pokemon-card {
+    margin-bottom: 24px;
   }
 }

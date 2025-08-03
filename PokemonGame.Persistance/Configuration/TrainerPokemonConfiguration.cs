@@ -29,7 +29,8 @@ namespace PokemonGame.Persistance.Configuration
                 .WithMany()
                 .HasForeignKey(tp => tp.PokemonId);
             // Configure navigation properties
-            
+            builder.Property(tp => tp.Losses).HasDefaultValue(0);
+            builder.Property(tp => tp.Wins).HasDefaultValue(0);
 
         }
     }

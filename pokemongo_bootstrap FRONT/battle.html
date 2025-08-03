@@ -2,77 +2,107 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Pokemon Battle - Выбор тренеров</title>
-  <style>
-    body { max-width: 700px; margin: 20px auto; font-family: Arial, sans-serif; }
-    .select-group { margin-bottom: 20px; }
-    label { margin-right: 10px; }
-    select { padding: 5px 10px; }
-    button { padding: 8px 16px; cursor: pointer; }
-    #battle-area { display: flex; justify-content: space-around; margin-top: 30px; }
-    .pokemon { width: 250px; border: 1px solid #ccc; border-radius: 8px; padding: 10px; text-align: center; }
-    .hp-bar { height: 20px; background: #eee; border-radius: 10px; overflow: hidden; margin: 10px 0; }
-    .hp-bar-fill { height: 100%; background: #4caf50; width: 100%; transition: width 0.5s; }
-    #battle-log { margin-top: 20px; height: 150px; overflow-y: auto; border: 1px solid #ccc; padding: 10px; background: #fafafa; text-align: left;}
-  </style>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <link href="./css/battle.css" rel="stylesheet">
-
+  <title>Pokemon Battle</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="./css/bootstrap.min.css" rel="stylesheet">
+  <link href="./css/battle.css" rel="stylesheet">
 </head>
 <body>
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="index.html">Pokemon Game</a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li><a href="index.html">Home</a></li>
+          <li class="active"><a href="battle.html">Battle</a></li>
 
-  <h1>Choose trainers</h1>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-  <div class="select-group">
-  <label for="trainer1-select">Trainer 1:</label>
-  <select id="trainer1-select" required>
-    <option value="" disabled selected hidden>-- Choose trainer --</option>
-  </select>
-</div>
-<div class="select-group">
-  <label for="pokemon1-select">Pokemon 1:</label>
-  <select id="pokemon1-select" required disabled>
-    <option value="">-- Select pokemon --</option>
-  </select>
-</div>
-
-<div class="select-group">
-  <label for="trainer2-select">Trainer 2:</label>
-  <select id="trainer2-select" required>
-    <option value="" disabled selected hidden>-- Choose trainer --</option>
-  </select>
-</div>
-
-<div class="select-group">
-  <label for="pokemon2-select">Pokemon 2:</label>
-  <select id="pokemon2-select" required disabled>
-    <option value="">-- Select pokemon --</option>
-  </select>
-</div>
-  <button id="start-battle" disabled>Get Battle</button>
-
-  <div id="battle-area" style="display:none;">
-    <div id="pokemon1" class="pokemon">
-      <h2 id="name1"></h2>
-      <img id="img1" src="" alt=" " width="150" />
-      <div class="hp-bar"><div id="hp-bar-fill1" class="hp-bar-fill"></div></div>
-      <p>HP: <span id="hp1">100</span></p>
-      <button id="attack1">attack1</button>
+  <main class="container" style="margin-top:70px;">
+    <h2 class="text-center">Pokemon Battle</h2>
+    <div class="row justify-content-center">
+      <div class="col-md-5">
+        <div class="select-group">
+          <label for="trainer1-select">Trainer 1:</label>
+          <select id="trainer1-select" class="form-control" required>
+            <option value="" disabled selected hidden>-- Choose trainer --</option>
+          </select>
+        </div>
+        <div class="select-group">
+          <label for="pokemon1-select">Pokemon 1:</label>
+          <select id="pokemon1-select" class="form-control" required disabled>
+            <option value="">-- Select pokemon --</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-md-2 text-center" style="padding-top:40px;">
+        <button id="start-battle" class="btn btn-success btn-lg" disabled>Get Battle</button>
+        <button id="reset-battle" class="btn btn-warning btn-lg" disabled>Reset Battle</button> 
+      </div>
+      <div class="col-md-5">
+        <div class="select-group">
+          <label for="trainer2-select">Trainer 2:</label>
+          <select id="trainer2-select" class="form-control" required>
+            <option value="" disabled selected hidden>-- Choose trainer --</option>
+          </select>
+        </div>
+        <div class="select-group">
+          <label for="pokemon2-select">Pokemon 2:</label>
+          <select id="pokemon2-select" class="form-control" required disabled>
+            <option value="">-- Select pokemon --</option>
+          </select>
+        </div>
+      </div>
     </div>
 
-    <div id="pokemon2" class="pokemon">
-      <h2 id="name2"></h2>
-      <img id="img2" src="" alt="Pokemon 2" width="150" />
-      <div class="hp-bar"><div id="hp-bar-fill2" class="hp-bar-fill"></div></div>
-      <p>HP: <span id="hp2"></span></p>
-      <button id="attack2">attack2</button>
+    <div id="battle-area" class="row" style="margin-top:30px; display:none;">
+      <div class="col-md-5 pokemon-card text-center">
+        <h2 id="name1">Pikachu</h2>
+        <img id="img1" src="" alt="" class="battle-pokemon-img">
+        <div class="hp-bar">
+          <div id="hp-bar-fill1" class="hp-bar-fill"></div>
+        </div>
+        <p>HP: <span id="hp1">100</span></p>
+        <button id="attack1" class="btn btn-danger btn-block" disabled>Attack</button>
+      </div>
+      <div class="col-md-2 text-center vs-block">
+        <h3>VS</h3>
+      </div>
+      <div class="col-md-5 pokemon-card text-center">
+        <h2 id="name2"></h2>
+        <img id="img2" src="" alt="Pokemon 2" class="battle-pokemon-img" width="150" />
+        <div class="hp-bar">
+          <div id="hp-bar-fill2" class="hp-bar-fill"></div>
+        </div>
+        <p>HP: <span id="hp2"></span></p>
+        <button id="attack2" class="btn btn-danger btn-block" disabled>Attack</button>
+      </div>
     </div>
-  </div>
 
-  <div id="battle-log"></div>
+    <div class="row" style="margin-top:30px;">
+      <div class="col-md-12">
+        <div id="battle-log" class="battle-log"></div>
+      </div>
+    </div>
+  </main>
 
- <script src="https://cdn.jsdelivr.net/npm/@microsoft/signalr@7.0.5/dist/browser/signalr.min.js"></script>
-<script src="./js/battle.js"></script>
+  <footer class="footer text-center">
+    <hr>
+    <p>&copy; 2015 Company, Inc.</p>
+  </footer>
 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="./js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@microsoft/signalr@7.0.5/dist/browser/signalr.min.js"></script>
+  <script type="module" src="./js/battle.js"></script>
+  <script>
+    const attack1Btn = document.getElementById("attack1");
+    if (attack1Btn) attack1Btn.disabled = true;
+  </script>
 </body>
 </html>

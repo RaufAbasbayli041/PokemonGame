@@ -11,6 +11,8 @@ namespace PokemonGame_Domain.Repository
     {
         //public Task<Trainer> GetTrainerByIdAsync(int trainerId);
         //public Task<Pokemon> GetPokemonByIdAsync(int pokemonId);
+        Task TransferPokemon (int pokemonId,int newTrainerId);
+        Task CaughtPokemon (int pokemonId, int trainerId);
 
     }
 }
