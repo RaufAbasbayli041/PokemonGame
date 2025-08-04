@@ -60,9 +60,7 @@ namespace PokemonGame.Application.Profiles
 				.ReverseMap();
 			CreateMap<Battle, BattleDto>()
 				.ForMember(dest => dest.TrainerPokemon1Id, opt => opt.MapFrom(src => src.TrainerPokemon1Id))
-				.ForMember(dest => dest.TrainerPokemon2Id, opt => opt.MapFrom(src => src.TrainerPokemon2Id))
-				.ForMember(dest => dest.WinnerId, opt => opt.MapFrom(src => src.TrainerPokemonWinnerId))
-				.ForMember(dest => dest.LoserId, opt => opt.MapFrom(src => src.TrainerPokemonLoserId))
+				.ForMember(dest => dest.TrainerPokemon2Id, opt => opt.MapFrom(src => src.TrainerPokemon2Id)) 
 				.ForMember(dest => dest.GymId, opt => opt.MapFrom(src => src.Gym.Id))
 				.ReverseMap();
 			CreateMap<BattleTurn, BattleTurnDto>()

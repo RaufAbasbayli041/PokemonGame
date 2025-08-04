@@ -11,5 +11,6 @@ namespace PokemonGame.Contracts.Contracts
         Task NotifyTurnAsync(int battleId, int attackerId, int defenderId, string action, int turnNumber);
         // This method will be used to notify clients about the battle turn updates.
         Task NotifyBattleEndAsync(int battleId, int winnerId, int loserId);
+        Task NotifyAttackAsync(object id, int parsedAttackerId, int parsedDefenderId, int damage);
     }
 }

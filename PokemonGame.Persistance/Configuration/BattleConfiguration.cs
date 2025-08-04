@@ -20,19 +20,7 @@ namespace PokemonGame.Persistance.Configuration
             builder.HasOne(builder => builder.TrainerPokemon2)
                 .WithMany()
                 .HasForeignKey(builder => builder.TrainerPokemon2Id)
-                .OnDelete(DeleteBehavior.NoAction);
-
-            builder.HasOne(builder => builder.Winner)
-                .WithMany()
-                .HasForeignKey(builder => builder.TrainerPokemonWinnerId)
-                .IsRequired(false)
-
-                .OnDelete(DeleteBehavior.NoAction);
-            builder.HasOne(builder => builder.Loser)
-                .WithMany()
-                .HasForeignKey(builder => builder.TrainerPokemonLoserId)
-                .IsRequired(false)
-                .OnDelete(DeleteBehavior.NoAction);
+                .OnDelete(DeleteBehavior.NoAction);   
             builder.HasOne(builder => builder.Gym)
                 .WithMany()
                 .HasForeignKey(builder => builder.GymId)

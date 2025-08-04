@@ -79,10 +79,7 @@ namespace PokemonGame.Application.Service
                 await AddTurnAsync(battle.Id, attacker.Id, defender.Id, action, turnNumber);
 
                 if (defender.CurrentHP <= 0)
-                {
-                    battle.TrainerPokemonWinnerId = attacker.Id;
-                    battle.TrainerPokemonLoserId = defender.Id;
-                     
+                {                   
 
 
                     await _trainerPokemonRepository.TransferPokemon(defender.PokemonId, attacker.TrainerId);
@@ -128,8 +125,9 @@ namespace PokemonGame.Application.Service
             }
 
             int damage = CalculateDamage(attackerPokemon, defenderPokemon, skill);
-            defenderPokemon.HP -= damage;
-            if (defenderPokemon.HP < 0) defenderPokemon.HP = 0;
+            defender.CurrentHP -= damage;
+            if (defender.CurrentHP < 0)
+                defender.CurrentHP = 0;
 
             // Обновляем текущие HP
             defender.CurrentHP = defenderPokemon.HP;

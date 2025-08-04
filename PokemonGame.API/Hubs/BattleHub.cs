@@ -16,12 +16,18 @@ namespace PokemonGame.API.Hubs
             // Notify all clients about the end of the battle
             await Clients.All.SendAsync("BattleEnded", new { WinnerId = winnerId, LoserId = loserId });
         }
-        public async Task SendAttack(int attackerId, int defenderId, int damage)
+        public async Task SendAttack(int battleId, int attackerId, int defenderId, int damage)
         {
+            Console.WriteLine($"SendAttack called: battleId={battleId}, {attackerId} -> {defenderId}, damage: {damage}");
 
-            Console.WriteLine($"SendAttack called: {attackerId} -> {defenderId}, damage: {damage}");
-
-            await Clients.All.SendAsync("ReceiveAttack", attackerId, defenderId, damage);
+            await Clients.All.SendAsync("ReceiveAttack", new
+            {
+                BattleId = battleId,
+                AttackerId = attackerId,
+                DefenderId = defenderId,
+                Damage = damage
+            });
         }
+
     }
 }

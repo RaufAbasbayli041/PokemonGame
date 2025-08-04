@@ -12,6 +12,17 @@ namespace PokemonGame.API.Hubs
             _hubContext = hubContext;
         }
 
+        public Task NotifyAttackAsync(object id, int parsedAttackerId, int parsedDefenderId, int damage)
+        {
+            return _hubContext.Clients.All.SendAsync("ReceiveAttack", new
+            {
+                BattleId = id,
+                AttackerId = parsedAttackerId,
+                DefenderId = parsedDefenderId,
+                Damage = damage
+            });
+        }
+
         public Task NotifyBattleEndAsync(int battleId, int winnerId, int loserId)
         {
             return _hubContext.Clients.All.SendAsync("BattleEnded", new
