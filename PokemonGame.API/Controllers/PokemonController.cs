@@ -77,6 +77,8 @@ namespace PokemonGame.API.Controllers
         [HttpPost("upload-image/{id}")]
         public async Task<IActionResult> UploadImage(int id, [FromForm] FileUploadDto image)
         {
+
+
             if (image == null || image.Image.Length == 0)
             {
                 return BadRequest("No image file provided");
@@ -92,16 +94,15 @@ namespace PokemonGame.API.Controllers
             {
                 await image.Image.CopyToAsync(stream);
             }
-            var isUploaded = await _pokemonService.UploadImgAsync(id, fileName);
+            var isUploaded = await _pokemonService.UploadImgAsync(id, "");
             if (!isUploaded)
             {
                 return BadRequest("Image upload failed");
             }
             return Ok();
         }
-
-       
-      
-
     }
+
+
+
 }

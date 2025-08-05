@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using FluentValidation;
 using Microsoft.AspNetCore.SignalR;
-
+using Microsoft.Extensions.Logging;
 using PokemonGame.Application.Validators;
 using PokemonGame.Contracts.Contracts;
 using PokemonGame.Contracts.Dtos;
@@ -22,15 +22,18 @@ namespace PokemonGame.Application.Service
         private readonly IBattleNotifier _notifier;
         private readonly IPokemonRepository _pokemonRepository;
         private readonly ITrainerPokemonRepository _trainerPokemonRepository; 
-        public BattleService(IBattleRepository repository, IMapper mapper, BattleValidator validator, IBattleNotifier notifier, IPokemonRepository pokemonRepository, ITrainerPokemonRepository trainerPokemonRepository) : base(repository, mapper, validator)
+        private readonly ILogger<BattleService> _logger;
+        public BattleService(IBattleRepository repository, IMapper mapper, BattleValidator validator, IBattleNotifier notifier, IPokemonRepository pokemonRepository, ITrainerPokemonRepository trainerPokemonRepository, ILogger<BattleService> logger) : base(repository, mapper, validator)
         {
             _battleRepository = repository;
             _notifier = notifier;
             _pokemonRepository = pokemonRepository;
             _trainerPokemonRepository = trainerPokemonRepository;
+            _logger = logger;
         }
         public override async Task<BattleDto> AddAsync(BattleDto dto)
         {
+
             var p1 = await _battleRepository.GetTrainerByIdAsync(dto.TrainerPokemon1Id);
             var p2 = await _battleRepository.GetTrainerByIdAsync(dto.TrainerPokemon2Id);
 
@@ -62,6 +65,7 @@ namespace PokemonGame.Application.Service
         }
         private async Task BattleAsync(Battle battle, TrainerPokemon p1, TrainerPokemon p2 )
         {
+            _logger.LogInformation($"Battle started: {p1.Pokemon.Name} vs {p2.Pokemon.Name} at {battle.BattleDate}");
             int turnNumber = 1;
             bool p1Turn = true;
           
@@ -101,7 +105,8 @@ namespace PokemonGame.Application.Service
 
                 p1Turn = !p1Turn;
                 turnNumber++;
-            }
+            } 
+            _logger.LogInformation($"Battle ended: {p1.Pokemon.Name} vs {p2.Pokemon.Name}. Winner: {(p1.CurrentHP > 0 ? p1.Pokemon.Name : p2.Pokemon.Name)}");
         }
         private async Task<int> PerformAction(TrainerPokemon attacker, TrainerPokemon defender, BattleAction action)
         {

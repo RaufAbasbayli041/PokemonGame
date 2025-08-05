@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using FluentValidation;
+using Microsoft.Extensions.Logging;
 using PokemonGame.Application.Validators;
 using PokemonGame.Contracts.Contracts;
 using PokemonGame.Contracts.Dtos;
@@ -20,13 +21,15 @@ namespace PokemonGame.Application.Service
         private readonly IPokemonRepository _pokemonRepository;
         private readonly ITrainerPokemonRepository _trainerPokemonRepository;
         private readonly IBattleNotifier _notifier;
+        private readonly ILogger<WildBattleService> _logger;
 
-        public WildBattleService(IWildBattleRepository repository, IMapper mapper, WildBattleValidator validator, IPokemonRepository pokemonRepository, ITrainerPokemonRepository trainerPokemonRepository, IBattleNotifier notifier) : base(repository, mapper, validator)
+        public WildBattleService(IWildBattleRepository repository, IMapper mapper, WildBattleValidator validator, IPokemonRepository pokemonRepository, ITrainerPokemonRepository trainerPokemonRepository, IBattleNotifier notifier, ILogger<WildBattleService> logger) : base(repository, mapper, validator)
         {
             _wildBattleRepository = repository;
             _pokemonRepository = pokemonRepository;
             _trainerPokemonRepository = trainerPokemonRepository;
             _notifier = notifier;
+            _logger = logger;
         }
 
         public async Task AddTurnAsync(int battleId, int attackerId, int defenderId, BattleAction action, int turnNumber)
@@ -76,6 +79,7 @@ namespace PokemonGame.Application.Service
 
         private async Task WildBattleAsync(WildBattle wildBattle, TrainerPokemon trainerPokemon, WildPokemon wildPokemon)
         {
+            _logger.LogInformation($"Wild battle started: {trainerPokemon.Pokemon.Name} vs {wildPokemon.Pokemon.Name} at {wildBattle.BattleDate}");
             int turnNumber = 1;
             bool trainerTurn = true;
 
@@ -136,6 +140,8 @@ namespace PokemonGame.Application.Service
                 trainerTurn = !trainerTurn;
                 turnNumber++;
             }
+
+            _logger.LogInformation($"Wild battle ended: {trainerPokemon.Pokemon.Name} vs {wildPokemon.Pokemon.Name} at {wildBattle.BattleDate}");
         }
 
         // battle action when trainer pokemon attack wild pokemon

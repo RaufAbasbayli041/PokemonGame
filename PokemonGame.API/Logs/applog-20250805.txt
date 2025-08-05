@@ -1,0 +1,84 @@
+2025-08-05 21:55:42.753 +04:00 [WRN] The foreign key property 'WildBattle.WildPokemonId1' was created in shadow state because a conflicting property with the simple name 'WildPokemonId' exists in the entity type, but is either not mapped, is already used for another relationship, or is incompatible with the associated primary key type. See https://aka.ms/efcore-relationships for information on mapping relationships in EF Core.
+2025-08-05 21:55:45.494 +04:00 [INF] Retrieved battles: [
+  {
+    "TrainerPokemon1Id": 3,
+    "TrainerPokemon2Id": 4,
+    "BattleDate": "2025-07-28T18:31:26.941",
+    "WinnerId": null,
+    "LoserId": null,
+    "GymId": 21,
+    "Id": 1
+  },
+  {
+    "TrainerPokemon1Id": 9,
+    "TrainerPokemon2Id": 10,
+    "BattleDate": "2025-08-01T18:56:41.454",
+    "WinnerId": null,
+    "LoserId": null,
+    "GymId": 21,
+    "Id": 3
+  },
+  {
+    "TrainerPokemon1Id": 9,
+    "TrainerPokemon2Id": 10,
+    "BattleDate": "2025-08-01T19:10:30.536",
+    "WinnerId": null,
+    "LoserId": null,
+    "GymId": 21,
+    "Id": 4
+  },
+  {
+    "TrainerPokemon1Id": 9,
+    "TrainerPokemon2Id": 10,
+    "BattleDate": "2025-08-01T19:10:30.536",
+    "WinnerId": null,
+    "LoserId": null,
+    "GymId": 21,
+    "Id": 5
+  },
+  {
+    "TrainerPokemon1Id": 9,
+    "TrainerPokemon2Id": 10,
+    "BattleDate": "2025-08-01T19:42:04.346",
+    "WinnerId": null,
+    "LoserId": null,
+    "GymId": 21,
+    "Id": 6
+  },
+  {
+    "TrainerPokemon1Id": 9,
+    "TrainerPokemon2Id": 10,
+    "BattleDate": "2025-08-01T19:42:04.346",
+    "WinnerId": null,
+    "LoserId": null,
+    "GymId": 21,
+    "Id": 7
+  },
+  {
+    "TrainerPokemon1Id": 9,
+    "TrainerPokemon2Id": 10,
+    "BattleDate": "2025-08-01T19:48:19.57",
+    "WinnerId": null,
+    "LoserId": null,
+    "GymId": 21,
+    "Id": 8
+  },
+  {
+    "TrainerPokemon1Id": 9,
+    "TrainerPokemon2Id": 10,
+    "BattleDate": "2025-08-01T20:00:45.295",
+    "WinnerId": null,
+    "LoserId": null,
+    "GymId": 21,
+    "Id": 9
+  },
+  {
+    "TrainerPokemon1Id": 9,
+    "TrainerPokemon2Id": 10,
+    "BattleDate": "2025-08-01T20:05:14.673",
+    "WinnerId": null,
+    "LoserId": null,
+    "GymId": 21,
+    "Id": 10
+  }
+]

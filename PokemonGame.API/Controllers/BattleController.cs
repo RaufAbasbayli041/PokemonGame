@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using PokemonGame.Contracts.Contracts;
 using PokemonGame.Contracts.Dtos;
+using System.Text.Json;
 
 namespace PokemonGame.API.Controllers
 {
@@ -10,16 +11,24 @@ namespace PokemonGame.API.Controllers
     public class BattleController : ControllerBase
     {
         private readonly IBattleService _battleService;
+        private readonly ILogger<BattleController> _logger;
 
-        public BattleController(IBattleService battleService)
+        public BattleController(IBattleService battleService, ILogger<BattleController> logger)
         {
             _battleService = battleService;
+            _logger = logger;
         }
 
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
             var battles = await _battleService.GetBattlesAsync();
+            string battlesJson =  JsonSerializer.Serialize(battles, new JsonSerializerOptions
+            {
+                WriteIndented = true
+            });
+
+            _logger.LogInformation("Retrieved battles: {BattlesJson}", battlesJson);
             return Ok(battles);
         }
         [HttpGet("{id}")]

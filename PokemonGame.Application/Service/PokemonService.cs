@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using FluentValidation;
+using PokemonGame.Application.Exceptions;
 using PokemonGame.Application.Validators;
 using PokemonGame.Contracts.Contracts;
 using PokemonGame.Contracts.Dtos;
@@ -74,7 +75,12 @@ namespace PokemonGame.Application.Service
 
 		public async Task<bool> UploadImgAsync(int id, string filePath)
 		{
-			var data = await _pokemonRepository.UploadImgAsyn(id,filePath);
+			if (string.IsNullOrEmpty(filePath))
+            {
+                throw new BadRequestException("File path cannot be null or empty");
+            }
+
+            var data = await _pokemonRepository.UploadImgAsyn(id,filePath);
 			if (data == null)
 			{
 				throw new ArgumentException("Pokemon not found");

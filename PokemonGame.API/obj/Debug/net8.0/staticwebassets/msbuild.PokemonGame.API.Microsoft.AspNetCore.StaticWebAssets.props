@@ -72,5 +72,59 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\pokemon\images\fc7bf254-bd0f-40e8-a2c9-d7cd0b4c08f2_025.png'))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\pokemon\images\image708ca46d-cbbb-4690-8e5c-6e75bde99f55_025.png'))">
+      <SourceType>Package</SourceType>
+      <SourceId>PokemonGame.API</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/PokemonGame.API</BasePath>
+      <RelativePath>pokemon/images/image708ca46d-cbbb-4690-8e5c-6e75bde99f55_025.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>ziukk2fjwc</Fingerprint>
+      <Integrity>dZzq/bS41jffz+Zzz2crw8RyNUo7Ln4INdnNys2NGV0=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\pokemon\images\image708ca46d-cbbb-4690-8e5c-6e75bde99f55_025.png'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\pokemon\images\imaged9fa17b0-0ae5-425c-8c93-8b5f11134bf1_025.png'))">
+      <SourceType>Package</SourceType>
+      <SourceId>PokemonGame.API</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/PokemonGame.API</BasePath>
+      <RelativePath>pokemon/images/imaged9fa17b0-0ae5-425c-8c93-8b5f11134bf1_025.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>ziukk2fjwc</Fingerprint>
+      <Integrity>dZzq/bS41jffz+Zzz2crw8RyNUo7Ln4INdnNys2NGV0=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\pokemon\images\imaged9fa17b0-0ae5-425c-8c93-8b5f11134bf1_025.png'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\pokemon\images\imagee4747682-a350-42e5-aa5f-dbf892e41506_025.png'))">
+      <SourceType>Package</SourceType>
+      <SourceId>PokemonGame.API</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/PokemonGame.API</BasePath>
+      <RelativePath>pokemon/images/imagee4747682-a350-42e5-aa5f-dbf892e41506_025.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>ziukk2fjwc</Fingerprint>
+      <Integrity>dZzq/bS41jffz+Zzz2crw8RyNUo7Ln4INdnNys2NGV0=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\pokemon\images\imagee4747682-a350-42e5-aa5f-dbf892e41506_025.png'))</OriginalItemSpec>
+    </StaticWebAsset>
   </ItemGroup>
 </Project>
